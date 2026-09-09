@@ -1,0 +1,5250 @@
+[
+ {
+  "slug": "extract-a",
+  "title": "Field extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 1,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Extracts a named field from free text using a field descriptor. The model returns exactly one value per request, with a confidence indicator."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-b",
+  "title": "Entity extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 2,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Identifies named entities (people, orgs, places, dates) from text and returns them as a typed list with source positions."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-c",
+  "title": "Attribute extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 3,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Extracts specific attributes from an entity description. Given a product description, returns color, size, material, and price."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-d",
+  "title": "Schema extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 4,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Converts unstructured text into a target schema. Each field in the target schema maps to a source extraction with the context preserved."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-e",
+  "title": "Temporal extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 5,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Extracts temporal information from narrative text, including relative dates, durations, and sequences. Anchors to a reference date."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-f",
+  "title": "Measurement extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 6,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Extracts measurements with units from technical text. Returns value, unit, precision, and context for each measurement."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-g",
+  "title": "Record subset extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 7,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Given a large structured record, returns only the fields specified in a subset schema. Useful for token-budget reduction."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "extract-h",
+  "title": "Citation extraction",
+  "type": "extract",
+  "status": "inspected",
+  "number": 8,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Extracts bibliographic citation data from text. Returns structured reference entries with confidence per field."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in document processing pipelines. Works with resumes, invoices, transcripts, technical reports, and meeting notes."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use whenever unstructured text must feed a structured downstream process. Best for single-field or small-schema tasks."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the field name, provide a short description of what counts as valid, and include an example of the expected output format."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source text increases hallucination risk for fields near the middle. Always verify output against source for critical extractions."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Schema extraction and record subset extraction. Schema extraction for multi-field tasks, record subset for record reduction."
+   },
+   {
+    "title": "Example",
+    "body": "Input: job description paragraph. Output: salary range, required years of experience, and remote policy as separate fields."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the extract family (8 methods). Most reliable for single-field extractions from clean text under 500 words."
+   }
+  ]
+ },
+ {
+  "slug": "compare-a",
+  "title": "Criterion comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 9,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Compares items against a shared set of criteria. Each criterion gets a rating per item, producing a comparison table."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-b",
+  "title": "Diff comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 10,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Identifies exact and semantic differences between two versions of a document or record. Returns additions, removals, and modifications."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-c",
+  "title": "Alternative ranking",
+  "type": "compare",
+  "status": "inspected",
+  "number": 11,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Ranks alternatives along a single dimension (cost, risk, latency). Each rank position includes the rationale for placement."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-d",
+  "title": "Baseline comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 12,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Compares a candidate against a reference baseline. Reports exact matches, partial matches, and significant deviations."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-e",
+  "title": "Strategy comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 13,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Evaluates multiple strategies against feasibility, effort, risk, and outcome criteria. Returns a structured tradeoff analysis."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-f",
+  "title": "Semantic diff",
+  "type": "compare",
+  "status": "inspected",
+  "number": 14,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Detects meaning-preserving and meaning-changing differences between two documents, ignoring surface-level wording changes."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-g",
+  "title": "Conformity comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 15,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Measures how well a set of items conforms to a template or specification. Returns per-item conformity scores."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "compare-h",
+  "title": "Source comparison",
+  "type": "compare",
+  "status": "inspected",
+  "number": 16,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Compares multiple sources reporting on the same claim or event. Highlights agreement, contradictions, and methodological differences."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in vendor selection, tool evaluation, design review, and evidence reconciliation."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a decision depends on choosing between alternatives and the reasoning must be auditable."
+   },
+   {
+    "title": "How to use it",
+    "body": "List the items and criteria explicitly before any comparison. Each criterion should be independently verifiable."
+   },
+   {
+    "title": "Limitations",
+    "body": "Subjective criteria reduce reliability. Best for criteria that can be stated as binary facts or measurable scales."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Strategy comparison and ranking. Strategy for multi-dimensional tradeoffs, ranking for single-dimension ordering."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 3 CI tools + 6 criteria. Output: comparison table with per-criterion scores and overall ranking with rationale."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the compare family (8 methods). Most reliable for criteria-based comparisons with objective measures."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-a",
+  "title": "Thematic synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 17,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Combines multiple sources into a theme-organized summary. Each theme is grounded in specific source excerpts with attribution."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-b",
+  "title": "Cross-report synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 18,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Integrates findings from multiple analysis reports into a unified assessment. Contradictions are surfaced, not smoothed."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-c",
+  "title": "Multi-modal synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 19,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Combines text, tables, and structured data into a single integrated analysis while preserving cross-format references."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-d",
+  "title": "Feedback synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 20,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Aggregates feedback from multiple reviewers into a consolidated revision list. Groups related comments and surfaces conflicts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-e",
+  "title": "Document synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 21,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Condenses a long document into a structured summary with key decisions, open questions, and action items."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-f",
+  "title": "Research synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 22,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Integrates research findings from multiple sources into a coherent synthesis with minority conclusions preserved."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-g",
+  "title": "Solution synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 23,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Combines candidate solutions or approaches into a hybrid proposal. Documents provenance of each element."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "synthesize-h",
+  "title": "Status synthesis",
+  "type": "synthesize",
+  "status": "inspected",
+  "number": 24,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Combines periodic workstream updates into a program-level progress report with per-workstream attribution."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in research review, project reporting, design integration, and multi-source analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when multiple sources of information must be combined and their relationships preserved."
+   },
+   {
+    "title": "How to use it",
+    "body": "Provide source excerpts with identifiers. Each body paragraph should cite specific sources."
+   },
+   {
+    "title": "Limitations",
+    "body": "Long source sets increase the risk of losing individual source context. Best with 3-10 sources per call."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Thematic synthesis and research synthesis. Thematic for general topic, research for evidence-based work."
+   },
+   {
+    "title": "Example",
+    "body": "Input: 5 research abstracts + synthesis question. Output: findings organized by theme with supporting source IDs."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the synthesize family (8 methods). Works best when sources are provided with explicit identifiers."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-a",
+  "title": "Rubric evaluation",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 25,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Evaluates a candidate against an explicit rubric with scored criteria. Returns per-criterion scores and overall assessment."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-b",
+  "title": "Credibility assessment",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 26,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Assesses source credibility against recency, authority, methodology, and consistency with known evidence."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-c",
+  "title": "Creative scoring",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 27,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Scores a creative candidate against an explicit brief with weighted criteria. Supports comparing multiple candidates."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-d",
+  "title": "Plan evaluation",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 28,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Evaluates a plan against feasibility, resources, risk, and timeline. Returns readiness score with gap analysis."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-e",
+  "title": "Design assessment",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 29,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Assesses technical design against architecture principles: modularity, testability, deployability, recoverability."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-f",
+  "title": "Safety rating",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 30,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Rates output for safety against content policy, privacy requirements, and disclosure boundaries."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-g",
+  "title": "Post-hoc evaluation",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 31,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs post-hoc evaluation of completed effort against original goals. Reports outcomes, deviations, and lessons."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "evaluate-h",
+  "title": "Comparative ranking",
+  "type": "evaluate",
+  "status": "inspected",
+  "number": 32,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Compares evaluation results across candidates for a ranked recommendation with tradeoff rationale."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in quality assurance, design review, safety checking, and retrospective analysis."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when an output needs structured assessment against known criteria, not holistic judgment."
+   },
+   {
+    "title": "How to use it",
+    "body": "Define criteria before seeing the candidate. Each criterion should have a binary or scaled rating with evidence."
+   },
+   {
+    "title": "Limitations",
+    "body": "Difficult criteria (originality, elegance) are hard to score consistently. Best for criteria that can be operationalized."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Rubric evaluation and comparative ranking. Use rubric for one candidate, ranking for multiple."
+   },
+   {
+    "title": "Example",
+    "body": "Input: design mockup + brief + criteria. Output: scored table with per-criterion pass/fail and overall assessment."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "Part of the evaluate family (8 methods). Most reliable with well-defined, observable criteria."
+   }
+  ]
+ },
+ {
+  "slug": "transform-a",
+  "title": "Transform variant a",
+  "type": "transform",
+  "status": "inspected",
+  "number": 33,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-b",
+  "title": "Transform variant b",
+  "type": "transform",
+  "status": "inspected",
+  "number": 34,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-c",
+  "title": "Transform variant c",
+  "type": "transform",
+  "status": "inspected",
+  "number": 35,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-d",
+  "title": "Transform variant d",
+  "type": "transform",
+  "status": "inspected",
+  "number": 36,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-e",
+  "title": "Transform variant e",
+  "type": "transform",
+  "status": "inspected",
+  "number": 37,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-f",
+  "title": "Transform variant f",
+  "type": "transform",
+  "status": "inspected",
+  "number": 38,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-g",
+  "title": "Transform variant g",
+  "type": "transform",
+  "status": "inspected",
+  "number": 39,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "transform-h",
+  "title": "Transform variant h",
+  "type": "transform",
+  "status": "inspected",
+  "number": 40,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a transform transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other transform methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined transform operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the transform family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 transform methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-a",
+  "title": "Generate variant a",
+  "type": "generate",
+  "status": "inspected",
+  "number": 41,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-b",
+  "title": "Generate variant b",
+  "type": "generate",
+  "status": "inspected",
+  "number": 42,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-c",
+  "title": "Generate variant c",
+  "type": "generate",
+  "status": "inspected",
+  "number": 43,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-d",
+  "title": "Generate variant d",
+  "type": "generate",
+  "status": "inspected",
+  "number": 44,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-e",
+  "title": "Generate variant e",
+  "type": "generate",
+  "status": "inspected",
+  "number": 45,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-f",
+  "title": "Generate variant f",
+  "type": "generate",
+  "status": "inspected",
+  "number": 46,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-g",
+  "title": "Generate variant g",
+  "type": "generate",
+  "status": "inspected",
+  "number": 47,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "generate-h",
+  "title": "Generate variant h",
+  "type": "generate",
+  "status": "inspected",
+  "number": 48,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a generate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other generate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined generate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the generate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 generate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-a",
+  "title": "Analyze variant a",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 49,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-b",
+  "title": "Analyze variant b",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 50,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-c",
+  "title": "Analyze variant c",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 51,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-d",
+  "title": "Analyze variant d",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 52,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-e",
+  "title": "Analyze variant e",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 53,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-f",
+  "title": "Analyze variant f",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 54,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-g",
+  "title": "Analyze variant g",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 55,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "analyze-h",
+  "title": "Analyze variant h",
+  "type": "analyze",
+  "status": "inspected",
+  "number": 56,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a analyze transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other analyze methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined analyze operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the analyze family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 analyze methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-a",
+  "title": "Verify variant a",
+  "type": "verify",
+  "status": "inspected",
+  "number": 57,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-b",
+  "title": "Verify variant b",
+  "type": "verify",
+  "status": "inspected",
+  "number": 58,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-c",
+  "title": "Verify variant c",
+  "type": "verify",
+  "status": "inspected",
+  "number": 59,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-d",
+  "title": "Verify variant d",
+  "type": "verify",
+  "status": "inspected",
+  "number": 60,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-e",
+  "title": "Verify variant e",
+  "type": "verify",
+  "status": "inspected",
+  "number": 61,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-f",
+  "title": "Verify variant f",
+  "type": "verify",
+  "status": "inspected",
+  "number": 62,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-g",
+  "title": "Verify variant g",
+  "type": "verify",
+  "status": "inspected",
+  "number": 63,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "verify-h",
+  "title": "Verify variant h",
+  "type": "verify",
+  "status": "inspected",
+  "number": 64,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a verify transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other verify methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined verify operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the verify family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 verify methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-a",
+  "title": "Decompose variant a",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 65,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-b",
+  "title": "Decompose variant b",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 66,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-c",
+  "title": "Decompose variant c",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 67,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-d",
+  "title": "Decompose variant d",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 68,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-e",
+  "title": "Decompose variant e",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 69,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-f",
+  "title": "Decompose variant f",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 70,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-g",
+  "title": "Decompose variant g",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 71,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "decompose-h",
+  "title": "Decompose variant h",
+  "type": "decompose",
+  "status": "inspected",
+  "number": 72,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a decompose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other decompose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined decompose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the decompose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 decompose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-a",
+  "title": "Route variant a",
+  "type": "route",
+  "status": "inspected",
+  "number": 73,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-b",
+  "title": "Route variant b",
+  "type": "route",
+  "status": "inspected",
+  "number": 74,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-c",
+  "title": "Route variant c",
+  "type": "route",
+  "status": "inspected",
+  "number": 75,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-d",
+  "title": "Route variant d",
+  "type": "route",
+  "status": "inspected",
+  "number": 76,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-e",
+  "title": "Route variant e",
+  "type": "route",
+  "status": "inspected",
+  "number": 77,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-f",
+  "title": "Route variant f",
+  "type": "route",
+  "status": "inspected",
+  "number": 78,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-g",
+  "title": "Route variant g",
+  "type": "route",
+  "status": "inspected",
+  "number": 79,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "route-h",
+  "title": "Route variant h",
+  "type": "route",
+  "status": "inspected",
+  "number": 80,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a route transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other route methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined route operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the route family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 route methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-a",
+  "title": "Refine variant a",
+  "type": "refine",
+  "status": "inspected",
+  "number": 81,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-b",
+  "title": "Refine variant b",
+  "type": "refine",
+  "status": "inspected",
+  "number": 82,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-c",
+  "title": "Refine variant c",
+  "type": "refine",
+  "status": "inspected",
+  "number": 83,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-d",
+  "title": "Refine variant d",
+  "type": "refine",
+  "status": "inspected",
+  "number": 84,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-e",
+  "title": "Refine variant e",
+  "type": "refine",
+  "status": "inspected",
+  "number": 85,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-f",
+  "title": "Refine variant f",
+  "type": "refine",
+  "status": "inspected",
+  "number": 86,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-g",
+  "title": "Refine variant g",
+  "type": "refine",
+  "status": "inspected",
+  "number": 87,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "refine-h",
+  "title": "Refine variant h",
+  "type": "refine",
+  "status": "inspected",
+  "number": 88,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a refine transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other refine methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined refine operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the refine family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 refine methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-a",
+  "title": "Audit variant a",
+  "type": "audit",
+  "status": "inspected",
+  "number": 89,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-b",
+  "title": "Audit variant b",
+  "type": "audit",
+  "status": "inspected",
+  "number": 90,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-c",
+  "title": "Audit variant c",
+  "type": "audit",
+  "status": "inspected",
+  "number": 91,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-d",
+  "title": "Audit variant d",
+  "type": "audit",
+  "status": "inspected",
+  "number": 92,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-e",
+  "title": "Audit variant e",
+  "type": "audit",
+  "status": "inspected",
+  "number": 93,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-f",
+  "title": "Audit variant f",
+  "type": "audit",
+  "status": "inspected",
+  "number": 94,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-g",
+  "title": "Audit variant g",
+  "type": "audit",
+  "status": "inspected",
+  "number": 95,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "audit-h",
+  "title": "Audit variant h",
+  "type": "audit",
+  "status": "inspected",
+  "number": 96,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a audit transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other audit methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined audit operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the audit family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 audit methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-a",
+  "title": "Frame variant a",
+  "type": "frame",
+  "status": "inspected",
+  "number": 97,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-b",
+  "title": "Frame variant b",
+  "type": "frame",
+  "status": "inspected",
+  "number": 98,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-c",
+  "title": "Frame variant c",
+  "type": "frame",
+  "status": "inspected",
+  "number": 99,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-d",
+  "title": "Frame variant d",
+  "type": "frame",
+  "status": "inspected",
+  "number": 100,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-e",
+  "title": "Frame variant e",
+  "type": "frame",
+  "status": "inspected",
+  "number": 101,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-f",
+  "title": "Frame variant f",
+  "type": "frame",
+  "status": "inspected",
+  "number": 102,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-g",
+  "title": "Frame variant g",
+  "type": "frame",
+  "status": "inspected",
+  "number": 103,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "frame-h",
+  "title": "Frame variant h",
+  "type": "frame",
+  "status": "inspected",
+  "number": 104,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a frame transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other frame methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined frame operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the frame family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 frame methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-a",
+  "title": "Compose variant a",
+  "type": "compose",
+  "status": "inspected",
+  "number": 105,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-b",
+  "title": "Compose variant b",
+  "type": "compose",
+  "status": "inspected",
+  "number": 106,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-c",
+  "title": "Compose variant c",
+  "type": "compose",
+  "status": "inspected",
+  "number": 107,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-d",
+  "title": "Compose variant d",
+  "type": "compose",
+  "status": "inspected",
+  "number": 108,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-e",
+  "title": "Compose variant e",
+  "type": "compose",
+  "status": "inspected",
+  "number": 109,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-f",
+  "title": "Compose variant f",
+  "type": "compose",
+  "status": "inspected",
+  "number": 110,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-g",
+  "title": "Compose variant g",
+  "type": "compose",
+  "status": "inspected",
+  "number": 111,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "compose-h",
+  "title": "Compose variant h",
+  "type": "compose",
+  "status": "inspected",
+  "number": 112,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a compose transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other compose methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined compose operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the compose family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 compose methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-a",
+  "title": "Map variant a",
+  "type": "map",
+  "status": "inspected",
+  "number": 113,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-b",
+  "title": "Map variant b",
+  "type": "map",
+  "status": "inspected",
+  "number": 114,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-c",
+  "title": "Map variant c",
+  "type": "map",
+  "status": "inspected",
+  "number": 115,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-d",
+  "title": "Map variant d",
+  "type": "map",
+  "status": "inspected",
+  "number": 116,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-e",
+  "title": "Map variant e",
+  "type": "map",
+  "status": "inspected",
+  "number": 117,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-f",
+  "title": "Map variant f",
+  "type": "map",
+  "status": "inspected",
+  "number": 118,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-g",
+  "title": "Map variant g",
+  "type": "map",
+  "status": "inspected",
+  "number": 119,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "map-h",
+  "title": "Map variant h",
+  "type": "map",
+  "status": "inspected",
+  "number": 120,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a map transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other map methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined map operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the map family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 map methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-a",
+  "title": "Translate variant a",
+  "type": "translate",
+  "status": "inspected",
+  "number": 121,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-b",
+  "title": "Translate variant b",
+  "type": "translate",
+  "status": "inspected",
+  "number": 122,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-c",
+  "title": "Translate variant c",
+  "type": "translate",
+  "status": "inspected",
+  "number": 123,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-d",
+  "title": "Translate variant d",
+  "type": "translate",
+  "status": "inspected",
+  "number": 124,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-e",
+  "title": "Translate variant e",
+  "type": "translate",
+  "status": "inspected",
+  "number": 125,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-f",
+  "title": "Translate variant f",
+  "type": "translate",
+  "status": "inspected",
+  "number": 126,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-g",
+  "title": "Translate variant g",
+  "type": "translate",
+  "status": "inspected",
+  "number": 127,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ },
+ {
+  "slug": "translate-h",
+  "title": "Translate variant h",
+  "type": "translate",
+  "status": "inspected",
+  "number": 128,
+  "sections": [
+   {
+    "title": "How it works",
+    "body": "Performs a translate transformation on the input according to the specified input and output contracts."
+   },
+   {
+    "title": "Practical use",
+    "body": "Common in data processing, analysis, and workflow automation. Integrates with other translate methods."
+   },
+   {
+    "title": "When to use it",
+    "body": "Use when a well-defined translate operation is needed as part of a pipeline or analysis."
+   },
+   {
+    "title": "How to use it",
+    "body": "Specify the input format, desired output format, and any constraints. Provide a worked example if the transformation is complex."
+   },
+   {
+    "title": "Limitations",
+    "body": "Output quality depends on input clarity and model capability. Run evaluation fixtures before production use."
+   },
+   {
+    "title": "Related techniques",
+    "body": "Other methods in the translate family for different input/output combinations and complexity levels."
+   },
+   {
+    "title": "Example",
+    "body": "Input: representative source data. Output: transformed result as specified by the output contract."
+   },
+   {
+    "title": "Precise orientation",
+    "body": "One of 8 translate methods. Use when the transformation is well-defined and the input is within context limits."
+   }
+  ]
+ }
+]

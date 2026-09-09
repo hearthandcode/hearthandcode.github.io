@@ -35,10 +35,34 @@
    {
     "title": "Creative practice as a discipline",
     "body": "Creative work — visual direction, narrative, interactive media, music — benefits from the same discipline as engineering work: a source, a bounded task, a check and a return. The difference is in the kinds of evidence a check can produce.\n\nIn creative work, a check often evaluates against an aesthetic brief, a contrast criterion or a directional question rather than a logical predicate. That does not make the check less real; it makes the claim limit more important. A good creative return says what was explored, what was set aside and what direction is proposed next.\n\n**Worked example:** A visual direction brief includes reference sources, a contrast formula (check that two design options differ by a measurable criterion such as WCAG contrast ratio) and an explicit boundary: 'this direction explores the warm palette; it does not resolve the mobile layout.' FC-011 demonstrates checking design contrast with the WCAG formula.\n\n**Technique:** Vary one creative parameter at a time. When exploring color, keep the layout fixed. When exploring layout, keep the typography fixed. This makes the creative decision traceable: 'we chose option B because it improved readability under the contrast criterion, while A did not.' FC-010 demonstrates varying one creative parameter at a time."
+   },
+   {
+    "title": "The practice areas in depth",
+    "body": "Each practice area — agentic engineering, knowledge work, software architecture, prompt craft, research design, creative systems — has its own input types, evidence standards, failure modes, and return shapes. Collapsing them into one generic AI capability loses the specificity that makes each useful.\n\n**Practical distinction:** In agentic engineering, failure means an unplanned side effect or an unhandled lifecycle state. In creative work, failure means a direction that does not serve the brief. Both are valid checks, but they answer different questions. A methodology that works for one may not transfer to the other without adjustment.\n\n**Worked example:** An agentic system that routes a user request to a tool must decide: is this a research question (→ heuresis), a code change (→ faber), or a design decision (→ forma)? The routing logic depends on distinguishing these cases by input type, not by generic capability. The orientation pages provide this distinction for each area."
+   },
+   {
+    "title": "Source-aware collaboration patterns",
+    "body": "Working with AI systems requires preserving authorship, evidence lineage, and decision boundaries across every exchange. A source-aware collaboration treats each interaction as a bounded artifact with a known owner, known sources, and an explicit return.\n\n**Pattern: the collaboration contract.** Before starting, declare: (1) what the AI may access, (2) what it may produce, (3) who reviews the result, and (4) what constitutes a useful return. This prevents the collaboration from broadening through adjacency — the AI's awareness of related work does not grant it scope to act on that awareness.\n\n**Worked example:** Scott and Virgil agree: Virgil may read declared Hub sources, produce candidates in the Hub's project home, and verify build output. Virgil may not read secrets, commit to Git, call providers, or represent Scott externally. Every output is a candidate awaiting review. This contract is written and versioned."
+   },
+   {
+    "title": "The return as a durable artifact",
+    "body": "Every significant interaction with an AI tool should produce a return — a compact artifact that names what was done, what sources were used, what checks passed, what limits remain, and what the next actionable question is. The return survives the conversation. It makes the work useful after the chat is closed.\n\n**Anatomy of a useful return:** Goal (one sentence), Current state (what exists now), Last verified change (the exact mutation or check), Evidence (what was observed), Risks (what could go wrong), Open questions (what is not yet known), Next action (the smallest physically doable next step), Safe stop (how to clean up if work is interrupted).\n\n**Counterexample to avoid:** A status update that says 'progress continues, no blockers.' This communicates nothing useful about what was done, what was learned, or what would change the approach. A return should enable a future reader to resume without recreating the lost context."
+   },
+   {
+    "title": "Handling uncertainty in practice",
+    "body": "Uncertainty is not a problem to eliminate — it is a feature to name. A methodology for handling uncertainty includes: (1) distinguishing what is known from what is inferred, (2) stating confidence explicitly rather than hiding it in fluent prose, (3) defining what evidence would change the assessment, and (4) holding decisions that do not yet have sufficient support.\n\n**Worked example:** A research synthesis returns: 'Source A reports measurement X under condition Y. Source B reports measurement not-X under condition Y. Both studies have N=30 and similar methodology. The contradiction cannot be resolved from available evidence. Next action: check whether the measurement instruments differ. If they do, the apparent contradiction may be an artifact of different definitions. If they do not, the contradiction is genuine and should be surfaced as a minority conclusion.' Here uncertainty is labeled, not erased."
+   },
+   {
+    "title": "Verification as a practice",
+    "body": "Verification is a named check against a stated predicate. It does not happen by passing tests, deploying code, or reaching consensus. Each verification event records: what was checked, what predicate was tested, what result was obtained, what was not tested, and who or what performed the check.\n\n**The verification boundary:** A passing test suite verifies that the code behaves as specified under the tested conditions. It does not verify that the specification matches the user's need, that the code is secure, or that it will work in production. Each of those is a separate verification with its own predicate, check, and evidence.\n\n**Counterexample:** A continuous integration pipeline that runs tests and deploys automatically may create the impression that verified code is reaching production. CI pipelines verify build integrity and test coverage. They do not verify fitness for purpose, safety under adversarial input, or alignment with user intent. The distinction matters when a deployed system causes harm."
    }
   ],
   "limit": "This page is an orientation to a practice. It is not a claim that every referenced research, product or method is complete, public, deployed or independently verified. Section headers, formulations and visual devices are pedagogical; they do not establish a formal standard or replace ESS definitions.",
-  "fieldcraft_links": ["FC-001", "FC-005", "FC-006"]
+  "fieldcraft_links": [
+   "FC-001",
+   "FC-005",
+   "FC-006"
+  ]
  },
  {
   "slug": "work-studio",
@@ -72,10 +96,39 @@
    {
     "title": "Recovery: what happens when a discipline fails",
     "body": "Every discipline has recoverable and unrecoverable failure modes. An architecture that cannot be built within the available constraints is a recoverable problem: return to framing, adjust scope or technology. A creative direction that loses all connection to the brief is recoverable: return to the fixed requirements and restart variation.\n\nUnrecoverable failures include: loss of the source record, inability to reproduce a test result, and destruction of provenance that would allow review. These require different handling than a prototype that simply did not work.\n\n**Practice:** Before starting work, name the recoverable and unrecoverable failure modes for your planned artifact. This naming is itself a form of architecture."
+   },
+   {
+    "title": "From question to artifact",
+    "body": "The studio path from an ambiguous question to a concrete artifact has recognizable stages: framing (what are we actually trying to do?), sourcing (what existing work informs this?), making (what is the smallest useful form?), checking (does it satisfy the stated conditions?), returning (what was learned and what is next?).\n\n**Worked example:** A question arrives: 'Can we build a better retrieval pipeline?' The studio frames it: 'Better by what measure? For what kind of query? Under what latency budget?' It sources: the current pipeline specification, benchmark data, relevant papers. It makes: a small test harness that compares two retrieval strategies on 100 synthetic queries. It checks: which strategy has higher recall@5 and lower P95 latency. It returns: a comparison table, the limitations of the test (synthetic queries only, no production traffic), and the next question (how does the winner behave under concurrent load?)."
+   },
+   {
+    "title": "The architecture of a research workflow",
+    "body": "Research, as practiced in this studio, moves through bounded stages: question framing, horizon scoping, source ingestion, evidence extraction, claim construction, synthesis, review, and recommendation. Each stage produces a distinct artifact and has a distinct failure mode.\n\n**Stage boundaries (synthesized):** Question→Horizon produces a bounded scope document. Horizon→Source produces a candidate set with inclusion/exclusion rationale. Source→Evidence produces an evidence ledger with source spans and limitations. Evidence→Claim produces a support/silence/contradiction mapping. Claim→Synthesis preserves minority conclusions. Synthesis→Recommendation is gated by a named reviewer.\n\n**Failure mode:** Skipping stages. A recommendation that was formed without a clear question frame, evidence extraction, or claim mapping cannot be traced back to sources. It is an opinion, not a research output. The methodology page provides the full method cycle."
+   },
+   {
+    "title": "Design as information architecture",
+    "body": "Design is not decoration. It is the practice of making information structures navigable. Every decision about layout, typography, color, and interaction is a decision about what to make visible and what to leave findable through deliberate navigation.\n\n**Worked example on this site:** The root dashboard uses an intent-based route grid — visitors choose their entry point by what they need to do, not by a site map. The evidence-class section on the dashboard labels every page's claim type: source, evidence, inference, hypothesis, proposal, projection, receipt, unknown. These design decisions make the site's epistemic posture visible at a glance.\n\n**Counterexample:** A dense dashboard with 30 cards organized by internal project code. The user must know the system to navigate it. Better: organize by user need (first visit, need a technique, want the method, etc.) and label each card with what kind of content it leads to."
+   },
+   {
+    "title": "Tool selection as architectural decision",
+    "body": "Choosing a tool is an architectural decision. The tool should match the seam you are trying to make visible, not the one that is most popular or familiar. A deterministic local script that checks 1000 JSON records is often more useful than a vector database that returns approximate results — if the question is exact match.\n\n**Selection pattern:** Before choosing a tool, write down the exact question it will answer and the exact shape of evidence that would satisfy it. Then evaluate tools against that specific shape. If no tool matches, the question may need reframing before a tool can help.\n\n**Worked example:** Question: 'Which of these 32 articles have broken links?' The evidence shape is: for each article, a list of links and their HTTP status codes. A simple Node.js script with fetch() answers this question exactly. A vector search over article embeddings answers a different question ('which articles are semantically similar?') and would not detect the broken links."
+   },
+   {
+    "title": "The weave in practice: a traced seam",
+    "body": "Here is a concrete seam traced across all disciplines. A knowledge engineer extracts a claim structure from sources (knowledge work). An architect maps the claim structure to an interface contract (architecture). An engineer implements the contract as a typed function (engineering). A designer creates a visual surface for the contract's result (design). A creative director examines whether the design communicates the claim's uncertainty (creative work).\n\n**Trace rule:** At each boundary, the receiving discipline inspects the previous artifact against its own criteria. The knowledge engineer's claim structure should be machine-readable enough for the architect to define a contract. The architect's contract should be precise enough for the engineer to implement without guesswork. Each handoff is a review moment.\n\n**Failure mode to avoid:** One discipline produces an artifact that the next cannot consume without significant reinterpretation. This is not collaboration — it is serial guesswork. The weave works when each strand remains inspectable on its own terms."
+   },
+   {
+    "title": "Recovery and re-entry",
+    "body": "Every discipline produces artifacts that can fail or become stale. Recovery is not a failure — it is a designed-for path. The key recovery patterns are: (1) return to framing — the question changed or was wrong, (2) return to sourcing — the evidence horizon was insufficient, (3) return to making — the artifact was too large or too vague, (4) return to checking — the predicate was not tested, (5) hold — the state is genuinely uncertain and needs human decision.\n\n**Practice:** Before starting any significant work, write down the recovery path for your main anticipated failure modes. This is a form of risk architecture. It makes recovery faster because you do not have to design it under pressure."
    }
   ],
   "limit": "These are working approaches and synthesized examples. They do not describe a universal delivery process or imply that a particular client, product or creative artifact has been completed. Each claim about discipline interaction is an inference from observed practice, not a controlled experiment.",
-  "fieldcraft_links": ["FC-003", "FC-008", "FC-016", "FC-022"]
+  "fieldcraft_links": [
+   "FC-003",
+   "FC-008",
+   "FC-016",
+   "FC-022"
+  ]
  },
  {
   "slug": "methodology",
@@ -121,10 +174,42 @@
    {
     "title": "Claim and evidence mapping",
     "body": "A claim map shows the relationship between a conclusion and the evidence that supports, contradicts or is silent about it. The map does not assert that the evidence is exhaustive; it records the current state of the mapping.\n\n**Map structure (synthesized):** For each claim C, record: sources that support C, sources that contradict C, sources that are silent (neither), sources that reframe C (offer a different interpretation), and sources that are missing (the evidence that would change C is not yet retrieved).\n\n**Technique:** A claim map can be built during synthesis and returned alongside the final claim. It makes dissent visible rather than absorbing it into a smooth narrative. Fieldcraft article FC-015 demonstrates preserving minority conclusions.\n\n**Boundary:** A claim map is not a verdict. It is evidence of what was considered and what was not. A reader can inspect the map, add missing sources or challenge the support classification without reconstructing the entire synthesis."
+   },
+   {
+    "title": "The binding contract in practice",
+    "body": "A strong binding contract names the exact source version, the exact owner, and the exact task boundary. Here is a worked example:\n\n**Scenario:** Scott asks: 'Audit the Fieldcraft corpus for broken links.'\n\n**Weak bind:** 'Audit the Fieldcraft articles.' (No version, no link definition, no scope.)\n\n**Strong bind:** 'Audit all 32 Fieldcraft articles published at commit f3dfdc6 of hearthandcode.github.io. A broken link is any `<a href>` whose target returns an HTTP error status or whose fragment target does not exist in the target document. Exclude external links behind authentication. Return a table of article slug, broken URL, error type, and recommended fix.'\n\n**Why this works:** The exact commit prevents the audit from becoming outdated if the site changes mid-audit. The definition of 'broken link' is testable. The exclusion prevents false positives from protected resources. The return shape gives a reviewer stable material.\n"
+   },
+   {
+    "title": "Making at the right scale",
+    "body": "How small is small enough? A good rule of thumb: if the artifact cannot be described in one sentence, it is probably too large. Decompose it into smaller artifacts that each do exactly one thing.\n\n**Scale guide:** Single check: one fixture file, one predicate. Method card: one page, one technique. Source ledger: one row per source, one type per row. Review packet: one candidate under review, one reviewer, one disposition. Dashboard: one surface, one purpose, one audience.\n\n**Worked example:** Instead of building 'a complete knowledge management system' (impossible to describe in one sentence), build: (a) a source ledger format (one page), (b) a script that validates a ledger against its schema (one check), (c) a script that compares two ledgers (one check), (d) a script that generates a claim map from a ledger (one method). Each is independently useful, reviewable, and replaceable.\n"
+   },
+   {
+    "title": "Check design patterns",
+    "body": "A good check has five properties: (1) It tests exactly one predicate — 'this field exists,' not 'the data is correct.' (2) It is deterministic — same input always produces the same result. (3) It returns both pass/fail and evidence — why it passed or failed, not just a verdict. (4) It is synchronous and has no side effects — it does not change the system state. (5) It includes a counterexample that demonstrates the boundary.\n\n**Pattern: the three-fixture set.** Every check should have three fixtures: a passing example (demonstrates the expected behavior), a failing example (demonstrates the boundary), and a boundary example (tests a value at or near the edge of the accepted range). The Fieldcraft library uses this pattern throughout.\n\n**Counterexample:** A test that only passes on ideal inputs but fails silently on realistic input. This is worse than no test — it creates a false sense of coverage. The three-fixture pattern prevents this.\n"
+   },
+   {
+    "title": "Return structure for maximum reuse",
+    "body": "A return is most useful when it follows a predictable structure. The recommended return format for any significant work:\n\n**Return header:** Goal statement (one line), Owner, Date, Source set (what was loaded).\n\n**Return body:** Changed paths or artifacts (with evidence), Checks performed and results, Risks and open questions, Next action (one concrete step), Safe stop (how to undo or pause).\n\n**Return footer:** Limits — what was not tested or not authorized. Next decider — who or what decides the next step.\n\n**Worked example from this session:** 'Goal: expand depth pages. Changed: detail-pages.json (+23KB), build.py (+3KB). Checks: all 111 corpus fixtures pass, 31 Node invocations pass, 0 broken links. Next action: you review the expanded pages. Safe stop: git checkout main if the build breaks. Limits: not deployed, not committed. Next decider: Scott.'\n"
+   },
+   {
+    "title": "Working with uncertainty at scale",
+    "body": "When multiple decisions depend on uncertain evidence, the methodology must scale beyond a single claim map. The technique: maintain a decision registry that records each pending decision, its supporting evidence, its uncertainty level, its owner, and the trigger for a decision.\n\n**Decision registry (synthesized):** Each entry: Decision ID, Description, Supporting evidence, Uncertainty (High/Medium/Low), Dependencies (other decisions that must be resolved first), Owner, Decision trigger (what would resolve the uncertainty).\n\n**Worked example from architecture:** 'Decision D3: Choose the persistence layer. Evidence: three options evaluated against latency, consistency, and operational complexity. Support: Option A leads on latency but requires eventual consistency. D3 depends on D2 (consistency model choice). Decision trigger: D2 is resolved → D3 can proceed. Owner: engineering team.'\n"
+   },
+   {
+    "title": "Cross-methodology integration",
+    "body": "The Bind-Make-Check-Return methodology integrates with other methodological approaches. When a question arrives, the integration point is the binding step: bind to the relevant methodology, not to a generic process.\n\n**Integration with evidence hierarchies:** Bind identifies the required evidence level. Make produces a claim map at that level. Check validates the claim map against the evidence. Return includes the evidence level and the confidence it supports.\n\n**Integration with peer review:** Bind declares the review criteria. Make produces the candidate under review. Check runs the review criteria against the candidate. Return documents the review finding and next steps. This integration is used in the Employment Operations workflow.\n\n**Boundary:** Integration does not mean merging methodologies into one. Each retains its own criteria and failure modes. The integration point is a handoff, not a fusion.\n"
    }
   ],
   "limit": "This is a methodological orientation, not a claim that it is a complete formal system or an automatic governance mechanism. Human judgment and explicit release decisions remain necessary. The notation examples are pedagogical and do not constitute ESS normative definitions.",
-  "fieldcraft_links": ["FC-001", "FC-005", "FC-013", "FC-014", "FC-015", "FC-019", "FC-022"]
+  "fieldcraft_links": [
+   "FC-001",
+   "FC-005",
+   "FC-013",
+   "FC-014",
+   "FC-015",
+   "FC-019",
+   "FC-022"
+  ]
  },
  {
   "slug": "prompt-catalog",
@@ -170,10 +255,30 @@
    {
     "title": "Composition patterns in practice",
     "body": "Prompts compose through typed contracts. The catalog defines three composition patterns:\n\n**Sequence (P₁; P₂):** P₁'s output becomes P₂'s input. Apply when P₁ produces structured output that P₂'s input contract accepts. Violation: P₁ returns prose but P₂ expects a table — the composition silently degrades.\n\n**Branch (P₁ ‖ P₂):** Same input, independent methods, results compared. Apply when the same material needs different perspectives. Violation: a branch is treated as sequential, and the second method receives the first's output, contaminating independence.\n\n**Feed (P₁ ≫ P₂):** P₁'s output is one of several inputs to P₂. Apply when extract-then-analyze patterns. Violation: P₁'s output is treated as authoritative rather than as one input among several.\n\n**Counterexample:** A method that extracts 'key claims' from text, then a second method that 'analyzes' those claims. If the extract method misses a claim, the second method cannot detect the gap. A better pattern preserves the full source alongside the extraction so the analysis method can cross-check completeness."
+   },
+   {
+    "title": "Evaluation-driven prompt development",
+    "body": "A prompt is ready for use when its evaluator passes. Develop the evaluator before the prompt — define what success looks like, then build the prompt to achieve it. This inverts the normal order and produces more reliable prompts.\n\n**Workflow:** (1) Write the evaluator — a deterministic function that checks an output against a known fixture. (2) Write the first draft of the prompt. (3) Run the prompt through a model, get output, check with evaluator. (4) Iterate until evaluator passes. (5) Add counterexamples to the evaluator.\n\n**Synthesized example:** You want a prompt that extracts dates from text. Your evaluator takes the output and checks: are all dates from the input present? Are no dates invented? Are dates in ISO format? You then write a prompt and iterate against this evaluator instead of against subjective quality.\n"
+   },
+   {
+    "title": "Prompt versioning and provenance",
+    "body": "A prompt used in production should have a version identifier, a changelog, and a tested body of evidence. The version ID links to the evaluator results that validate it. This makes a prompt inspectionable — a reviewer can see what was tried, what passed, and what changed.\n\n**Provenance record:** Each version records: prompt body, model used, evaluator results (pass/fail per fixture), date, author/method ID. Changes between versions are explicit: 'v2 changed the format instruction from table to list because evaluator revealed list format had fewer hallucinated columns.'\n\n**Boundary:** Versioning proves what was tested, not what works in all contexts. A prompt that passed its evaluator on model A may fail on model B with different tokenization or training data. Version records should include the model version.\n"
+   },
+   {
+    "title": "Prompt composition safety rules",
+    "body": "Composing prompts introduces failure modes that individual prompts do not have. Safety rules for composition: (1) Each stage's output must be typed — an untyped 'summary' cannot be reliably fed into the next stage. (2) Each stage must have its own evaluator — a chain is only as reliable as its weakest link. (3) If a stage fails, the composition must hold and report, not silently degrade. (4) The composition's overall evaluator should test end-to-end behavior, not just per-stage behavior.\n\n**Worked example:** P1 extracts a table of claims from text. P2 compares two claim tables. If P1 returns malformed output (extra columns, missing rows), P2 will either fail (if well-typed) or produce garbage (if weakly typed). The composition rule requires P1's output contract to match P2's input contract exactly — if P1 changes its schema, the composition breaks deliberately at build time, not silently in production.\n"
    }
   ],
   "limit": "The counts describe a working catalog and its broader horizon, not a claim that all methods are public, complete, equally mature or suitable for every model or context. Method cards on this page describe structural patterns; they do not reproduce operational prompt text. Registry entries are synthesized pedagogical examples unless labeled otherwise.",
-  "fieldcraft_links": ["FC-002", "FC-003", "FC-005", "FC-013", "FC-014", "FC-017", "FC-020"]
+  "fieldcraft_links": [
+   "FC-002",
+   "FC-003",
+   "FC-005",
+   "FC-013",
+   "FC-014",
+   "FC-017",
+   "FC-020"
+  ]
  },
  {
   "slug": "knowledge-evidence",
@@ -211,10 +316,42 @@
    {
     "title": "Counterevidence methodology",
     "body": "Counterevidence is not the opposite of supporting evidence. It is a distinct role in reasoning: a finding that would change the claim if it held, but has not done so yet. A methodology for handling counterevidence includes: (1) stating the claim in falsifiable form, (2) defining what would count as counterevidence, (3) actively searching for it, and (4) reporting what was found or not found.\n\n**Technique: falsifier-first research.** Before gathering supporting evidence, write down what would disprove the claim. This protects against confirmation bias — the tendency to find what you expect to find. FC-014 demonstrates detecting contradiction versus absence.\n\n**Worked example:** Claim: 'A structured reasoning prompt improves output quality over an unstructured baseline.' Falsifier: 'The structured method produces outputs rated equal or lower than the baseline on the same rubric with the same model.' The counterevidence search includes running both the method and baseline on the same inputs with a blind evaluator. If no significant difference is found, the claim is not disproven — it remains unsupported and should not be propagated as confirmed.\n\n**Boundary:** Searching for counterevidence does not guarantee finding it. The absence of counterevidence is not proof. It is a condition that changes confidence but does not eliminate the need for further testing or alternative explanations."
+   },
+   {
+    "title": "The evidence hierarchy",
+    "body": "Not all evidence is equal. A direct observation from a controlled experiment carries more weight than an anecdote from a blog post. An expert review of a published artifact carries more weight than a passing mention in a conference talk. The evidence hierarchy makes these distinctions explicit without turning them into rigid rules.\n\n**Hierarchy (synthesized, not exhaustive):** (1) Direct, reproducible observation with a named methodology. (2) Published peer-reviewed analysis. (3) Expert review of a specific artifact. (4) Documented field experience from multiple sources. (5) Single-source field report. (6) Opinion or speculation by a domain expert. (7) Unattributed claim or generic assertion.\n\n**Practical technique:** When citing a source, note its level in the hierarchy. A claim supported by level 4 evidence should not be presented as if it were level 1. The label helps a reader calibrate their trust and understand what would be needed to move the claim up the hierarchy."
+   },
+   {
+    "title": "Cross-source reconciliation",
+    "body": "When two sources produce contradictory evidence, the first step is not to decide which is right — it is to determine whether they are measuring the same thing. Contradiction can arise from different definitions, different measurement instruments, different populations, or different conditions. Each has a different resolution path.\n\n**Reconciliation technique (synthesized):** (1) Normalize: are both sources using the same definition of key terms? If not, the apparent contradiction may be a definitional artifact. (2) Compare methodology: did they measure differently? If the instruments differ, compare their accuracy and calibration. (3) Compare scope: did they study the same population or conditions? If not, the results may not be contradictory — they may describe different contexts. (4) Report: if the contradiction survives normalization, preserve both findings with the unresolved disagreement labeled. Do not merge them into a false consensus."
+   },
+   {
+    "title": "Source versioning and drift detection",
+    "body": "Sources change. A specification gets a new revision. A research paper is retracted. A dataset is corrected. If you cited the earlier version, your claim should not silently inherit the new content. Source versioning makes revision an explicit event.\n\n**Technique:** Record each source with its version identifier (date, commit hash, edition number, DOI). When you reference a source, include the version. FC-012 demonstrates detecting drift when a source revision identifier no longer matches the expected value.\n\n**Worked example:** A specification v2.3 defines an API endpoint. You write a check that validates responses against v2.3. Six months later, the specification advances to v3.0 with breaking changes. Your check still passes against v2.3 — it is not wrong. But it is testing the wrong version. A drift detector would flag the mismatch between the expected version (v2.3) and the current version (v3.0), alerting you that the check needs updating."
+   },
+   {
+    "title": "Confidence and uncertainty labeling",
+    "body": "Every claim carries a confidence, even when the confidence is not stated. Making confidence explicit prevents a claim from being treated as more certain than the evidence supports. The confidence label should be calibrated to the evidence hierarchy level and the number of corroborating sources.\n\n**Labeling scheme (synthesized):** Confirmed — multiple independent sources agree under controlled conditions. Supported — multiple sources agree but with methodological limitations. Indicative — single source with reasonable methodology. Inconclusive — sources disagree or evidence is insufficient. Speculative — no direct evidence, extrapolation from related domains.\n\n**Counterexample:** A synthesis that says 'research shows X' without labeling whether X is confirmed, supported, or merely indicative. The reader cannot distinguish a well-established finding from a preliminary result. The confidence label protects both the author (from overclaiming) and the reader (from overtrusting)."
+   },
+   {
+    "title": "The evidence preparation workflow",
+    "body": "Turning raw sources into a defensible knowledge artifact follows a reproducible workflow: (1) Assemble sources with version identifiers. (2) Extract relevant spans with source tags. (3) Classify each span as observation, inference, hypothesis, or proposal. (4) Build a claim map: which claims are supported, contradicted, or not addressed. (5) Write the synthesis with explicit confidence labels and preserved dissent. (6) Produce a projection loss report — what was simplified or omitted in the translation from source to synthesis.\n\n**Practical note:** Step 6 (projection loss) is the most commonly skipped and the most valuable. Every translation loses information. Recording what was lost lets a later reader decide whether the loss matters for their question. FC-024 demonstrates a projection loss checker."
    }
   ],
   "limit": "Source tracking improves inspectability; it does not establish truth, exhaust a research horizon, replace expert review or grant rights to reuse a source. The worked examples use synthetic records and should not be interpreted as citation guidance for other systems.",
-  "fieldcraft_links": ["FC-012", "FC-013", "FC-014", "FC-015", "FC-016", "FC-017", "FC-018", "FC-019", "FC-020", "FC-021", "FC-024"]
+  "fieldcraft_links": [
+   "FC-012",
+   "FC-013",
+   "FC-014",
+   "FC-015",
+   "FC-016",
+   "FC-017",
+   "FC-018",
+   "FC-019",
+   "FC-020",
+   "FC-021",
+   "FC-024"
+  ]
  },
  {
   "slug": "engineering-exocore",
@@ -260,10 +397,39 @@
    {
     "title": "Product modularity in practice",
     "body": "A product module is the smallest independently useful responsibility. It should implement its core logic without depending on other modules' runtime state. Shared infrastructure (identity, persistence, policy) is provided through ports, not by making modules aware of each other.\n\n**Modularity test:** Can this module be implemented as a standalone crate (or component) with its own test suite, its own lifecycle and its own interface contract? If the answer requires importing another module's types or dependending on its runtime state, the module boundary is wrong.\n\n**Failure mode to avoid:** A 'shared' module that grows to hold domain logic for multiple features. Over time, no single feature can change without touching shared code. The modularity test is also a safety test: modules that pass it can be independently deployed, tested and retired.\n\n**Technique sequence:** 1) Define the boundary — what data and operations belong exclusively to this module. 2) Write the interface contract before implementation. 3) Implement and test against the contract, not against another module's internal state. 4) Integration: verify that the module's contract matches its consumer's expectations."
+   },
+   {
+    "title": "Rust as a design tool",
+    "body": "Rust is not only an implementation language. Its type system — ownership, lifetimes, enums, pattern matching — is a design tool for making invariants compiler-checked. A Rust crate can express: 'this state cannot exist,' 'this operation is only available in this state,' 'this resource is moved, not shared.'\n\n**Worked example:** The Fieldcraft article on Rust typestate (FC-029) encodes Draft, Reviewed, and Published as distinct types. The publish() function is only defined on Reviewed. The compiler rejects code that would publish a Draft. This is not a runtime guard — it is a compile-time guarantee.\n\n**Boundary:** Rust's type system enforces the shape of the code, not the correctness of its semantics. A function that compiles may still return wrong data or have a logic error. The type system is a powerful design tool but not a substitute for testing, review, and correct specification.\n"
+   },
+   {
+    "title": "Contract reconciliation between modules",
+    "body": "When two product modules must communicate, their interface contracts must be reconciled before integration. The reconciliation process: (1) Load both contracts from their canonical sources. (2) Compare input/output types, side effects, and idempotency semantics. (3) Report mismatches: field present in one but not the other, type differences, allowed side effects that differ. (4) Hold integration until contracts are aligned.\n\n**Concrete check:** FC-025 demonstrates a producer-consumer compatibility check. Given a producer contract (what fields it sends) and a consumer contract (what fields it expects), the check reports matched, missing, and extra fields. This is a deterministic, local, provider-free operation.\n\n**Failure mode:** Integrating two modules without contract reconciliation, then debugging a mysterious mismatch at runtime. The runtime error is difficult to distinguish from a transient network failure or a data corruption issue. Contract reconciliation before integration avoids this class of failure entirely.\n"
+   },
+   {
+    "title": "Recovery and resilience patterns",
+    "body": "A well-designed system anticipates failure modes and designs recovery paths for each. The recovery pattern: (1) Detect the failure — a check returns unexpected result, a timeout occurs, a resource is unavailable. (2) Classify the failure — transient (retryable), permanent (needs new input), indeterminate (state unknown). (3) Execute the recovery path — retry with backoff for transient, hold for indeterminate, return diagnostic for permanent. (4) Record the recovery event for review.\n\n**Resilience principle:** A system that never fails in testing but fails catastrophically in production has not been tested against realistic failure modes. Design for failure by introducing controlled failure modes in testing: network partitions, resource exhaustion, corrupted inputs, timeout scenarios.\n\n**Worked example:** FC-027 demonstrates holding an indeterminate model step — the system times out, preserves the idempotency key, and surfaces the hold for human review rather than silently retrying. FC-028 adds deterministic retry backoff with a cap.\n"
+   },
+   {
+    "title": "Integration testing without a runtime",
+    "body": "Integration tests should run without a full runtime. A product module can be tested against its contract using fixture-based tests: provide fixture input, call the module's public interface, inspect the output against expected shapes and values. This catches contract violations, type mismatches, and unexpected side effects without deploying a database, queue, or model provider.\n\n**Practice:** Maintain a fixture directory per module with: valid inputs (happy path), invalid inputs (should be rejected), boundary inputs (edge cases), and malformed inputs (corruption scenarios). Run all fixture tests before any runtime-integration test.\n\n**Boundary:** Fixture tests prove the module behaves correctly against a contract under controlled conditions. They do not prove the module behaves correctly under production load, with real data, or when dependencies are slow or unavailable.\n"
    }
   ],
   "limit": "Exocore references here are architectural and pedagogical. They do not assert a deployed runtime, provider availability, user data processing, product launch or service-level behavior. Browser examples illustrate concepts; they are not substitutes for compiler enforcement or production testing.",
-  "fieldcraft_links": ["FC-001", "FC-022", "FC-023", "FC-024", "FC-025", "FC-026", "FC-027", "FC-028", "FC-029", "FC-030", "FC-031", "FC-032"]
+  "fieldcraft_links": [
+   "FC-001",
+   "FC-022",
+   "FC-023",
+   "FC-024",
+   "FC-025",
+   "FC-026",
+   "FC-027",
+   "FC-028",
+   "FC-029",
+   "FC-030",
+   "FC-031",
+   "FC-032"
+  ]
  },
  {
   "slug": "employment-operations",
@@ -297,9 +463,42 @@
    {
     "title": "Why automation is bounded here",
     "body": "Employment decisions — what to say about yourself, where to apply, how to present — are deeply personal and consequential. An automated system that sends applications or modifies public profiles without per-action review would cross a meaningful autonomy boundary. The system is designed to help prepare; it does not act on the user's behalf."
+   },
+   {
+    "title": "Opportunity research and discovery",
+    "body": "The research phase for an opportunity involves: (1) Identifying the opportunity source (job board, network referral, recruiter outreach, company career page). (2) Gathering public context (description, requirements, team, tech stack). (3) Assessing fit — how well the candidate's evidence matches the stated requirements. (4) Recording the source link and date for provenance.\n\n**Worked example:** An opportunity arrives from a network referral. The system records: source type (referral), referrer context (former colleague), opportunity URL, posting date, required skills, preferred skills, compensation range if listed. It then cross-references the required skills against the candidate's evidence ledger and reports match levels for each.\n\n**Boundary:** Opportunity research provides context for human decision-making. It does not assess candidacy, predict application outcome, or replace the candidate's own judgment about fit and interest.\n"
+   },
+   {
+    "title": "Drafting and review cycle",
+    "body": "Each application artifact (cover letter, talking points, portfolio excerpt) goes through a review cycle: (1) Draft from available evidence — the system projects relevant evidence from the ledger into a draft format. (2) Review pass 1 — the candidate reviews for accuracy, tone, and completeness. (3) Revise based on review. (4) Review pass 2 — the candidate confirms no private material leaked. (5) Hold for human release — the artifact is ready but not sent.\n\n**Technique:** The draft includes a provenance footer listing the specific evidence rows it used. If the draft says 'built a retrieval pipeline with 95% recall,' the footer shows which project record in the ledger supports that claim. This makes the review faster and more accurate.\n"
+   },
+   {
+    "title": "Gap identification and remediation",
+    "body": "Before applying, the system identifies gaps between the opportunity requirements and the candidate's evidence ledger. Gaps are classified: hard gap (candidate does not have the experience, period), soft gap (candidate has partial or adjacent experience), training gap (candidate could acquire the skill before the role starts), and documentation gap (candidate has the experience but it is not recorded in the ledger).\n\n**Remediation plan (synthesized):** For each gap, the system proposes: (1) For soft gaps — frame adjacent experience that demonstrates transferable skills. (2) For training gaps — suggest a short learning path with estimated duration. (3) For documentation gaps — log which project record needs updating. The candidate decides which gaps to address and how.\n"
+   },
+   {
+    "title": "Interview preparation workflow",
+    "body": "Interview preparation follows a structured cycle: (1) Analyze the role's stated requirements and typical interview format (technical screen, system design, behavioral, case study). (2) Extract likely question categories from the role description and industry patterns. (3) For each category, draft responses using the evidence ledger. (4) Review responses for accuracy, conciseness, and appropriate disclosure. (5) Practice responses (candidate-owned) and iterate based on self-assessment.\n\n**Synthesized example:** For a Staff Engineer role requiring distributed systems experience, the preparation workflow would identify relevant projects from the ledger (e.g., 'design a distributed retrieval pipeline with idempotency guarantees'), draft a structured response covering problem, approach, tradeoffs, and outcome, and flag any limitations (e.g., 'the pipeline handled 1,000 QPS in load testing but was not tested at production scale').\n"
+   },
+   {
+    "title": "Cover letter composition",
+    "body": "A cover letter is a projection from the evidence ledger to a specific opportunity. It should: (1) name the role and organization, (2) connect a specific evidence row to a specific requirement, (3) demonstrate understanding of the organization's context, (4) state what the candidate would bring, and (5) close with a forward-looking statement.\n\n**Synthesized example structure:** 'I am writing about the **[role]** at **[org]**. My experience with **[project from ledger]** involved **[relevant skill]** to achieve **[measured outcome]**, which aligns with your need for **[stated requirement]**. I have followed **[org]**'s work on **[topic]** and would welcome the opportunity to discuss how my background matches your team's goals.'\n\n**Boundary:** The draft must be reviewed for accuracy. No claim should appear in the letter that is not supported by the evidence ledger. The provenance footer linking each sentence to its evidence row enables this review."
+   },
+   {
+    "title": "Salary and offer research",
+    "body": "Salary research follows a structured process: (1) Identify the role level and geography. (2) Gather data from multiple sources (levels.fyi, Glassdoor, Blind, company disclosures, recruiter ranges). (3) Record each data point with source and date. (4) Build a range: minimum acceptable, target, and aspirational. (5) Prepare talking points that tie the target to evidence (experience level, market rate, specific qualifications).\n\n**Technique:** Maintain a salary research log with entries per opportunity. Each entry records: role, level, geography, sources consulted, range found, date of research, and any time sensitivity (e.g., 'this range may shift with the start of the new fiscal year').\n\n**Boundary:** Salary research informs negotiation preparation. It does not predict what any specific employer will offer, and it should not be used to anchor expectations prematurely."
+   },
+   {
+    "title": "The evidence preparation cycle completed",
+    "body": "The full cycle from opportunity identification to submission readiness is: (1) Identify and record opportunity with source and date. (2) Research role, company, and compensation. (3) Audit evidence ledger for match and gaps. (4) Address gaps (update ledger, acquire training, or accept the gap). (5) Draft application materials from selected evidence. (6) Review for accuracy, privacy, and authorization. (7) Hold for human release.\n\n**History preservation:** Each cycle produces a record: opportunity researched, materials prepared, gaps identified, and decisions made (applied, passed, declined). This record supports future cycles by accumulating evidence of past preparation patterns.\n\n**Boundary:** The cycle supports human decision-making. No step in the cycle submits an application, sends a message, or modifies a public profile without explicit per-action human authorization."
    }
   ],
   "limit": "Employment Operations is described here as a local-first preparation and review system. This page does not expose personal data or claim automated outreach, application submission, hiring outcomes, legal guidance or active provider integration. Synthetic examples are pedagogical only.",
-  "fieldcraft_links": ["FC-003", "FC-005", "FC-006", "FC-020"]
+  "fieldcraft_links": [
+   "FC-003",
+   "FC-005",
+   "FC-006",
+   "FC-020"
+  ]
  }
 ]
