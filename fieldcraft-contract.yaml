@@ -1,0 +1,328 @@
+schema_version: fieldcraft.editorial-contract.v1
+artifact_class: proposal
+status: adopted-direction
+review_status: user-approved-direction
+verified: false
+authority_effect: none
+owner: Scott
+adoption:
+  date: '2026-09-09'
+  evidence: User approved structure, presentation and first article and asked to adopt
+    the posture.
+  scope: Editorial and UI posture, not automatic verification of future articles.
+identity:
+  name: Hearth & Code · Fieldcraft
+  promise: One technique. A working example. A visible result.
+  reference_article: FC-001
+  corpus_size: 32
+  includes_reference_article: true
+ownership:
+  master: Hub project articles/
+  public: Explicit article projections in fieldcraft repository
+  direction: one-way export; repository suggestions return to master
+  underlying_sources: Retain existing owners; cite rather than absorb
+  private_data: No private paths, Discord identities, secrets or bulk catalog exports
+    in public bodies
+article:
+  word_target:
+    minimum: 400
+    maximum: 900
+    count: Rendered prose excluding code, metadata and demo fixtures
+    exception: Record reason for a useful shorter/longer article; do not pad
+  metadata_required:
+  - id
+  - slug
+  - title
+  - subject
+  - category
+  - date
+  - status
+  - verified
+  - deck
+  - description
+  - reading_minutes
+  - demo
+  - source_refs
+  section_order:
+  - 01 / State the predicate
+  - 02 / Give the agent a bounded task
+  - 03 / Run the independent check
+  - 04 / Try the counterexample
+  - 05 / Keep the claim bounded
+  - Source and formulation note
+  opening: Concrete failure or task, then one actionable technique
+  notation:
+    class: pedagogical unless traced to exact source clause
+    required:
+    - typed domains
+    - symbol glossary
+    - assumptions
+    - prose bridge
+    - non-implication
+    render: Native MathML or readable plain mathematical text; no external renderer
+    avoid:
+    - Decorative formulas
+    - Unjustified quantitative claims
+    - Presenting a new expression as normative ESS
+    methodology_alignment: Use stable scoped symbols, explicit assumptions and source-model
+      mappings; analogy is not a theorem. Fieldcraft does not amend the ESS semantic
+      contract.
+  example:
+    runtime: Node.js 18+ for browser-shared JavaScript; name other toolchains when
+      used
+    required:
+    - complete runnable source
+    - invocation
+    - expected output
+    - passing fixture
+    - failing fixture
+    - boundary fixture
+    - exact published command executed; a passing fixture runner is insufficient
+    data: synthetic
+    relationship: Same exported function in browser and tests; public prose must explain
+      exact semantics
+  source_notes: Trace adapted ideas to exact internal source in private sidecar and
+    supporting official public reference in article where applicable. Clearly label
+    original pedagogical constructions.
+demo:
+  module: examples/<slug>.mjs
+  api: export function evaluate(input) returning JSON-safe {pass:boolean, summary:string,
+    checks:array}; synchronous, pure, no effects
+  fixtures: 'fixtures/<slug>.json: {initial:<JSON>, counterexample:<JSON>, tests:[{name,input,expected:<complete
+    result>}]}'
+  controls:
+  - editable labeled JSON input
+  - Run the check
+  - Failing fixture
+  - Reset
+  states:
+  - initial result
+  - stale after edit
+  - pass
+  - fail
+  - invalid JSON or input
+  accessibility:
+  - live result announcement
+  - text status not color alone
+  - visible focus
+  - keyboard operation
+  safety:
+  - No eval or arbitrary execution
+  - No network
+  - No storage
+  - No providers
+presentation:
+  tokens:
+    background: '#161411'
+    panel: '#211d18'
+    ink: '#f1e7d2'
+    secondary: '#cfc1ab'
+    rule: '#4b4237'
+    copper: '#C25A3A'
+    gold: '#F4B860'
+    violet: '#9B5DE5'
+    violet_legible_component: '#b994ed'
+    cyan: '#3FE0D0'
+  typography:
+    display: Georgia, serif
+    body: system-ui, sans-serif
+    code: ui-monospace, monospace
+    reading_width: 780px maximum
+    body_line_height: 1.9
+  layout:
+    index:
+    - masthead
+    - editorial hero with Ember Circuit geometry
+    - subject strip
+    - featured FC-001
+    - searchable filtered series
+    - about
+    - footer
+    article:
+    - series sidebar
+    - article metadata
+    - serif title
+    - deck
+    - six-section body
+    - demo
+    - sources
+    - previous/next navigation
+    responsive_breakpoints_px:
+    - 680
+    - 1000
+    mobile: One column; preserve metadata/downloads; contain code/math overflow
+  ui:
+  - Preserve approved hero and first-article visual hierarchy
+  - Generate article labels, date, reading time, subject and downloads from metadata
+  - Index newest first then descending article ID
+  - Do not show planned articles as available
+  - Use skip link, semantic headings and explicit labels
+  - Reduced motion; no trackers, remote fonts or decorative telemetry
+  - Render the first formulation paragraph in a restrained bordered panel; preserve
+    FC-001 native equation panel.
+root_dashboard:
+  status: adopted-direction
+  purpose: Public orientation surface for Hearth & Code; links to work without
+    promoting candidate artifacts into verified products.
+  route: index.html
+  fieldcraft_route: fieldcraft.html
+  visual_posture: Ember Circuit tokens, editorial typography, source-aware labels,
+    visible boundaries and no fabricated telemetry.
+  sections:
+  - Hearth & Code
+  - Fieldcraft
+  - Work and studio
+  - Methodology
+  - Prompt engineering catalog
+  - Knowledge and evidence
+  - Engineering and Exocore
+  - Employment Operations
+  publication_rules:
+  - Use public-safe descriptions only; no private paths, personal records, job data,
+    Discord identities, secrets or bulk catalog exports.
+  - Label source-only, candidate and review-only work as such.
+  - Describe Employment Operations as candidate-owned, local-first preparation and
+    review; never imply automated outreach, submission or public-profile mutation.
+  - Keep Fieldcraft available as a distinct, working-method library.
+  detail_pages:
+  - hearth-code.html
+  - work-studio.html
+  - methodology.html
+  - prompt-catalog.html
+  - knowledge-evidence.html
+  - engineering-exocore.html
+  - employment-operations.html
+  detail_page_requirements:
+  - Provide a substantive public-safe explanation, a distinct visual information
+    device, source-aware labels and an explicit claim limit.
+  - Use synthesized examples when the underlying record, catalog, runtime or
+    operational detail is private, unverified or review-only.
+  - Do not imply a product launch, active service, automatic effect or human
+    verification from an orientation page.
+corpus:
+  required_total: 32
+  new_articles: 31
+  distinctness: One identifiable technique and failure mode per article; avoid 31
+    copies of one checker
+  lanes:
+    luna: FC-002–FC-011 prompt and creative practice
+    terra: FC-012–FC-021 knowledge and synthesis
+    sol: FC-022–FC-032 ESS, engineering and Rust
+  quality_gates:
+  - metadata and section validation
+  - source lineage and privacy review
+  - executable fixtures
+  - article/code correspondence
+  - cross-article duplication review
+  - responsive UI and interactions
+  - publication digest and explicit manifest
+  - execute the exact published invocation from companion-file directory
+  - peer review by a different author lane
+  - regression fixtures for every substantive review correction
+lifecycle:
+  draft: agent-authored
+  reviewed: bounded editorial and technical checks complete
+  published: explicitly released projection deployed
+  verified: human seal only; never inferred from checks or publication
+publication:
+  current_request: Seed repository with 32 articles using adopted posture
+  gate: Publish only articles with passing bounded checks; record exceptions and claim
+    limits
+  rss: true
+  downloads:
+  - Markdown
+  - example module
+  - fixtures
+  rollback: corrective commit and redeploy; preserve Hub masters and prior public
+    revision
+agent_contract:
+  one_writer_per_lane: true
+  agent_models:
+  - gpt-5.6-luna
+  - gpt-5.6-terra
+  - gpt-5.6-sol
+  integration_owner: root
+  no_effects:
+  - No Git operations
+  - No publication
+  - No provider calls
+  - No edits outside assigned paths
+  return:
+  - article inventory
+  - sources read
+  - tests run
+  - limitations
+  - unresolved concerns
+agent_profiles:
+  luna:
+    model: gpt-5.6-luna
+    reasoning_effort: high
+    role: Practical recipe author
+    focus:
+    - prompt and context craft
+    - creative briefs
+    - design techniques
+    review_lenses:
+    - Can a reader try it within ten minutes?
+    - Are fixed requirements preserved?
+    - Does the example expose its actual result?
+  terra:
+    model: gpt-5.6-terra
+    reasoning_effort: high
+    role: Knowledge and evidence author
+    focus:
+    - source identity
+    - synthesis
+    - retrieval
+    - knowledge graphs
+    review_lenses:
+    - Does each claim have a traceable source?
+    - Are missing evidence and contradiction distinct?
+    - Are information losses explicit?
+  sol:
+    model: gpt-5.6-sol
+    reasoning_effort: high
+    role: Engineering and formal-method author
+    focus:
+    - ESS mechanisms
+    - software architecture
+    - Exocore-related patterns
+    - Rust
+    review_lenses:
+    - Are domains and transition guards precise?
+    - Does code demonstrate exactly the written claim?
+    - Are browser models distinguished from compiler or runtime evidence?
+reusable_dispatch:
+  inputs:
+  - assigned article IDs and topics
+  - exact source selection
+  - contract revision and reference article
+  - owned article/module/fixture paths
+  - expected output and no-touch paths
+  sequence:
+  - Read reference and selected direct sources
+  - Register output filenames
+  - Define the narrow technique and predicate
+  - Write runnable example and independent fixtures
+  - Write article with exact code and expected output
+  - Run tests and check source correspondence
+  - Return source digests, inventory, limitations and checks
+  integration:
+  - Root reviews every example and all article metadata
+  - Failed items return to original lane owner
+  - No agent edits another lane
+  - No agent publishes or mutates Git
+  definition_status: Reusable source briefs, not installed host agents
+review_protocol:
+  separation: An author writes; another lane or the integration owner reviews domain/claim
+    correspondence.
+  required_checks:
+  - Match mathematical domain to accepted input shapes
+  - Reject malformed required records instead of silently omitting them
+  - Check missing data separately from a negative semantic result
+  - Validate exact expected output after changing code
+  - Name vacuous empty-input semantics where accepted
+  - Keep overall result consistent with each reported check
+  - Run the article command itself, not an equivalent invented command
+  return_policy: Send bounded findings back to the owning lane; re-run affected checks,
+    then integrate.

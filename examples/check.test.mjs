@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {check} from './check.mjs';
+assert.deepEqual(check('Check encoding\nRecord digest',4),{count:2,withinCapacity:true,unique:true,pass:true});
+assert.equal(check('a\na',4).pass,false);
+assert.equal(check('a\nb\nc',2).withinCapacity,false);
+assert.equal(check(' \n',0).pass,true);
+assert.equal(check(' a \na',3).unique,false);
+assert.equal(check('A\na',2).unique,true);
+assert.equal(check('a\r\nb',2).pass,true);
+assert.throws(()=>check('a',-1),RangeError);
+assert.throws(()=>check('a',1.5),RangeError);
+console.log('9 boundary and counterexample checks passed');

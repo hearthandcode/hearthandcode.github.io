@@ -1,0 +1,9 @@
+{
+  "initial":{"state":"observed","event":"lose-continuity"},
+  "counterexample":{"state":"indeterminate","event":"redispatch"},
+  "tests":[
+    {"name":"pass: lost continuity becomes indeterminate","input":{"state":"observed","event":"lose-continuity"},"expected":{"pass":true,"summary":"hold: observed -> indeterminate","checks":[{"name":"transition-defined","pass":true,"detail":"observed:lose-continuity"},{"name":"no-indeterminate-redispatch","pass":true,"detail":"clear"}]}},
+    {"name":"fail: indeterminate step cannot redispatch","input":{"state":"indeterminate","event":"redispatch"},"expected":{"pass":false,"summary":"Redispatch forbidden; preserve the indeterminate step.","checks":[{"name":"transition-defined","pass":false,"detail":"indeterminate:redispatch"},{"name":"no-indeterminate-redispatch","pass":false,"detail":"hold"}]}},
+    {"name":"boundary: inspection preserves indeterminate state","input":{"state":"indeterminate","event":"inspect"},"expected":{"pass":true,"summary":"inspect-saved-state: indeterminate -> indeterminate","checks":[{"name":"transition-defined","pass":true,"detail":"indeterminate:inspect"},{"name":"no-indeterminate-redispatch","pass":true,"detail":"clear"}]}}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "initial": {"guardState":"allow","evidence":"review-17"},
+  "counterexample": {"guardState":"unknown","evidence":""},
+  "tests": [
+    {"name":"pass: allowed with evidence","input":{"guardState":"allow","evidence":"review-17"},"expected":{"pass":true,"summary":"Guard allows the transition.","checks":[{"name":"guard-known","pass":true,"detail":"allow"},{"name":"allow-with-evidence","pass":true,"detail":"evidence-present"}]}},
+    {"name":"fail: explicit denial","input":{"guardState":"deny","evidence":"policy-4"},"expected":{"pass":false,"summary":"Transition held; state must be preserved.","checks":[{"name":"guard-known","pass":true,"detail":"deny"},{"name":"allow-with-evidence","pass":false,"detail":"not-authorized"}]}},
+    {"name":"boundary: unknown is held","input":{"guardState":"unknown","evidence":""},"expected":{"pass":false,"summary":"Transition held; state must be preserved.","checks":[{"name":"guard-known","pass":false,"detail":"unknown"},{"name":"allow-with-evidence","pass":false,"detail":"not-authorized"}]}}
+  ]
+}

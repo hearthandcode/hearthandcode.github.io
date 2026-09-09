@@ -1,0 +1,10 @@
+{
+  "initial":{"producer":{"fields":[{"name":"id","type":"string"},{"name":"count","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},
+  "counterexample":{"producer":{"fields":[{"name":"count","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},
+  "tests":[
+    {"name":"pass: required field is offered","input":{"producer":{"fields":[{"name":"id","type":"string"},{"name":"count","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},"expected":{"pass":true,"summary":"Producer satisfies every required consumer field.","checks":[{"name":"id","pass":true,"detail":"string->string"}]}},
+    {"name":"fail: required field missing","input":{"producer":{"fields":[{"name":"count","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},"expected":{"pass":false,"summary":"Producer and consumer schemas are incompatible.","checks":[{"name":"id","pass":false,"detail":"missing"}]}},
+    {"name":"boundary: same name with different type fails","input":{"producer":{"fields":[{"name":"id","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},"expected":{"pass":false,"summary":"Producer and consumer schemas are incompatible.","checks":[{"name":"id","pass":false,"detail":"integer->string"}]}},
+    {"name":"fail: duplicate producer field is ambiguous","input":{"producer":{"fields":[{"name":"id","type":"string"},{"name":"id","type":"integer"}]},"consumer":{"required":[{"name":"id","type":"string"}]}},"expected":{"pass":false,"summary":"Duplicate field names make the schema ambiguous.","checks":[{"name":"field-name-uniqueness","pass":false,"detail":"producer:id;consumer:none"}]}}
+  ]
+}

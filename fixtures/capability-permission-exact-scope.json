@@ -1,0 +1,10 @@
+{
+  "initial":{"capabilities":["render"],"permissions":[{"action":"render","scope":"draft:42"}],"request":{"action":"render","scope":"draft:42"}},
+  "counterexample":{"capabilities":["render"],"permissions":[],"request":{"action":"render","scope":"draft:42"}},
+  "tests":[
+    {"name":"pass: exact action and scope","input":{"capabilities":["render"],"permissions":[{"action":"render","scope":"draft:42"}],"request":{"action":"render","scope":"draft:42"}},"expected":{"pass":true,"summary":"Capability and exact permission both match.","checks":[{"name":"capability","pass":true,"detail":"render"},{"name":"exact-permission","pass":true,"detail":"render@draft:42"}]}},
+    {"name":"fail: capability without permission","input":{"capabilities":["render"],"permissions":[],"request":{"action":"render","scope":"draft:42"}},"expected":{"pass":false,"summary":"Request held at the authority boundary.","checks":[{"name":"capability","pass":true,"detail":"render"},{"name":"exact-permission","pass":false,"detail":"render@draft:42"}]}},
+    {"name":"boundary: adjacent scope is not exact","input":{"capabilities":["render"],"permissions":[{"action":"render","scope":"draft:43"}],"request":{"action":"render","scope":"draft:42"}},"expected":{"pass":false,"summary":"Request held at the authority boundary.","checks":[{"name":"capability","pass":true,"detail":"render"},{"name":"exact-permission","pass":false,"detail":"render@draft:42"}]}},
+    {"name":"fail: malformed permission is rejected","input":{"capabilities":["render"],"permissions":[{"action":"render"}],"request":{"action":"render","scope":"draft:42"}},"expected":{"pass":false,"summary":"Invalid authority input.","checks":[{"name":"input-shape","pass":false,"detail":"Expected capabilities, permissions, and request."}]}}
+  ]
+}

@@ -1,0 +1,135 @@
+schema_version: hearthandcode.public-site-charter.v1
+artifact_class: charter
+status: adopted-direction
+review_status: user-authorized
+verified: false
+authority_effect: none
+owner: Hearth & Code
+repository:
+  canonical_public_working_surface: hearthandcode/hearthandcode.github.io
+  production_url: https://hearthandcode.github.io/
+  build_output: site/
+  deployment: GitHub Pages workflow from main
+  predecessor_snapshot: hearthandcode/fieldcraft
+identity:
+  name: Hearth & Code
+  posture: Source-aware practice for thinking, building and creating with AI.
+  promise: Make the work legible.
+  visual_system: Ember Circuit
+content_model:
+  root: index.html
+  fieldcraft: fieldcraft.html
+  orientation_pages:
+  - hearth-code.html
+  - work-studio.html
+  - methodology.html
+  - prompt-catalog.html
+  - knowledge-evidence.html
+  - engineering-exocore.html
+  - employment-operations.html
+  article_library:
+    manifest: publication.json
+    public_masters: content/
+    examples: examples/
+    fixtures: fixtures/
+    rendered_pages: site/
+  source_layers:
+  - public article and orientation source in this repository
+  - protected source packages retained by their existing owners
+  - generated public site output
+  - deployment receipt and revision
+public_safety:
+  never_publish:
+  - private paths
+  - secrets or credentials
+  - Discord identities or transcripts
+  - personal records, active job data or private correspondence
+  - bulk internal catalogs or source packages
+  required_labels:
+  - public orientation
+  - synthesized example where applicable
+  - candidate, source-only or review-only when applicable
+  - explicit claim limit on each orientation page
+  employment_operations: Candidate-owned, local-first preparation and review only;
+    do not imply outreach, submission, profile mutation, hiring outcome, legal guidance
+    or provider activation.
+  engineering_exocore: Architectural and pedagogical material only unless a separately
+    verified public release supplies stronger evidence.
+article_authoring:
+  contract: fieldcraft-contract.yaml
+  required_metadata:
+  - id
+  - slug
+  - title
+  - subject
+  - category
+  - date
+  - status
+  - verified
+  - deck
+  - description
+  - reading_minutes
+  - demo
+  - source_refs
+  required_sections:
+  - 01 / State the predicate
+  - 02 / Give the agent a bounded task
+  - 03 / Run the independent check
+  - 04 / Try the counterexample
+  - 05 / Keep the claim bounded
+  - Source and formulation note
+  example_contract:
+    runtime: Node.js 18+ unless a named toolchain is required
+    must_include:
+    - complete source
+    - exact invocation
+    - expected result
+    - passing fixture
+    - failing fixture
+    - boundary fixture
+    - same pure browser and test function
+  notation: Pedagogical unless traced to a cited source clause; include domains,
+    assumptions, glossary, prose bridge and non-implication.
+  lifecycle:
+    draft: authored candidate
+    reviewed: bounded editorial and technical checks complete
+    published: deployed public projection
+    verified: human seal only; never inferred from tests, deployment or prose quality
+development:
+  implementation:
+    templates: web/
+    build: scripts/build.py
+    generated_output: site/
+    no_trackers: true
+    no_remote_fonts: true
+    no_provider_calls: true
+  visual_rules:
+    tokens: charcoal, parchment, copper, gold, violet, cyan
+    typography: editorial serif for display, readable system body, monospace for methods
+    detail_pages: Distinct information device per page, visible navigation, source-aware
+      label and claim-boundary panel.
+    accessibility: Skip link, semantic headings, visible focus, keyboard operation,
+      mobile single-column reading and contained code overflow.
+  checks:
+  - python scripts/build.py
+  - python scripts/validate_corpus.py
+  - node examples/check.test.mjs
+  - node scripts/test_corpus.mjs
+  - python scripts/test_article_commands.py
+  - python scripts/test_rust.py
+publication:
+  release_condition: All named checks pass and the public-safety review finds no
+    protected material.
+  git: Commit and push reviewed public changes to main; GitHub Pages deploys from workflow.
+  rollback: Corrective commit and redeploy; preserve prior public history.
+  nonclaims: Publication does not confer verification, product acceptance, runtime
+    availability, provider authorization or human review.
+working_agreement:
+  write_scope: This repository is the single public working surface for page design,
+    public article writing and release-ready examples.
+  provenance: Underlying research, operational systems and protected source packages
+    retain their own authority; this repository links, cites and synthesizes without
+    absorbing them.
+  change_control: Keep source, evidence, inference, proposal, projection, receipt and
+    unknown distinct. Escalate any release that would broaden a public claim or disclose
+    protected material.

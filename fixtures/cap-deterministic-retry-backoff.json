@@ -1,0 +1,9 @@
+{
+  "initial":{"attempt":2,"maxAttempts":5,"baseDelayMs":100,"capMs":1000},
+  "counterexample":{"attempt":5,"maxAttempts":5,"baseDelayMs":100,"capMs":1000},
+  "tests":[
+    {"name":"pass: retry within budget","input":{"attempt":2,"maxAttempts":5,"baseDelayMs":100,"capMs":1000},"expected":{"pass":true,"summary":"Retry after 400 ms.","checks":[{"name":"attempt-remaining","pass":true,"detail":"2/5"},{"name":"delay-capped","pass":true,"detail":"400<=1000"}]}},
+    {"name":"fail: retry budget exhausted","input":{"attempt":5,"maxAttempts":5,"baseDelayMs":100,"capMs":1000},"expected":{"pass":false,"summary":"Retry budget exhausted.","checks":[{"name":"attempt-remaining","pass":false,"detail":"5/5"},{"name":"delay-capped","pass":true,"detail":"0<=1000"}]}},
+    {"name":"boundary: exponential delay reaches cap","input":{"attempt":4,"maxAttempts":5,"baseDelayMs":100,"capMs":500},"expected":{"pass":true,"summary":"Retry after 500 ms.","checks":[{"name":"attempt-remaining","pass":true,"detail":"4/5"},{"name":"delay-capped","pass":true,"detail":"500<=500"}]}}
+  ]
+}

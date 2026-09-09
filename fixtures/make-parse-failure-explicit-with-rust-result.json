@@ -1,0 +1,10 @@
+{
+  "initial":{"text":"42","min":0,"max":100},
+  "counterexample":{"text":"four","min":0,"max":100},
+  "tests":[
+    {"name":"pass: integer inside bounds","input":{"text":"42","min":0,"max":100},"expected":{"pass":true,"summary":"Parsed integer 42.","checks":[{"name":"integer-syntax","pass":true,"detail":"42"},{"name":"range","pass":true,"detail":"0..100"}]}},
+    {"name":"fail: non-integer text","input":{"text":"four","min":0,"max":100},"expected":{"pass":false,"summary":"Parse failed: invalid-integer.","checks":[{"name":"integer-syntax","pass":false,"detail":"four"},{"name":"range","pass":false,"detail":"0..100"}]}},
+    {"name":"boundary: parsed value outside bounds","input":{"text":"101","min":0,"max":100},"expected":{"pass":false,"summary":"Parse failed: out-of-range.","checks":[{"name":"integer-syntax","pass":true,"detail":"101"},{"name":"range","pass":false,"detail":"0..100"}]}},
+    {"name":"pass: explicit plus sign matches Rust i32 parsing","input":{"text":"+42","min":0,"max":100},"expected":{"pass":true,"summary":"Parsed integer 42.","checks":[{"name":"integer-syntax","pass":true,"detail":"+42"},{"name":"range","pass":true,"detail":"0..100"}]}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "initial":{"mode":"plan","steps":[{"effect":"publish","target":"draft-7"}],"releases":[]},
+  "counterexample":{"mode":"execute","steps":[{"effect":"publish","target":"draft-7"}],"releases":[]},
+  "tests":[
+    {"name":"pass: planning needs no effect release","input":{"mode":"plan","steps":[{"effect":"publish","target":"draft-7"}],"releases":[]},"expected":{"pass":true,"summary":"Pure plan produced; no effects admitted.","checks":[{"name":"publish@draft-7","pass":true,"detail":"planned-only"}]}},
+    {"name":"fail: execution lacks release","input":{"mode":"execute","steps":[{"effect":"publish","target":"draft-7"}],"releases":[]},"expected":{"pass":false,"summary":"Execution held; at least one exact release is missing.","checks":[{"name":"publish@draft-7","pass":false,"detail":"release-missing"}]}},
+    {"name":"boundary: adjacent target release does not cover","input":{"mode":"execute","steps":[{"effect":"publish","target":"draft-7"}],"releases":[{"effect":"publish","target":"draft-8"}]},"expected":{"pass":false,"summary":"Execution held; at least one exact release is missing.","checks":[{"name":"publish@draft-7","pass":false,"detail":"release-missing"}]}},
+    {"name":"pass: exact execution release","input":{"mode":"execute","steps":[{"effect":"publish","target":"draft-7"}],"releases":[{"effect":"publish","target":"draft-7"}]},"expected":{"pass":true,"summary":"Every effect has an exact release.","checks":[{"name":"publish@draft-7","pass":true,"detail":"exact-release"}]}}
+  ]
+}

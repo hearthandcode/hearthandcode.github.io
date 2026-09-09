@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "hearth-code",
+    "number": "01",
+    "kicker": "IDENTITY / PUBLIC ORIENTATION",
+    "title": "Hearth & Code",
+    "deck": "A source-aware practice for making work with AI more legible, more useful and easier to return to.",
+    "visual": "compass",
+    "summary": "Hearth & Code treats research, software, design and creative practice as related forms of careful making. The public surface describes methods and work in progress without turning a draft, a prototype or a fluent explanation into proof.",
+    "sections": [
+      {"title":"A studio, not a black box","body":"The studio is organized around the work itself: a question, a source horizon, a constrained artifact and a return. AI can participate in every stage, but it does not erase ownership. A source retains its author; a reviewer retains judgment; a person retains the decision to act.\n\nThis matters because useful work accumulates. A good result should carry enough context that someone can inspect it, revise it or continue it later without recreating the entire conversation."},
+      {"title":"The public posture","body":"Public pages use clear labels for public orientation, teaching example, candidate design and review-only system. Those labels are not decorative. They prevent an interesting experiment from being mistaken for a deployed service or a completed claim.\n\nWhere detailed source material is private, the public layer uses a synthesized example that demonstrates the method while leaving private records, identities and operating detail where they belong."},
+      {"title":"The areas of practice","body":"The work crosses agentic engineering, software architecture, knowledge synthesis, prompt craft, research design and creative systems. These are not collapsed into one generic AI capability. Each asks for its own inputs, evidence, constraints and checks.\n\nThe root orientation map keeps those areas visible as separate rooms, then shows the shared method that allows them to connect without losing their meaning."},
+      {"title":"What a return contains","body":"A useful return names the thing made, the source or assumption it depended on, the check that was performed and the next bounded question. It also names the limit: what has not been tested, authorized, released or verified.\n\nThat small discipline makes the work easier to trust for the right reason. It gives a reader a way to distinguish an artifact from its promise."}
+    ],
+    "limit": "This page is an orientation to a practice. It is not a claim that every referenced research, product or method is complete, public, deployed or independently verified."
+  },
+  {
+    "slug": "work-studio",
+    "number": "03",
+    "kicker": "PRACTICE / CONNECTED DISCIPLINES",
+    "title": "Work & Studio",
+    "deck": "Architecture, engineering, knowledge work and creative direction are different crafts that become stronger when their handoffs are explicit.",
+    "visual": "weave",
+    "summary": "The studio works across the whole path from an ambiguous question to a concrete artifact. The goal is not to automate taste or replace craft. It is to build a stronger working surface around it.",
+    "sections": [
+      {"title":"Architecture gives work a place to stand","body":"Architecture begins by separating responsibilities: what a component owns, what it receives, what it may return and which transition needs human authority. This prevents a useful prototype from quietly becoming a system of record.\n\nA small architectural decision can be enough: declare a stable input, a typed output, a failure state and a receipt. The point is not ceremony. It is making an integration understandable before it becomes expensive."},
+      {"title":"Engineering makes the seam executable","body":"Engineering turns a declared seam into a real one: schemas, pure functions, fixtures, bounded retries, explicit parse failures and lifecycle states. The Fieldcraft library contains compact versions of these moves because they are easier to learn when the counterexample is visible.\n\nThe working preference is for small proofs before broad automation. A deterministic local check can clarify a design faster than a large service with unclear ownership."},
+      {"title":"Design keeps the decision visible","body":"Design is not a final skin. It shapes what can be noticed: a missing source, a held gate, an invalid state, a changed input or a meaningful next action. Good information design makes the system easier to read without pretending it is simpler than it is.\n\nThe Ember Circuit palette and editorial typography serve that aim: warm enough for sustained reading, structured enough for technical detail, and restrained enough that evidence remains the focal point."},
+      {"title":"Creative work retains its own criteria","body":"Creative direction needs room for variation, contrast and human judgment. It benefits from an explicit brief and a way to compare alternatives, but it should not be reduced to a score. A selected concept is a decision with reasons, not merely the highest number in a table.\n\nWhen AI enters this space, the useful question is usually not “did it make something?” but “which constraint did it preserve, which did it vary, and can we see the difference?”"}
+    ],
+    "limit": "These are working approaches and synthesized examples. They do not describe a universal delivery process or imply that a particular client, product or creative artifact has been completed."
+  },
+  {
+    "slug": "methodology",
+    "number": "04",
+    "kicker": "FOUNDATION / METHOD",
+    "title": "Methodology",
+    "deck": "Bind the work to a source, make a bounded artifact, check the declared predicate, and return with the boundary still intact.",
+    "visual": "loop",
+    "summary": "The methodology is a practical discipline for moving from language to work without confusing capability with permission or a passing check with a final judgment.",
+    "sections": [
+      {"title":"1. Bind","body":"Begin with a direct source, a named owner and a bounded task. A source can be an approved brief, a record, a specification or a supplied question. The point is to know what the work is answering and what it is not authorized to alter.\n\nBinding avoids a common AI failure mode: broadening a request through adjacency. A model may recognize related work, but relation does not grant scope."},
+      {"title":"2. Make","body":"Create the smallest artifact that gives the question a concrete form. That might be a method card, a source ledger, a typed record, a visual direction, a review packet or a runnable check. The artifact should have a readable shape and a place for the assumptions it uses.\n\nSmall artifacts are easier to review because their promises are small enough to test. They are also easier to replace when the underlying source changes."},
+      {"title":"3. Check","body":"State a predicate before treating a result as useful. A check can establish a narrow property: that a field exists, a value stays within a budget, a source identifier still matches, or a lifecycle transition is allowed. It should not claim more than that property.\n\nThe counterexample is part of the method. It demonstrates the boundary of the check and keeps a passing path from becoming a vague quality signal."},
+      {"title":"4. Return","body":"Return the artifact with a short account of sources, checks, limits and the next question. Evidence, inference, hypothesis, proposal and release belong to different classes; they should stay distinguishable in the return.\n\nThat distinction lets work remain useful across time. A later reader can update the evidence without silently rewriting the earlier conclusion or pretending an unreviewed draft became accepted."}
+    ],
+    "limit": "This is a methodological orientation, not a claim that it is a complete formal system or an automatic governance mechanism. Human judgment and explicit release decisions remain necessary."
+  },
+  {
+    "slug": "prompt-catalog",
+    "number": "05",
+    "kicker": "PROMPT CRAFT / METHOD CATALOG",
+    "title": "Prompt engineering catalog",
+    "deck": "Treat prompts as reusable methods with inputs, constraints, failure modes and return shapes—not as incantations.",
+    "visual": "catalog",
+    "summary": "The working catalog contains 128 prompt methods, with a broader 512-method horizon. The public layer shares the design of the catalog and synthesized examples, rather than exporting private prompt text or operational context.",
+    "sections": [
+      {"title":"A prompt is a small interface","body":"A strong prompt has a job, a context boundary, an expected return and a stopping rule. It tells the model what inputs are available, which facts must be preserved, what output shape is useful and what to do when information is missing.\n\nThis is more durable than collecting clever phrases. When the task changes, an interface can be revised intentionally; an isolated string usually becomes folklore."},
+      {"title":"The catalog is organized by transformation","body":"Methods are grouped by the work they perform: orient a task, extract a structure, compare alternatives, synthesize evidence, compose a draft, check a claim, return a handoff. This lets a practitioner choose a prompt by the transformation needed instead of by a vague topic label.\n\nEach method can be understood as a contract: input set → bounded operation → return type. The contract makes it possible to see where a prompt belongs in a workflow and where it does not."},
+      {"title":"A synthesized example","body":"Consider a source-dossier prompt. Its input is a set of named excerpts and a claim frame. Its output is a table of observations, inferences and open questions. Its failure condition is an unsupported claim, a missing source label or a conclusion that treats absence as contradiction.\n\nThe value is not that the prompt “knows research.” The value is that its return shape gives a reviewer a stable surface on which to inspect the reasoning."},
+      {"title":"Why the catalog stays governed","body":"Prompt libraries can leak context, overstate what a model can safely do, or become a substitute for a source of truth. The catalog therefore keeps a distinction between a reusable method and the private material it may be applied to.\n\nPublic examples use synthetic records. A method can be shared without publishing the people, systems or working notes that gave rise to it."}
+    ],
+    "limit": "The counts describe a working catalog and its broader horizon, not a claim that all methods are public, complete, equally mature or suitable for every model or context."
+  },
+  {
+    "slug": "knowledge-evidence",
+    "number": "06",
+    "kicker": "KNOWLEDGE WORK / EVIDENCE",
+    "title": "Knowledge & Evidence",
+    "deck": "Keep sources, claims, uncertainty, dissent and review decisions separate enough that each can be inspected and revised.",
+    "visual": "evidence",
+    "summary": "Knowledge work becomes more reliable when it records how a statement relates to its evidence, rather than presenting a synthesis as if it arrived without a history.",
+    "sections": [
+      {"title":"Source identity comes first","body":"A source needs an identity that survives a summary: a title or record label, a version when known, a relevant span and a note about what it can support. A citation alone is not an argument, but it makes the argument inspectable.\n\nWhen a source changes, the earlier claim should not silently inherit the new wording. Version awareness makes revision an explicit event instead of a hidden rewrite."},
+      {"title":"Claims are not evidence","body":"Evidence is an observation, record or source span. A claim is an interpretation about what that material supports. Separating them creates room for a claim to be weak, contested, incomplete or simply premature without damaging the record of what was actually observed.\n\nIn a synthesized example, two sources may agree on a measurement while disagreeing about its cause. The shared observation remains; the interpretation stays plural."},
+      {"title":"Absence and contradiction are different","body":"A missing source does not negate a claim. A contradictory source does not disappear because it is inconvenient. These are different states with different next actions: retrieve more evidence, resolve a definition, preserve a minority conclusion or hold a decision.\n\nThat distinction is especially valuable in AI-assisted synthesis, where fluent prose can make a gap look like a conclusion unless the record gives uncertainty its own place."},
+      {"title":"A review is its own record","body":"Review should capture who or what evaluated a candidate, against which edition, under which criteria and with what disposition. It should not overwrite the underlying source or convert confidence into authority.\n\nThis makes it possible to revise a claim, re-check a source and retain the history of a prior review without claiming that older work never existed."}
+    ],
+    "limit": "Source tracking improves inspectability; it does not establish truth, exhaust a research horizon, replace expert review or grant rights to reuse a source."
+  },
+  {
+    "slug": "engineering-exocore",
+    "number": "07",
+    "kicker": "ENGINEERING / CANDIDATE ARCHITECTURE",
+    "title": "Engineering & Exocore",
+    "deck": "Reliable agentic systems begin with typed boundaries, explicit lifecycle states and a refusal to turn an indeterminate step into a quiet retry.",
+    "visual": "stack",
+    "summary": "Exocore is a candidate architecture for local-first, contract-bound product modules. The public page describes design principles and synthetic patterns; it does not represent a running service or released platform.",
+    "sections": [
+      {"title":"Separate meaning from mechanics","body":"A product module should own its domain records and operations. Shared infrastructure can own generic policy, runtime mechanics, identity, persistence ports and receipts, but it should not silently decide what a domain record means.\n\nThis keeps a platform from becoming a collection of screens with unclear authority. It also gives each new module a real admission question: what is the smallest independently meaningful responsibility it owns?"},
+      {"title":"Use typed boundaries","body":"Typed inputs and outputs make a seam visible. In Rust, a lifecycle state can be represented so that a release-shaped operation is unavailable on a draft-shaped value. In a browser model, the same constraint can be shown as an explicit guard and a failing fixture.\n\nThe browser example is useful for explanation; compiler enforcement is useful for a narrower claim. They should not be conflated."},
+      {"title":"Hold indeterminate work","body":"A model call or external operation can end in an indeterminate state: the result may have occurred, but the system cannot prove it. Automatically sending the work again risks duplicate effects and broken receipts.\n\nA safer pattern records the uncertainty, preserves the key, polls or reconciles known state, and requires a deliberate next route. The point is not to avoid failure; it is to make recovery observable."},
+      {"title":"Build local proofs first","body":"The proposed architecture favors provider-free fixtures, deterministic checks and reversible implementation slices before a broader runtime is introduced. A simple proof can establish that a contract accepts valid input, rejects an invalid state and produces a readable receipt.\n\nThat proof does not establish model quality, production readiness or adoption. It earns only the next bounded question."}
+    ],
+    "limit": "Exocore references here are architectural and pedagogical. They do not assert a deployed runtime, provider availability, user data processing, product launch or service-level behavior."
+  },
+  {
+    "slug": "employment-operations",
+    "number": "08",
+    "kicker": "OPERATIONS / LOCAL-FIRST REVIEW",
+    "title": "Employment Operations",
+    "deck": "A candidate-owned system for turning career material and opportunity research into evidence-backed review packets, without automating representation.",
+    "visual": "board",
+    "summary": "Employment Operations keeps a local, evidence-backed workflow for preparation and review. It is designed to support careful work at volume while preserving the user's authority over what is sent, submitted or made public.",
+    "sections": [
+      {"title":"Candidate-owned records","body":"A canonical profile, source register, opportunity packet and review artifact each have a distinct role. The system treats generated documents as projections, not as the source of truth, and it preserves the relationship between a statement and the evidence supporting it.\n\nThis helps avoid a familiar failure: a polished résumé or application packet drifting away from the record it was meant to represent."},
+      {"title":"A reviewed path, not an auto-submit path","body":"The workflow can prepare a job packet, identify questions, compose a draft and surface missing evidence. It does not submit applications, send messages, answer legal or demographic questions, bypass CAPTCHAs or modify public profiles by default.\n\nThose boundaries are practical. They leave the consequential moments—representation, disclosure and submission—with the person who owns them."},
+      {"title":"Shared context without collapsed authority","body":"A business-oriented control room can project opportunities, research, offers, projects, capacity and pending decisions into one orientation surface. The projection is read-only where it crosses a record boundary. A selected organization or opportunity can provide context without becoming the authority for every other domain.\n\nWhen a source is absent, a review surface should show the gap rather than manufacture a record to keep the dashboard full."},
+      {"title":"Synthetic examples protect real work","body":"Public demonstrations use empty or synthetic fixtures. They can show a state transition, a review gate or an evidence ledger without exposing personal records, job data or private correspondence.\n\nA passing fixture demonstrates only the declared behavior under that synthetic input. It does not show that a real application has been submitted, a contact has been reached or a decision has been made."}
+    ],
+    "limit": "Employment Operations is described here as a local-first preparation and review system. This page does not expose personal data or claim automated outreach, application submission, hiring outcomes, legal guidance or active provider integration."
+  }
+]

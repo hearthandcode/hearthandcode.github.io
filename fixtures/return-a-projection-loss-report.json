@@ -1,0 +1,10 @@
+{
+  "initial":{"source":{"title":"Map","privateNote":"omit"},"projection":{"title":"Map"},"declaredLoss":[{"field":"privateNote","disposition":"dropped","reason":"not public"}]},
+  "counterexample":{"source":{"title":"Map","privateNote":"omit"},"projection":{"title":"Map"},"declaredLoss":[]},
+  "tests":[
+    {"name":"pass: dropped field declared","input":{"source":{"title":"Map","privateNote":"omit"},"projection":{"title":"Map"},"declaredLoss":[{"field":"privateNote","disposition":"dropped","reason":"not public"}]},"expected":{"pass":true,"summary":"Loss report accounts for 1 field(s).","checks":[{"name":"declarations-valid","pass":true,"detail":"1 declared"},{"name":"loss-complete","pass":true,"detail":"privateNote:dropped"}]}},
+    {"name":"fail: omission unreported","input":{"source":{"title":"Map","privateNote":"omit"},"projection":{"title":"Map"},"declaredLoss":[]},"expected":{"pass":false,"summary":"Projection loss is missing or misclassified.","checks":[{"name":"declarations-valid","pass":true,"detail":"0 declared"},{"name":"loss-complete","pass":false,"detail":"privateNote:dropped"}]}},
+    {"name":"boundary: byte-equivalent fields are lossless","input":{"source":{"title":"Map"},"projection":{"title":"Map"},"declaredLoss":[]},"expected":{"pass":true,"summary":"Loss report accounts for 0 field(s).","checks":[{"name":"declarations-valid","pass":true,"detail":"0 declared"},{"name":"loss-complete","pass":true,"detail":"lossless"}]}},
+    {"name":"fail: malformed declaration is bounded","input":{"source":{"title":"Map","privateNote":"omit"},"projection":{"title":"Map"},"declaredLoss":[null]},"expected":{"pass":false,"summary":"Projection loss is missing or misclassified.","checks":[{"name":"declarations-valid","pass":false,"detail":"1 declared"},{"name":"loss-complete","pass":false,"detail":"privateNote:dropped"}]}}
+  ]
+}

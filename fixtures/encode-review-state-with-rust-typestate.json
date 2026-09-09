@@ -1,0 +1,9 @@
+{
+  "initial":{"state":"reviewed","operation":"release-candidate"},
+  "counterexample":{"state":"draft","operation":"release-candidate"},
+  "tests":[
+    {"name":"pass: reviewed exposes release candidate","input":{"state":"reviewed","operation":"release-candidate"},"expected":{"pass":true,"summary":"release-candidate is available for reviewed.","checks":[{"name":"state-known","pass":true,"detail":"reviewed"},{"name":"operation-available","pass":true,"detail":"release-candidate"}]}},
+    {"name":"fail: draft cannot release candidate","input":{"state":"draft","operation":"release-candidate"},"expected":{"pass":false,"summary":"Operation unavailable in this state.","checks":[{"name":"state-known","pass":true,"detail":"draft"},{"name":"operation-available","pass":false,"detail":"release-candidate"}]}},
+    {"name":"boundary: draft exposes review transition","input":{"state":"draft","operation":"review"},"expected":{"pass":true,"summary":"review is available for draft.","checks":[{"name":"state-known","pass":true,"detail":"draft"},{"name":"operation-available","pass":true,"detail":"review"}]}}
+  ]
+}

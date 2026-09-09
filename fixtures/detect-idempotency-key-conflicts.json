@@ -1,0 +1,10 @@
+{
+  "initial":{"prior":[{"key":"job-7","digest":"sha256:a","result":{"status":"done"}}],"request":{"key":"job-7","digest":"sha256:a"}},
+  "counterexample":{"prior":[{"key":"job-7","digest":"sha256:a","result":{"status":"done"}}],"request":{"key":"job-7","digest":"sha256:b"}},
+  "tests":[
+    {"name":"pass: same key and digest replays","input":{"prior":[{"key":"job-7","digest":"sha256:a","result":{"status":"done"}}],"request":{"key":"job-7","digest":"sha256:a"}},"expected":{"pass":true,"summary":"Same key and digest replay the recorded result.","checks":[{"name":"key-match-count","pass":true,"detail":"1"},{"name":"digest-consistency","pass":true,"detail":"replay"}]}},
+    {"name":"fail: same key different digest conflicts","input":{"prior":[{"key":"job-7","digest":"sha256:a","result":{"status":"done"}}],"request":{"key":"job-7","digest":"sha256:b"}},"expected":{"pass":false,"summary":"Same key carries a different digest; request held.","checks":[{"name":"key-match-count","pass":true,"detail":"1"},{"name":"digest-consistency","pass":false,"detail":"conflict"}]}},
+    {"name":"boundary: unseen key is new","input":{"prior":[],"request":{"key":"job-8","digest":"sha256:c"}},"expected":{"pass":true,"summary":"New key may be accepted.","checks":[{"name":"key-match-count","pass":true,"detail":"0"},{"name":"digest-consistency","pass":true,"detail":"accept-new"}]}},
+    {"name":"fail: duplicate prior keys are ambiguous","input":{"prior":[{"key":"job-7","digest":"sha256:a","result":{"status":"done"}},{"key":"job-7","digest":"sha256:a","result":{"status":"done"}}],"request":{"key":"job-7","digest":"sha256:a"}},"expected":{"pass":false,"summary":"Duplicate prior keys are ambiguous; request held.","checks":[{"name":"key-match-count","pass":false,"detail":"2"},{"name":"digest-consistency","pass":false,"detail":"duplicate"}]}}
+  ]
+}

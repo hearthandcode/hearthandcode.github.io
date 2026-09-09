@@ -1,0 +1,9 @@
+{
+  "initial":{"resource":{"id":"packet-7","owner":"planner"},"transfer":{"from":"planner","to":"worker"},"subsequentActor":"worker"},
+  "counterexample":{"resource":{"id":"packet-7","owner":"planner"},"transfer":{"from":"planner","to":"worker"},"subsequentActor":"planner"},
+  "tests":[
+    {"name":"pass: receiver continues","input":{"resource":{"id":"packet-7","owner":"planner"},"transfer":{"from":"planner","to":"worker"},"subsequentActor":"worker"},"expected":{"pass":true,"summary":"Ownership of packet-7 transfers to worker.","checks":[{"name":"current-owner","pass":true,"detail":"planner"},{"name":"distinct-receiver","pass":true,"detail":"worker"},{"name":"receiver-continues","pass":true,"detail":"worker"}]}},
+    {"name":"fail: sender continues after transfer","input":{"resource":{"id":"packet-7","owner":"planner"},"transfer":{"from":"planner","to":"worker"},"subsequentActor":"planner"},"expected":{"pass":false,"summary":"Transfer boundary is inconsistent.","checks":[{"name":"current-owner","pass":true,"detail":"planner"},{"name":"distinct-receiver","pass":true,"detail":"worker"},{"name":"receiver-continues","pass":false,"detail":"planner"}]}},
+    {"name":"boundary: declared sender is not current owner","input":{"resource":{"id":"packet-7","owner":"reviewer"},"transfer":{"from":"planner","to":"worker"},"subsequentActor":"worker"},"expected":{"pass":false,"summary":"Transfer boundary is inconsistent.","checks":[{"name":"current-owner","pass":false,"detail":"reviewer"},{"name":"distinct-receiver","pass":true,"detail":"worker"},{"name":"receiver-continues","pass":true,"detail":"worker"}]}}
+  ]
+}

@@ -1,0 +1,704 @@
+{
+  "articles": [
+    {
+      "id": "FC-001",
+      "slug": "acceptance-condition",
+      "source_filename": "0001-make-the-acceptance-condition-executable.md",
+      "title": "Make the acceptance condition executable",
+      "subject": "ESS & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "design-preview",
+      "verified": false,
+      "deck": "Turn “looks right” into a condition you can inspect.",
+      "description": "One independent acceptance predicate, a runnable example, and a counterexample.",
+      "reading_minutes": 6,
+      "demo": "acceptance-condition",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, section 12: transition guards",
+        "Original Fieldcraft pedagogical example"
+      ],
+      "master_sha256": "4b3dc801072fc003eb1070774a7e23a7e583d0bf6dab06822c2f8cbd8e4ebade",
+      "export_sha256": "1b263f542e36f5a35d57da54033418e3aedd3329d630f2dd1a9299b3aa633f78"
+    },
+    {
+      "id": "FC-002",
+      "slug": "delimiter-collisions-in-prompt-input",
+      "source_filename": "0002-delimiter-collisions-in-prompt-input.md",
+      "title": "Treat prompt fields as data, not separators",
+      "subject": "Prompt craft",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A delimiter is part of the data eventually. Choose framing that survives the data you expect.",
+      "description": "Test whether a prompt transport preserves items that contain its separator.",
+      "reading_minutes": 4,
+      "demo": "delimiter-collisions-in-prompt-input",
+      "source_refs": [
+        "MDN JSON.parse()",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
+      ],
+      "master_sha256": "878f1010a1a265287379996768831681207788a8d53717f4efc7f7a9c6665103",
+      "export_sha256": "167525ddc80c51dcae84482db87d47740ffa0dac66a71c3f8ca9abf2a50a53d1"
+    },
+    {
+      "id": "FC-003",
+      "slug": "validate-output-shape-before-use",
+      "source_filename": "0003-validate-output-shape-before-use.md",
+      "title": "Check output shape before the next step",
+      "subject": "Agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A result can be plausible text and still be unusable data. Validate the shape before consuming it.",
+      "description": "Reject missing fields and wrong item types before a downstream operation reads an output.",
+      "reading_minutes": 4,
+      "demo": "validate-output-shape-before-use",
+      "source_refs": [
+        "MDN JSON.parse()",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"
+      ],
+      "master_sha256": "17b6165757ef1ab160886eba01307a11de6f41c48c68c3711c9ed9396a9fb373",
+      "export_sha256": "caa24904be74ad1cf92d66b33b88c0a4320ff132c6e8bcad3adb8604f7362cfa"
+    },
+    {
+      "id": "FC-004",
+      "slug": "compare-against-a-simple-baseline",
+      "source_filename": "0004-compare-against-a-simple-baseline.md",
+      "title": "Keep a simple baseline in the comparison",
+      "subject": "Evaluation practice",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A candidate is easier to interpret when the comparison target is visible and simple enough to audit.",
+      "description": "Compare declared numeric criteria with a baseline and an explicit margin.",
+      "reading_minutes": 4,
+      "demo": "compare-against-a-simple-baseline",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "de94b37ab7805608446849777957131df724e5604bd58b3885b3a94eff398820",
+      "export_sha256": "26f857b3e70a1a910afa6e8a0603db3f534ebfe43cdfd29cd68589a679e2af84"
+    },
+    {
+      "id": "FC-005",
+      "slug": "stop-at-a-bounded-iteration-budget",
+      "source_filename": "0005-stop-at-a-bounded-iteration-budget.md",
+      "title": "Stop refinement at a declared budget",
+      "subject": "Agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Refinement is useful until its cost and stopping rule disappear. Make the budget part of the trace.",
+      "description": "Verify that a refinement trace stays within its iteration budget and records one entry per iteration.",
+      "reading_minutes": 4,
+      "demo": "stop-at-a-bounded-iteration-budget",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "ecaa4a58c2bae88dc3060dc3c784b5208b1cac9d49dbd0d06995d01b2ff1e667",
+      "export_sha256": "b86dc149eb246918a9fb7078223008bd2c07cbbd71f0f4df57fb0de68ebb8e10"
+    },
+    {
+      "id": "FC-006",
+      "slug": "preserve-task-constraints-during-handoff",
+      "source_filename": "0006-preserve-task-constraints-during-handoff.md",
+      "title": "Carry the constraints across a handoff",
+      "subject": "Agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A handoff is a new boundary. Compare the receiving brief with the constraints that made the original task meaningful.",
+      "description": "Check that required and optional task constraints survive a synthetic handoff.",
+      "reading_minutes": 4,
+      "demo": "preserve-task-constraints-during-handoff",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "30efc5ec4f45e94d65193a877dad3b3e225b93363e432ec1341a9eacf7a94d36",
+      "export_sha256": "3f7304778929533c48bd95a5598bf900f7a8618f139472e74c852b376e6b92d3"
+    },
+    {
+      "id": "FC-007",
+      "slug": "score-a-creative-candidate-with-explicit-criteria",
+      "source_filename": "0007-score-a-creative-candidate-with-explicit-criteria.md",
+      "title": "Score a creative candidate with declared criteria",
+      "subject": "Creative practice",
+      "category": "creative",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Arithmetic can expose a brief fit or threshold while leaving aesthetic judgement with the human reviewer.",
+      "description": "Apply explicit weighted criteria to a synthetic creative candidate without calling the score a quality verdict.",
+      "reading_minutes": 4,
+      "demo": "score-a-creative-candidate-with-explicit-criteria",
+      "source_refs": [
+        "WCAG 2.2, Success Criterion 1.4.3 Contrast (Minimum)",
+        "https://www.w3.org/TR/WCAG22/"
+      ],
+      "master_sha256": "76fc569acc03e14926e0d78d6d80239ca1f4da04d1df1555f2e5bb76f6b3f73d",
+      "export_sha256": "4bf77ea0bbc53b8cb96441fa5df9bba297caf2b55780181bb72e7b93f0ebb2b2"
+    },
+    {
+      "id": "FC-008",
+      "slug": "vary-one-creative-parameter-at-a-time",
+      "source_filename": "0008-vary-one-creative-parameter-at-a-time.md",
+      "title": "Vary one creative parameter at a time",
+      "subject": "Creative practice",
+      "category": "creative",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Isolate a change so the comparison has a chance to teach you what changed.",
+      "description": "Compare two synthetic creative candidates and require exactly one declared parameter to differ.",
+      "reading_minutes": 4,
+      "demo": "vary-one-creative-parameter-at-a-time",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "4b0248fd064a3d24c606b816f92c82d755fb877a01a1c9be108c0a2a5de3a4d0",
+      "export_sha256": "fa106d3d64308b0b48140209ccde3cd5a9f8259d5160fea2d9cecf87e74a3e55"
+    },
+    {
+      "id": "FC-009",
+      "slug": "separate-fixed-brief-from-optional-variations",
+      "source_filename": "0009-separate-fixed-brief-from-optional-variations.md",
+      "title": "Separate the fixed brief from optional variation",
+      "subject": "Creative practice",
+      "category": "creative",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Give exploration room by naming what cannot move and what may move.",
+      "description": "Check that a synthetic creative candidate keeps fixed brief fields and uses only declared optional fields and values.",
+      "reading_minutes": 4,
+      "demo": "separate-fixed-brief-from-optional-variations",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "914309d2ea40965bed70328968462cac7a83b5077cfa3ca7ae89422e1fe35e3d",
+      "export_sha256": "627d8bf6c47eac178cb390c12d0d01aee5589b189df903601f35cdf6bac3fb49"
+    },
+    {
+      "id": "FC-010",
+      "slug": "choose-a-diverse-concept-set-by-declared-tags",
+      "source_filename": "0010-choose-a-diverse-concept-set-by-declared-tags.md",
+      "title": "Choose a diverse concept set with declared tags",
+      "subject": "Creative practice",
+      "category": "creative",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Diversity is not a mood word. Declare the tags and coverage floor you intend to preserve.",
+      "description": "Check a synthetic concept set for unique identities, required tags and a declared diversity floor.",
+      "reading_minutes": 4,
+      "demo": "choose-a-diverse-concept-set-by-declared-tags",
+      "source_refs": [
+        "NIST AI Risk Management Framework 1.0",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "master_sha256": "7914994b88615185e3fe8554e946755e6eb2261525c8893e053f2f782253d1d1",
+      "export_sha256": "90eb5d9d5e17bb3527c0a379ab795dae387a8bc49e50faf0ded9d7a6deb3ad3b"
+    },
+    {
+      "id": "FC-011",
+      "slug": "check-design-contrast-with-wcag-formula",
+      "source_filename": "0011-check-design-contrast-with-wcag-formula.md",
+      "title": "Check design contrast with the WCAG formula",
+      "subject": "Design with AI",
+      "category": "creative",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Put the contrast calculation beside the palette decision so a readable design is testable before it is polished.",
+      "description": "Calculate relative luminance and compare a synthetic color pair with a declared contrast threshold.",
+      "reading_minutes": 5,
+      "demo": "check-design-contrast-with-wcag-formula",
+      "source_refs": [
+        "WCAG 2.2, Success Criterion 1.4.3 Contrast (Minimum)",
+        "https://www.w3.org/TR/WCAG22/#contrast-minimum",
+        "W3C Technique G18, contrast ratio procedure",
+        "https://www.w3.org/WAI/WCAG22/Techniques/general/G18.html"
+      ],
+      "master_sha256": "8c6dc9fbc1c419fb574b7b70ac2f020064684e7e01a9681160d9d386bc173c4b",
+      "export_sha256": "1e4047f3f608ad380202159e33ae33e68abe851b45dfc3065084e83be5500b4a"
+    },
+    {
+      "id": "FC-012",
+      "slug": "detect-source-revision-drift",
+      "source_filename": "0012-detect-source-revision-drift.md",
+      "title": "Detect source revision drift with explicit identity",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Compare the source identity you expected with the identity you actually received.",
+      "description": "A small explicit check for source revision drift without treating a version label as cryptographic proof.",
+      "reading_minutes": 3,
+      "demo": "detect-source-revision-drift",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — JavaScript equality operators",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality"
+        }
+      ],
+      "master_sha256": "877450979c2e4ebdc200bd1898481d959ec95845bd29ba47a5824659bba95957",
+      "export_sha256": "e360252ab2da6cb50f6865c91d23d70c0c0d5310416fc76ba6df74ead7462ac0"
+    },
+    {
+      "id": "FC-013",
+      "slug": "bind-every-claim-to-evidence",
+      "source_filename": "0013-bind-every-claim-to-evidence.md",
+      "title": "Require every claim to name its evidence",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Make support visible one claim at a time before synthesis hides the gaps.",
+      "description": "A claim-to-evidence checker that rejects claims with no named supporting record.",
+      "reading_minutes": 3,
+      "demo": "bind-every-claim-to-evidence",
+      "source_refs": [
+        {
+          "title": "W3C PROV Overview",
+          "url": "https://www.w3.org/TR/prov-overview/"
+        }
+      ],
+      "master_sha256": "653874a04aecb33deed4a48ae509471a2d9687429a13e09ac0fb8b16bb6fe4dd",
+      "export_sha256": "ae39c21b06c8def6f427e09dce855cf5e92be763909dcafd5236d598b208bac3"
+    },
+    {
+      "id": "FC-014",
+      "slug": "separate-contradiction-from-absence",
+      "source_filename": "0014-separate-contradiction-from-absence.md",
+      "title": "Separate contradiction from missing evidence",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A gap in support and a conflict in support require different next moves.",
+      "description": "Classify unsupported records separately from records that assert incompatible values for the same claim.",
+      "reading_minutes": 3,
+      "demo": "separate-contradiction-from-absence",
+      "source_refs": [
+        {
+          "title": "W3C PROV Overview",
+          "url": "https://www.w3.org/TR/prov-overview/"
+        }
+      ],
+      "master_sha256": "8097e92ca379dd102f48404abc42824865ec47818fba505efa2aeb4a46069522",
+      "export_sha256": "7351db058daf35b5b0d66396e112e0c9cc42fe229ce285b1449c8dfcaf19655e"
+    },
+    {
+      "id": "FC-015",
+      "slug": "preserve-minority-conclusions",
+      "source_filename": "0015-preserve-minority-conclusions.md",
+      "title": "Preserve minority conclusions during synthesis",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A synthesis can report agreement without erasing a material dissent.",
+      "description": "A retention check that keeps every supplied conclusion, including minority positions, in a synthesis record.",
+      "reading_minutes": 3,
+      "demo": "preserve-minority-conclusions",
+      "source_refs": [
+        {
+          "title": "Cochrane Handbook — Chapter 21: Qualitative evidence",
+          "url": "https://training.cochrane.org/handbook/current/chapter-21"
+        }
+      ],
+      "master_sha256": "3fa859207375a035c7b81004c95a2966327f1e968c88acd77c4f3b7ac38a68f2",
+      "export_sha256": "5089f37e2d75cb1440255f0d2b1b15bc4a60c1fd241134ed390360109c034d75"
+    },
+    {
+      "id": "FC-016",
+      "slug": "detect-dependency-cycles",
+      "source_filename": "0016-detect-dependency-cycles.md",
+      "title": "Detect cycles in a dependency graph",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A plan that depends on itself cannot be ordered by waiting harder.",
+      "description": "Use depth-first traversal to identify a directed dependency cycle before scheduling work.",
+      "reading_minutes": 3,
+      "demo": "detect-dependency-cycles",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — Map",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
+        }
+      ],
+      "master_sha256": "a19aaa470521e1be8c4597fd224e2434c1f97bee36b0d481bfcdaab9792fdc89",
+      "export_sha256": "0f4fda92a89f961e324650fe56918285b61eb61a384a06c3e3172fb2dc5aa540"
+    },
+    {
+      "id": "FC-017",
+      "slug": "select-context-within-a-token-budget",
+      "source_filename": "0017-select-context-within-a-token-budget.md",
+      "title": "Select context by relevance under a token budget",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Make the selection rule visible when the context window cannot hold everything.",
+      "description": "A deterministic greedy selector that prioritizes relevance while keeping within a declared token budget.",
+      "reading_minutes": 3,
+      "demo": "select-context-within-a-token-budget",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — Array.prototype.sort()",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+        }
+      ],
+      "master_sha256": "0b134026ddeec8bf66485894e6be0f0401b375122e994c5e61d0a1f6ab8de287",
+      "export_sha256": "3c4c164542b9e43e4e7abd1654f3ce50252be1d08a4d454f3beeae9c4065f821"
+    },
+    {
+      "id": "FC-018",
+      "slug": "preserve-utf-16-source-offsets",
+      "source_filename": "0018-preserve-utf-16-source-offsets.md",
+      "title": "Preserve source offsets when extracting spans",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Record the index unit or a quotation can no longer be reliably re-located.",
+      "description": "Check extracted spans against JavaScript UTF-16 code-unit offsets, including surrogate-pair boundaries.",
+      "reading_minutes": 3,
+      "demo": "preserve-utf-16-source-offsets",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — String length",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length"
+        }
+      ],
+      "master_sha256": "ee0254dbb96b4a60fd26aad4f5c379727d234e27d5ab2c2b33ced02aff7ad171",
+      "export_sha256": "833e56f3f18d1f5acb6ac2174121019aafeb141b3240eefb088dfcbc39b9a5ce"
+    },
+    {
+      "id": "FC-019",
+      "slug": "explain-a-revision-with-set-differences",
+      "source_filename": "0019-explain-a-revision-with-set-differences.md",
+      "title": "Explain a revision with set differences",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Say what entered and left a revision before narrating why it changed.",
+      "description": "Use added and removed set members to give a compact, reproducible revision explanation.",
+      "reading_minutes": 3,
+      "demo": "explain-a-revision-with-set-differences",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — Set",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"
+        }
+      ],
+      "master_sha256": "c563d66b674140dc10754193dfb674a9cc30451b78a61138409b67f9df5e4d60",
+      "export_sha256": "97a90307fb977e43580de91c3e169fc1a30270b8cd0620dc1787e46af69d60af"
+    },
+    {
+      "id": "FC-020",
+      "slug": "separate-evidence-confidence-from-release-status",
+      "source_filename": "0020-separate-evidence-confidence-from-release-status.md",
+      "title": "Separate evidence confidence from release status",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "A well-supported claim can still be a draft, and a released item is not a confidence score.",
+      "description": "Keep evidence confidence and release lifecycle in independent fields rather than deriving one from the other.",
+      "reading_minutes": 3,
+      "demo": "separate-evidence-confidence-from-release-status",
+      "source_refs": [
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ],
+      "master_sha256": "f60c4ce6b640828215a9d9dc257e10680859f99102e4889009853e6852887a8b",
+      "export_sha256": "4d374ff887d3530e135f52c2da55f53cf5e08bb251cf97b89297af7d7b274964"
+    },
+    {
+      "id": "FC-021",
+      "slug": "reject-stale-retrieval-evidence",
+      "source_filename": "0021-reject-stale-retrieval-evidence.md",
+      "title": "Reject stale retrieval evidence at an explicit boundary",
+      "subject": "Knowledge & synthesis",
+      "category": "knowledge",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Freshness is a comparison between a recorded retrieval time and a declared limit.",
+      "description": "Reject evidence that exceeds a stated maximum age while accepting the exact boundary.",
+      "reading_minutes": 3,
+      "demo": "reject-stale-retrieval-evidence",
+      "source_refs": [
+        {
+          "title": "MDN Web Docs — Date.parse()",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse"
+        }
+      ],
+      "master_sha256": "448eb267e9080f726e2b6bf73b70443b63e9631dfc154676e28db008b867c9ed",
+      "export_sha256": "65361abed594266235536c40118f7118f0f9b0062fd165d7faf039fb735cda8c"
+    },
+    {
+      "id": "FC-022",
+      "slug": "fail-closed-unknown-guard",
+      "source_filename": "0022-fail-closed-unknown-guard.md",
+      "title": "Fail closed when a guard state is unknown",
+      "subject": "ESS & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Preserve the current state when the condition for moving cannot be evaluated.",
+      "description": "A tri-state guard checker that treats unknown as a hold with visible evidence.",
+      "reading_minutes": 5,
+      "demo": "fail-closed-unknown-guard",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part II: states and transitions",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part VIII: unknown transitions"
+      ],
+      "master_sha256": "92f789f5132e9ce675b89b66a78fc3b44c538c385d8506f792e05629701603cd",
+      "export_sha256": "e3d8ddbadadbe6d6a558575a9973f8e130a328eae60d045d23ff8fad2467c935"
+    },
+    {
+      "id": "FC-023",
+      "slug": "capability-permission-exact-scope",
+      "source_filename": "0023-capability-permission-exact-scope.md",
+      "title": "Keep capability separate from permission",
+      "subject": "ESS & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Require the requested action and scope to match an explicit permission exactly.",
+      "description": "A checker that prevents technical capability or adjacent scope from becoming authority.",
+      "reading_minutes": 5,
+      "demo": "capability-permission-exact-scope",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part II: authority algebra",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part IV: actor, capability, permission"
+      ],
+      "master_sha256": "53c5719f2f24d1989853a0a97b3fb982c90e8ff4a60bb0d4537b9e818284c9f8",
+      "export_sha256": "9ea48b292e23462f25e7f61165e0a99a63fcc540648a459796e5f44643ecaa31"
+    },
+    {
+      "id": "FC-024",
+      "slug": "return-a-projection-loss-report",
+      "source_filename": "0024-return-a-projection-loss-report.md",
+      "title": "Return a loss report with every projection",
+      "subject": "ESS & knowledge engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Make every dropped or normalized field visible to the next reader.",
+      "description": "A shallow scalar projection checker that compares actual and declared loss.",
+      "reading_minutes": 6,
+      "demo": "return-a-projection-loss-report",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part II: loss accounting",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part XI: crossings and loss reports"
+      ],
+      "master_sha256": "ea494e33ba113525e12fd81889754a770f8bb896801b5e98e6bb9c30205add07",
+      "export_sha256": "cefcdb847007361d69edbdd77fac2772b2b2930bb461a4263e071e0565c0c4a1"
+    },
+    {
+      "id": "FC-025",
+      "slug": "check-producer-consumer-compatibility",
+      "source_filename": "0025-check-producer-consumer-compatibility.md",
+      "title": "Check producer and consumer compatibility",
+      "subject": "ESS & software architecture",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Compare required field names and types before connecting two components.",
+      "description": "A bounded required-field compatibility check for a typed producer-consumer seam.",
+      "reading_minutes": 5,
+      "demo": "check-producer-consumer-compatibility",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part II: function and mapping conventions",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part III: typed seams"
+      ],
+      "master_sha256": "a1db8b686e31c849972e6501473bd8eb6e9258a17261313567c4da683b10f6b6",
+      "export_sha256": "dd84a2328d29badc49025ddb89d9e75f2fc3e5e450b9226254f7ce8759db2037"
+    },
+    {
+      "id": "FC-026",
+      "slug": "detect-idempotency-key-conflicts",
+      "source_filename": "0026-detect-idempotency-key-conflicts.md",
+      "title": "Detect idempotency-key conflicts",
+      "subject": "Exocore & reliable workflows",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Bind a key to a request digest before deciding whether to replay or reject.",
+      "description": "A deterministic idempotency check that distinguishes new requests, replay, conflict and duplicate history.",
+      "reading_minutes": 6,
+      "demo": "detect-idempotency-key-conflicts",
+      "source_refs": [
+        "Exocore work-item command metadata v1",
+        "Exocore operational architecture charter, workflow law",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part IX: idempotence"
+      ],
+      "master_sha256": "89b5f5f4f365a03629c35b3c38b91520df952b9a110f2e423cf7cb1e72134411",
+      "export_sha256": "ce71164b52791689ab9e8f942d5805424e3bacc2abd24c8854ed7a48949ea42e"
+    },
+    {
+      "id": "FC-027",
+      "slug": "hold-indeterminate-model-steps",
+      "source_filename": "0027-hold-indeterminate-model-steps.md",
+      "title": "Do not redispatch an indeterminate model step",
+      "subject": "Exocore & reliable workflows",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Preserve the saved claim when continuity is lost and require a new recovery decision.",
+      "description": "A pedagogical lifecycle checker that holds redispatch after a model step becomes indeterminate.",
+      "reading_minutes": 6,
+      "demo": "hold-indeterminate-model-steps",
+      "source_refs": [
+        "Hearth & Code durable model-step lifecycle repair",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part VIII: unknown transitions",
+        "Exocore operational architecture charter, workflow law"
+      ],
+      "master_sha256": "614d6f7ca64c35aba4ceff3647cfdfa28cabc1e757b33278d976ae8ca02362fa",
+      "export_sha256": "e18ec66c2dc4c3189c202ac610a37b6e371c3b5627a0e585ccfb68513493d4d3"
+    },
+    {
+      "id": "FC-028",
+      "slug": "cap-deterministic-retry-backoff",
+      "source_filename": "0028-cap-deterministic-retry-backoff.md",
+      "title": "Cap deterministic retry backoff",
+      "subject": "Reliable software systems",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Bound both the number of attempts and the exponential delay.",
+      "description": "A deterministic retry calculator with an explicit attempt budget and delay cap.",
+      "reading_minutes": 5,
+      "demo": "cap-deterministic-retry-backoff",
+      "source_refs": [
+        "Exocore operational architecture charter, workflow law",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part XII: execution interface"
+      ],
+      "master_sha256": "d2fcac3a902b19bac3034538163d06d2afe8d454e1180697a8fee1e7b8cedc30",
+      "export_sha256": "a4711f20b2caf436753447ad6e3cd662a3cb20a0a0f696272a5108e4776a504d"
+    },
+    {
+      "id": "FC-029",
+      "slug": "encode-review-state-with-rust-typestate",
+      "source_filename": "0029-encode-review-state-with-rust-typestate.md",
+      "title": "Encode review state with Rust typestate",
+      "subject": "Rust & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Make release-candidate operations unavailable on draft values.",
+      "description": "A browser model and compile-tested Rust typestate example for draft and reviewed articles.",
+      "reading_minutes": 8,
+      "demo": "encode-review-state-with-rust-typestate",
+      "source_refs": [
+        "https://doc.rust-lang.org/stable/embedded-book/static-guarantees/zero-cost-abstractions.html",
+        "https://doc.rust-lang.org/stable/reference/special-types-and-traits.html",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part VIII: artifact machine"
+      ],
+      "master_sha256": "6e086ed7370c1fe604feb541634f001acad10c7e484459f1fd6256c818cb81d4",
+      "export_sha256": "4368e41d55c35493a329e9e235b538a38ccf218e5684599c84111d879e55f74c"
+    },
+    {
+      "id": "FC-030",
+      "slug": "make-parse-failure-explicit-with-rust-result",
+      "source_filename": "0030-make-parse-failure-explicit-with-rust-result.md",
+      "title": "Make parse failure explicit with Rust Result",
+      "subject": "Rust & reliable interfaces",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Return either a bounded integer or a typed reason the input was rejected.",
+      "description": "A browser-aligned parser and compile-tested Rust Result example with explicit failure variants.",
+      "reading_minutes": 8,
+      "demo": "make-parse-failure-explicit-with-rust-result",
+      "source_refs": [
+        "https://doc.rust-lang.org/core/result/",
+        "https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html"
+      ],
+      "master_sha256": "49a0de06478d3fa7366f236f41bc32093471155304fd85b7982798d284947f46",
+      "export_sha256": "ba83f7633af218603c4b2878f7dfab3878a2f622a8b4c0852246c39c110d5409"
+    },
+    {
+      "id": "FC-031",
+      "slug": "transfer-rust-ownership-at-task-boundaries",
+      "source_filename": "0031-transfer-rust-ownership-at-task-boundaries.md",
+      "title": "Transfer Rust ownership at a task boundary",
+      "subject": "Rust & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Consume a task packet so the sender cannot keep using the same value.",
+      "description": "A browser transfer model and compile-fail Rust ownership example for a single task packet.",
+      "reading_minutes": 8,
+      "demo": "transfer-rust-ownership-at-task-boundaries",
+      "source_refs": [
+        "https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html",
+        "https://doc.rust-lang.org/stable/error_codes/E0382.html",
+        "Exocore operational architecture charter, module and workflow boundaries"
+      ],
+      "master_sha256": "fa7f1831b34f6988b2328ed5e8d291238d22e6e16279497342593a1f1290de93",
+      "export_sha256": "542093ab1ca2cbc68f404a273da6b31fc8c50af30acea4ce76261045d380e690"
+    },
+    {
+      "id": "FC-032",
+      "slug": "separate-pure-plans-from-released-effects",
+      "source_filename": "0032-separate-pure-plans-from-released-effects.md",
+      "title": "Separate pure plans from released effects",
+      "subject": "ESS & agentic engineering",
+      "category": "engineering",
+      "date": "2026-09-09",
+      "status": "seed-preview",
+      "verified": false,
+      "deck": "Let planning describe work while effect admission checks exact releases separately.",
+      "description": "A two-mode checker that keeps pure planning distinct from authorized execution.",
+      "reading_minutes": 6,
+      "demo": "separate-pure-plans-from-released-effects",
+      "source_refs": [
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part VII: effect gating",
+        "Hearth & Code ESS public-spec manuscript candidate 2, Part XII: effect admission",
+        "Exocore operational architecture charter, layering"
+      ],
+      "master_sha256": "9a4d154fa1a905d395e399fc8032a3c4449fd5e1c1a9dafe7795ed08f943ef1d",
+      "export_sha256": "c81f725bef3878c78624be13079ec0bf675eefc72744377af5bbf14b0ff503f2"
+    }
+  ]
+}
