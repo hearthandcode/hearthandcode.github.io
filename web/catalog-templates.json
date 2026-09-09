@@ -1,0 +1,2678 @@
+{
+ "domains": [
+  {
+   "id": "math",
+   "label": "Mathematical topics",
+   "samples": {
+    "task": "prove that the union of two countable sets is countable",
+    "claim": "every bounded monotonic sequence converges",
+    "question": "does this proof handle the empty-set edge case?",
+    "input": "the statement and standard proof of the Bolzano-Weierstrass theorem",
+    "topic": "real analysis: convergence",
+    "concept": "epsilon-delta limits",
+    "text": "Theorem (Bolzano-Weierstrass): every bounded sequence in R has a convergent subsequence.",
+    "field": "convergence criterion",
+    "data": "sequence terms a_n = 1/n for n = 1..1000",
+    "evidence": "the epsilon-N definition of sequence convergence",
+    "criteria": "logical completeness; boundary cases; notation consistency",
+    "schema": "theorem, assumptions, proof_steps[], edge_cases[]",
+    "role": "a careful referee checking a journal submission",
+    "constraint": "stay within standard real analysis; no measure theory",
+    "alternatives": "proof by contradiction vs. constructive diagonal argument",
+    "steps": "state lemma, construct subsequence, verify boundedness, conclude",
+    "system": "the real numbers under the usual topology",
+    "components": "premises, inference rules, conclusion",
+    "result": "the convergent subsequence limit",
+    "goal": "a publishable proof with all lemmas stated",
+    "budget": "400 words; at most 3 lemmas",
+    "source": "Rudin, Principles of Mathematical Analysis, Ch. 3",
+    "tools": "a symbolic checker for algebraic rearrangements",
+    "name": "the Bolzano-Weierstrass argument",
+    "it": "the convergence proof",
+    "operation": "subsequence extraction"
+   }
+  },
+  {
+   "id": "ke",
+   "label": "Knowledge engineering",
+   "samples": {
+    "task": "convert a 40-page design charter into a typed artifact registry",
+    "claim": "section 4.2 defines the canonical owner of the registry",
+    "question": "which of these two conflicting clauses was amended later?",
+    "input": "the governance charter YAML plus its three amendment records",
+    "topic": "artifact classification and lifecycle",
+    "concept": "canonical ownership",
+    "text": "Section 4.2: the registry file is the allocation authority; the project home creates no second canonical owner.",
+    "field": "owner",
+    "data": "12 frontmatter records with id, status, verified, owner fields",
+    "evidence": "frontmatter of the charter at revision 4",
+    "criteria": "every claim carries a source id; no claim without a locator",
+    "schema": "record{id, title, status, verified, owner, source}",
+    "role": "a governance auditor with read-only access",
+    "constraint": "do not amend any canonical source; propose only",
+    "alternatives": "single canonical file vs. per-wing registries",
+    "steps": "extract clauses, type them, check conflicts, emit registry",
+    "system": "the 16-wing governance hierarchy",
+    "components": "charter clauses, amendments, review receipts",
+    "result": "a typed registry with one canonical owner per artifact",
+    "goal": "a conflict-free registry with an amendment trail",
+    "budget": "one pass; flag conflicts rather than resolve them",
+    "source": "governance charter, revision 4",
+    "tools": "a YAML schema validator",
+    "name": "the artifact registry",
+    "it": "the charter",
+    "operation": "clause extraction"
+   }
+  },
+  {
+   "id": "ks",
+   "label": "Knowledge synthesis",
+   "samples": {
+    "task": "synthesize 12 studies on spaced repetition into a claim map",
+    "claim": "spaced repetition improves long-term retention",
+    "question": "do any of the 12 studies contradict the retention claim?",
+    "input": "12 abstracts with sample sizes and outcome measures",
+    "topic": "learning science: retention",
+    "concept": "the spacing effect",
+    "text": "Study 7 (n=84) found no significant difference at 30 days for verbal materials.",
+    "field": "retention effect",
+    "data": "12 rows: study, n, material type, interval, outcome",
+    "evidence": "studies 1-6 support; study 7 is silent; studies 8-12 support",
+    "criteria": "preserve minority conclusions; separate absence from contradiction",
+    "schema": "claim_map{claim, supporting[], contradicting[], silent[]}",
+    "role": "a systematic-review analyst",
+    "constraint": "do not collapse contradicting studies into footnotes",
+    "alternatives": "claim map vs. narrative synthesis",
+    "steps": "extract outcomes, classify support, mark dissent, emit map",
+    "system": "the spacing-effect literature 2010-2026",
+    "components": "studies, outcome measures, populations",
+    "result": "a claim map with visible dissent",
+    "goal": "a reviewer-inspectable synthesis with no hidden disagreement",
+    "budget": "one page of map plus one page of dissent notes",
+    "source": "12 study abstracts, retrieved 2026-09",
+    "tools": "an extraction table; no live retrieval",
+    "name": "the claim map",
+    "it": "the synthesis",
+    "operation": "outcome classification"
+   }
+  },
+  {
+   "id": "rust",
+   "label": "Rust development",
+   "samples": {
+    "task": "design a typestate for a draft-review-published document lifecycle",
+    "claim": "publish() is uncallable on a Draft value",
+    "question": "which transition consumes the old state and why?",
+    "input": "the lifecycle spec: Draft -> Reviewed -> Published -> Archived",
+    "topic": "the typestate pattern",
+    "concept": "type-level state encoding",
+    "text": "fn publish(self) -> Published requires self: Reviewed",
+    "field": "transition",
+    "data": "three states, four transitions, two guard conditions",
+    "evidence": "compiler error E0599 on the failing fixture",
+    "criteria": "invalid transitions must not compile; valid ones must",
+    "schema": "struct Draft; struct Reviewed; impl Reviewed { fn publish }",
+    "role": "a reviewer checking API misuse resistance",
+    "constraint": "no runtime checks where the type system suffices",
+    "alternatives": "enum-with-match vs. distinct types",
+    "steps": "declare states, attach methods to the owning type, test fixtures",
+    "system": "the borrow checker and move semantics",
+    "components": "state structs, transition methods, marker traits",
+    "result": "a lifecycle where illegal states are unrepresentable",
+    "goal": "compile-time enforcement of the lifecycle",
+    "budget": "one module, no external crates",
+    "source": "the lifecycle specification v2",
+    "tools": "cargo build; cargo test; doctest",
+    "name": "the document lifecycle",
+    "it": "the typestate",
+    "operation": "state transition"
+   }
+  },
+  {
+   "id": "ts",
+   "label": "TypeScript development",
+   "samples": {
+    "task": "validate an API payload against a discriminated union before use",
+    "claim": "the handler rejects payloads missing the kind discriminator",
+    "question": "what happens when kind is present but variant fields are missing?",
+    "input": "the OpenAPI schema for the /events endpoint",
+    "topic": "runtime validation with type guards",
+    "concept": "discriminated unions",
+    "text": "type Event = {kind:'created', id: string} | {kind:'deleted', id: string}",
+    "field": "variant",
+    "data": "20 sample payloads, 3 of them malformed",
+    "evidence": "the failing fixture throws ValidationError with a path",
+    "criteria": "unknown kinds rejected; missing fields rejected with paths",
+    "schema": "function isEvent(x: unknown): x is Event",
+    "role": "a reviewer checking fail-closed behavior",
+    "constraint": "no any-typed escapes; errors carry JSON paths",
+    "alternatives": "zod schema vs. hand-written guards",
+    "steps": "define guard, test fixtures, wire into handler",
+    "system": "the request pipeline from fetch to handler",
+    "components": "type guard, error type, handler wrapper",
+    "result": "handlers that only see validated events",
+    "goal": "malformed payloads rejected at the boundary with diagnostics",
+    "budget": "one module plus one test file",
+    "source": "OpenAPI schema, revision 3",
+    "tools": "vitest; tsc --noEmit",
+    "name": "the event guard",
+    "it": "the payload validation",
+    "operation": "payload validation"
+   }
+  },
+  {
+   "id": "engine",
+   "label": "Game engine development",
+   "samples": {
+    "task": "design an ECS scheduling plan for a frame with 40 systems",
+    "claim": "physics runs before collision each frame",
+    "question": "which systems can safely run in parallel with rendering?",
+    "input": "the system list with declared resource access",
+    "topic": "ECS scheduling and dependency graphs",
+    "concept": "resource-conflict-free parallelism",
+    "text": "Physics: reads Transform, writes Velocity. Collision: reads Velocity, writes Contacts.",
+    "field": "resource access",
+    "data": "40 systems with read/write sets per component",
+    "evidence": "the schedule validator rejects cycles with a path",
+    "criteria": "no read-write cycle; frame budget under 16ms",
+    "schema": "schedule{stages[], per_stage: system[]}",
+    "role": "an engine reviewer checking frame-time safety",
+    "constraint": "deterministic order within a stage; no implicit priority",
+    "alternatives": "stage-batched vs. dependency-graph scheduling",
+    "steps": "extract access sets, build graph, topologically stage, emit",
+    "system": "the frame loop and its stage boundaries",
+    "components": "systems, component access sets, stage graph",
+    "result": "a staged schedule with parallel-safe stages",
+    "goal": "a schedule that validates at startup and fails closed",
+    "budget": "fit within the 16ms frame budget",
+    "source": "system declarations in engine.toml",
+    "tools": "schedule validator; frame-time profiler",
+    "name": "the frame schedule",
+    "it": "the schedule",
+    "operation": "system staging"
+   }
+  },
+  {
+   "id": "gamedesign",
+   "label": "Game design",
+   "samples": {
+    "task": "balance the economy of a crafting loop with 12 materials",
+    "claim": "the rarest material gates only cosmetic upgrades",
+    "question": "what happens to the economy if drop rates double?",
+    "input": "the economy table: 12 materials, drop rates, sink prices",
+    "topic": "economy balancing",
+    "concept": "faucet-drain balance",
+    "text": "Voidsteel: 0.5% drop rate, sink cost 400 shards, no stat bonus.",
+    "field": "sink price",
+    "data": "12 rows: material, drop_rate, source, sinks, stat_bonus",
+    "evidence": "simulation of 1000 player-hours shows shard inflation at 2x drops",
+    "criteria": "no dominant strategy; sinks absorb at least 80% of faucets",
+    "schema": "balance_report{material, faucet_rate, drain_rate, verdict}",
+    "role": "a systems designer checking long-run health",
+    "constraint": "changes must not alter mid-game progression feel",
+    "alternatives": "hard-gate cosmetics vs. soft prestige multiplier",
+    "steps": "model faucets, model sinks, simulate, flag inflation",
+    "system": "the crafting and drop economy",
+    "components": "materials, drop tables, sink prices, player time",
+    "result": "a balance report with flagged inflation risks",
+    "goal": "a table a designer can ship without a live patch",
+    "budget": "one table plus a one-page rationale",
+    "source": "economy design doc v1.3",
+    "tools": "a monte-carlo simulation script",
+    "name": "the crafting economy",
+    "it": "the economy",
+    "operation": "balance modeling"
+   }
+  },
+  {
+   "id": "creative",
+   "label": "Creative work",
+   "samples": {
+    "task": "generate four distinct cover directions for a typography-heavy zine",
+    "claim": "direction B best satisfies the high-contrast constraint",
+    "question": "does direction D fail the contrast criterion or a different one?",
+    "input": "the brief: 4 directions, fixed palette, one varying parameter",
+    "topic": "visual direction exploration",
+    "concept": "one-variable-at-a-time variation",
+    "text": "Brief: charcoal/parchment palette; vary only grid density across the four options.",
+    "field": "varied parameter",
+    "data": "4 direction cards with parameter values and rationale",
+    "evidence": "WCAG contrast ratios computed for each direction",
+    "criteria": "each direction varies exactly one parameter; ratios >= 4.5:1",
+    "schema": "direction{id, varied_parameter, value, contrast_ratio, verdict}",
+    "role": "an art director running a structured review",
+    "constraint": "palette is fixed; grid density is the only variable",
+    "alternatives": "vary typography scale vs. vary grid density",
+    "steps": "fix brief, vary one parameter, score each, compare",
+    "system": "the Ember Circuit visual system",
+    "components": "brief, parameter, scoring rubric, direction cards",
+    "result": "a scored comparison with a stated winner and why",
+    "goal": "a defensible direction choice with visible criteria",
+    "budget": "four cards; one scoring table",
+    "source": "the design brief, revision 2",
+    "tools": "a contrast checker; no image generation",
+    "name": "the cover directions",
+    "it": "the brief",
+    "operation": "parameter variation"
+   }
+  }
+ ],
+ "techniques": [
+  {
+   "slug": "01-dynamic-context-assembly",
+   "title": "Dynamic Context Assembly",
+   "type": "core",
+   "number": 1,
+   "template": "Apply Dynamic Context Assembly to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Instruction Hierarchy and Precedence domain, apply Dynamic Context Assembly and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "06-contrastive-fork-instruction-hierarchy-and-precedence",
+   "title": "Contrastive-Fork Instruction Hierarchy and Precedence",
+   "type": "contrastive",
+   "number": 2,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Instruction Hierarchy and Precedence domain, apply Contrastive-Fork Instruction Hierarchy and Precedence and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "09-emotion-prompting",
+   "title": "Emotion Prompting",
+   "type": "core",
+   "number": 3,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Task Framing and Intent Normalization domain, apply Emotion Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "16-staged-composition-task-framing-and-intent-normalization",
+   "title": "Staged-Composition Task Framing and Intent Normalization",
+   "type": "staged",
+   "number": 4,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Task Framing and Intent Normalization domain, apply Staged-Composition Task Framing and Intent Normalization and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "17-outcome-first-contract",
+   "title": "Outcome-First Contract",
+   "type": "core",
+   "number": 5,
+   "template": "Apply Outcome-First Contract to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Achieved-State and Outcome Specification domain, apply Outcome-First Contract and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "24-receipt-bound-achieved-state-and-outcome-specification",
+   "title": "Receipt-Bound Achieved-State and Outcome Specification",
+   "type": "receipt",
+   "number": 6,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Achieved-State and Outcome Specification domain, apply Receipt-Bound Achieved-State and Outcome Specification and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "25-bounded-receipt-with-non-effects",
+   "title": "Bounded Receipt with Non-Effects",
+   "type": "core",
+   "number": 7,
+   "template": "Apply Bounded Receipt with Non-Effects to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Constraint and Non-Action Contracts domain, apply Bounded Receipt with Non-Effects and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "30-contrastive-fork-constraint-and-non-action-contracts",
+   "title": "Contrastive-Fork Constraint and Non-Action Contracts",
+   "type": "contrastive",
+   "number": 8,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Constraint and Non-Action Contracts domain, apply Contrastive-Fork Constraint and Non-Action Contracts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "33-provenance-carrying-chunk",
+   "title": "Provenance-Carrying Chunk",
+   "type": "core",
+   "number": 9,
+   "template": "Apply Provenance-Carrying Chunk to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Source Grounding and Authority domain, apply Provenance-Carrying Chunk and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "40-contrastive-fork-source-grounding-and-authority",
+   "title": "Contrastive-Fork Source Grounding and Authority",
+   "type": "contrastive",
+   "number": 10,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Source Grounding and Authority domain, apply Contrastive-Fork Source Grounding and Authority and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "41-evidence-per-claim",
+   "title": "Evidence-per-Claim",
+   "type": "core",
+   "number": 11,
+   "template": "Apply Evidence-per-Claim to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Claim-Evidence Binding domain, apply Evidence-per-Claim and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "48-staged-composition-claim-evidence-binding",
+   "title": "Staged-Composition Claim-Evidence Binding",
+   "type": "staged",
+   "number": 12,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Claim-Evidence Binding domain, apply Staged-Composition Claim-Evidence Binding and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "49-ambiguity-ledger",
+   "title": "Ambiguity Ledger",
+   "type": "core",
+   "number": 13,
+   "template": "Apply Ambiguity Ledger to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Uncertainty Calibration and Missing Evidence domain, apply Ambiguity Ledger and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "56-staged-composition-uncertainty-calibration-and-missing-evidence",
+   "title": "Staged-Composition Uncertainty Calibration and Missing Evidence",
+   "type": "staged",
+   "number": 14,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Uncertainty Calibration and Missing Evidence domain, apply Staged-Composition Uncertainty Calibration and Missing Evidence and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "57-counterexample-set",
+   "title": "Counterexample Set",
+   "type": "core",
+   "number": 15,
+   "template": "Apply Counterexample Set to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Counterevidence and Falsification domain, apply Counterexample Set and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "64-receipt-bound-counterevidence-and-falsification",
+   "title": "Receipt-Bound Counterevidence and Falsification",
+   "type": "receipt",
+   "number": 16,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Counterevidence and Falsification domain, apply Receipt-Bound Counterevidence and Falsification and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "65-progressive-disclosure",
+   "title": "Progressive Disclosure",
+   "type": "core",
+   "number": 17,
+   "template": "Apply Progressive Disclosure to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Context Selection and Progressive Disclosure domain, apply Progressive Disclosure and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "71-contrastive-fork-context-selection-and-progressive-disclosure",
+   "title": "Contrastive-Fork Context Selection and Progressive Disclosure",
+   "type": "contrastive",
+   "number": 18,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Context Selection and Progressive Disclosure domain, apply Contrastive-Fork Context Selection and Progressive Disclosure and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "73-kv-cache-selective-retention",
+   "title": "KV-Cache Selective Retention",
+   "type": "core",
+   "number": 19,
+   "template": "Apply KV-Cache Selective Retention to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Context Compression and Summarization domain, apply KV-Cache Selective Retention and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "80-staged-composition-context-compression-and-summarization",
+   "title": "Staged-Composition Context Compression and Summarization",
+   "type": "staged",
+   "number": 20,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Context Compression and Summarization domain, apply Staged-Composition Context Compression and Summarization and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "81-episodic-experience-memory",
+   "title": "Episodic Experience Memory",
+   "type": "core",
+   "number": 21,
+   "template": "Apply Episodic Experience Memory to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Memory and Retrieval Design domain, apply Episodic Experience Memory and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "88-boundary-bound-memory-and-retrieval-design",
+   "title": "Boundary-Bound Memory and Retrieval Design",
+   "type": "boundary",
+   "number": 22,
+   "template": "Apply this technique to {task} strictly within the declared boundary: {constraint}. Report anything that would exceed the boundary as a held item with evidence: {evidence}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Memory and Retrieval Design domain, apply Boundary-Bound Memory and Retrieval Design and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "89-staleness-gate",
+   "title": "Staleness Gate",
+   "type": "core",
+   "number": 23,
+   "template": "Apply Staleness Gate to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Provenance, Currentness, and Staleness domain, apply Staleness Gate and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "96-staged-composition-provenance-currentness-and-staleness",
+   "title": "Staged-Composition Provenance, Currentness, and Staleness",
+   "type": "staged",
+   "number": 24,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Provenance, Currentness, and Staleness domain, apply Staged-Composition Provenance, Currentness, and Staleness and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "100-schema-guided-structured-input-contracts",
+   "title": "Schema-Guided Structured Input Contracts",
+   "type": "schema",
+   "number": 25,
+   "template": "Fill the declared fields for {data} against this schema: {schema}. Preserve explicit nulls, reject unknown values, and report every invariant ({criteria}) that could not be checked.",
+   "fields": [
+    {
+     "key": "data",
+     "label": "Data"
+    },
+    {
+     "key": "schema",
+     "label": "Schema"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Structured Input Contracts domain, apply Schema-Guided Structured Input Contracts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "104-staged-composition-structured-input-contracts",
+   "title": "Staged-Composition Structured Input Contracts",
+   "type": "staged",
+   "number": 26,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Structured Input Contracts domain, apply Staged-Composition Structured Input Contracts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "105-position-aware-context-packing",
+   "title": "Position-Aware Context Packing",
+   "type": "position",
+   "number": 27,
+   "template": "Apply Position-Aware Context Packing to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Output Schemas and Typed Responses domain, apply Position-Aware Context Packing and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "112-staged-composition-output-schemas-and-typed-responses",
+   "title": "Staged-Composition Output Schemas and Typed Responses",
+   "type": "staged",
+   "number": 28,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Output Schemas and Typed Responses domain, apply Staged-Composition Output Schemas and Typed Responses and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "113-structured-function-invocation",
+   "title": "Structured Function Invocation",
+   "type": "core",
+   "number": 29,
+   "template": "Apply Structured Function Invocation to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Validation, Rejection, and Repair domain, apply Structured Function Invocation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "120-receipt-bound-validation-rejection-and-repair",
+   "title": "Receipt-Bound Validation, Rejection, and Repair",
+   "type": "receipt",
+   "number": 30,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Validation, Rejection, and Repair domain, apply Receipt-Bound Validation, Rejection, and Repair and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "121-positional-context-extension",
+   "title": "Positional Context Extension",
+   "type": "core",
+   "number": 31,
+   "template": "Apply Positional Context Extension to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Transformation and Projection Contracts domain, apply Positional Context Extension and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "128-staged-composition-transformation-and-projection-contracts",
+   "title": "Staged-Composition Transformation and Projection Contracts",
+   "type": "staged",
+   "number": 32,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Transformation and Projection Contracts domain, apply Staged-Composition Transformation and Projection Contracts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "129-goal-prompt-lifecycle-state-machine",
+   "title": "Goal-Prompt Lifecycle State Machine",
+   "type": "core",
+   "number": 33,
+   "template": "Apply Goal-Prompt Lifecycle State Machine to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Agent Loops and State Machines domain, apply Goal-Prompt Lifecycle State Machine and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "136-contrastive-fork-agent-loops-and-state-machines",
+   "title": "Contrastive-Fork Agent Loops and State Machines",
+   "type": "contrastive",
+   "number": 34,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Agent Loops and State Machines domain, apply Contrastive-Fork Agent Loops and State Machines and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "137-capability-bounded-delegation",
+   "title": "Capability-Bounded Delegation",
+   "type": "core",
+   "number": 35,
+   "template": "Apply Capability-Bounded Delegation to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Tool and Capability Boundaries domain, apply Capability-Bounded Delegation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "144-staged-composition-tool-and-capability-boundaries",
+   "title": "Staged-Composition Tool and Capability Boundaries",
+   "type": "staged",
+   "number": 36,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Tool and Capability Boundaries domain, apply Staged-Composition Tool and Capability Boundaries and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "145-chain-of-thought-prompting-agentic-pattern",
+   "title": "Chain-of-Thought Prompting (Agentic Pattern)",
+   "type": "core",
+   "number": 37,
+   "template": "Apply Chain-of-Thought Prompting to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Budgets, Stops, and Attempt Accounting domain, apply Chain-of-Thought Prompting (Agentic Pattern) and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "151-contrastive-fork-budgets-stops-and-attempt-accounting",
+   "title": "Contrastive-Fork Budgets, Stops, and Attempt Accounting",
+   "type": "contrastive",
+   "number": 38,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Budgets, Stops, and Attempt Accounting domain, apply Contrastive-Fork Budgets, Stops, and Attempt Accounting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "153-context-snapshot-and-restoration",
+   "title": "Context Snapshot and Restoration",
+   "type": "core",
+   "number": 39,
+   "template": "Apply Context Snapshot and Restoration to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Recovery, Idempotency, and Continuity domain, apply Context Snapshot and Restoration and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "160-staged-composition-recovery-idempotency-and-continuity",
+   "title": "Staged-Composition Recovery, Idempotency, and Continuity",
+   "type": "staged",
+   "number": 40,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Recovery, Idempotency, and Continuity domain, apply Staged-Composition Recovery, Idempotency, and Continuity and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "161-wave-decomposition-12-wave-15-wave-8-pass-naming",
+   "title": "Wave Decomposition (12-wave / 15-wave / 8-pass naming)",
+   "type": "core",
+   "number": 41,
+   "template": "Apply Wave Decomposition (12-wave / 15-wave / 8-pass naming) to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Task Decomposition and Wave Design domain, apply Wave Decomposition (12-wave / 15-wave / 8-pass naming) and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "168-receipt-bound-task-decomposition-and-wave-design",
+   "title": "Receipt-Bound Task Decomposition and Wave Design",
+   "type": "receipt",
+   "number": 42,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Task Decomposition and Wave Design domain, apply Receipt-Bound Task Decomposition and Wave Design and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "169-disjoint-path-parallel-writers",
+   "title": "Disjoint-Path Parallel Writers",
+   "type": "core",
+   "number": 43,
+   "template": "Apply Disjoint-Path Parallel Writers to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Dependency Graphs and Scheduling domain, apply Disjoint-Path Parallel Writers and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "176-staged-composition-dependency-graphs-and-scheduling",
+   "title": "Staged-Composition Dependency Graphs and Scheduling",
+   "type": "staged",
+   "number": 44,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Dependency Graphs and Scheduling domain, apply Staged-Composition Dependency Graphs and Scheduling and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "177-checkpointed-autonomy",
+   "title": "Checkpointed Autonomy",
+   "type": "core",
+   "number": 45,
+   "template": "Apply Checkpointed Autonomy to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Typed Handoffs and Returnability domain, apply Checkpointed Autonomy and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "184-receipt-bound-typed-handoffs-and-returnability",
+   "title": "Receipt-Bound Typed Handoffs and Returnability",
+   "type": "receipt",
+   "number": 46,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Typed Handoffs and Returnability domain, apply Receipt-Bound Typed Handoffs and Returnability and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "185-multi-tool-coordination",
+   "title": "Multi-Tool Coordination",
+   "type": "core",
+   "number": 47,
+   "template": "Apply Multi-Tool Coordination to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Multi-Agent Coordination and Arbitration domain, apply Multi-Tool Coordination and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "190-contrastive-fork-multi-agent-coordination-and-arbitration",
+   "title": "Contrastive-Fork Multi-Agent Coordination and Arbitration",
+   "type": "contrastive",
+   "number": 48,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Multi-Agent Coordination and Arbitration domain, apply Contrastive-Fork Multi-Agent Coordination and Arbitration and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "193-evaluator-optimizer-loop",
+   "title": "Evaluator-Optimizer Loop",
+   "type": "core",
+   "number": 49,
+   "template": "Apply Evaluator-Optimizer Loop to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Rubrics and Multi-Dimensional Assessment domain, apply Evaluator-Optimizer Loop and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "200-staged-composition-rubrics-and-multi-dimensional-assessment",
+   "title": "Staged-Composition Rubrics and Multi-Dimensional Assessment",
+   "type": "staged",
+   "number": 50,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Rubrics and Multi-Dimensional Assessment domain, apply Staged-Composition Rubrics and Multi-Dimensional Assessment and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "201-acceptance-test-prompt",
+   "title": "Acceptance-Test Prompt",
+   "type": "core",
+   "number": 51,
+   "template": "Apply Acceptance-Test Prompt to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Fixtures, Baselines, and Reproducibility domain, apply Acceptance-Test Prompt and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "208-receipt-bound-fixtures-baselines-and-reproducibility",
+   "title": "Receipt-Bound Fixtures, Baselines, and Reproducibility",
+   "type": "receipt",
+   "number": 52,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Fixtures, Baselines, and Reproducibility domain, apply Receipt-Bound Fixtures, Baselines, and Reproducibility and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "209-metamorphic-prompt-test",
+   "title": "Metamorphic Prompt Test",
+   "type": "core",
+   "number": 53,
+   "template": "Apply Metamorphic Prompt Test to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adversarial and Metamorphic Evaluation domain, apply Metamorphic Prompt Test and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "214-contrastive-fork-adversarial-and-metamorphic-evaluation",
+   "title": "Contrastive-Fork Adversarial and Metamorphic Evaluation",
+   "type": "contrastive",
+   "number": 54,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adversarial and Metamorphic Evaluation domain, apply Contrastive-Fork Adversarial and Metamorphic Evaluation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "217-cost-latency-quality-frontier",
+   "title": "Cost-Latency-Quality Frontier",
+   "type": "core",
+   "number": 55,
+   "template": "Apply Cost-Latency-Quality Frontier to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Observability, Cost, and Latency domain, apply Cost-Latency-Quality Frontier and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "224-staged-composition-observability-cost-and-latency",
+   "title": "Staged-Composition Observability, Cost, and Latency",
+   "type": "staged",
+   "number": 56,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Observability, Cost, and Latency domain, apply Staged-Composition Observability, Cost, and Latency and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "225-self-refine-prompting",
+   "title": "Self-Refine Prompting",
+   "type": "core",
+   "number": 57,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Reflection and Self-Critique Prompts domain, apply Self-Refine Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "232-receipt-bound-reflection-and-self-critique-prompts",
+   "title": "Receipt-Bound Reflection and Self-Critique Prompts",
+   "type": "receipt",
+   "number": 58,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Reflection and Self-Critique Prompts domain, apply Receipt-Bound Reflection and Self-Critique Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "233-human-decision-gate",
+   "title": "Human Decision Gate",
+   "type": "core",
+   "number": 59,
+   "template": "Apply Human Decision Gate to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Preference Elicitation and Personalization domain, apply Human Decision Gate and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "240-receipt-bound-preference-elicitation-and-personalization",
+   "title": "Receipt-Bound Preference Elicitation and Personalization",
+   "type": "receipt",
+   "number": 60,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Preference Elicitation and Personalization domain, apply Receipt-Bound Preference Elicitation and Personalization and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "241-achieved-state-first-questioning",
+   "title": "Achieved-State-First Questioning",
+   "type": "core",
+   "number": 61,
+   "template": "State the observable end state first. Then ask: Which bounded option should produce that state without implying {{non_effect}}?",
+   "fields": [
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Human Gates and Review Question Design domain, apply Achieved-State-First Questioning and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "244-multi-lens-option-framing",
+   "title": "Multi-Lens Option Framing",
+   "type": "core",
+   "number": 62,
+   "template": "For {{question}}, instantiate D I C P M N U X G V E H R Y F and S. Give each a proposal, benefit, tradeoff, prerequisite, anti-trigger, check, and unlock.",
+   "fields": [
+    {
+     "key": "question",
+     "label": "Question"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Human Gates and Review Question Design domain, apply Multi-Lens Option Framing and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "249-sparse-or-linear-attention",
+   "title": "Sparse or Linear Attention",
+   "type": "core",
+   "number": 63,
+   "template": "Apply Sparse or Linear Attention to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Immutable Return Intake and Disposition domain, apply Sparse or Linear Attention and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "255-contrastive-fork-immutable-return-intake-and-disposition",
+   "title": "Contrastive-Fork Immutable Return Intake and Disposition",
+   "type": "contrastive",
+   "number": 64,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Immutable Return Intake and Disposition domain, apply Contrastive-Fork Immutable Return Intake and Disposition and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "257-retrieval-augmented-generation",
+   "title": "Retrieval-Augmented Generation",
+   "type": "core",
+   "number": 65,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Divergent Ideation domain, apply Retrieval-Augmented Generation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "264-receipt-bound-divergent-ideation",
+   "title": "Receipt-Bound Divergent Ideation",
+   "type": "receipt",
+   "number": 66,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Divergent Ideation domain, apply Receipt-Bound Divergent Ideation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "265-modular-retrieval-pipeline",
+   "title": "Modular Retrieval Pipeline",
+   "type": "core",
+   "number": 67,
+   "template": "Apply Modular Retrieval Pipeline to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Recombination and Concept Blending domain, apply Modular Retrieval Pipeline and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "272-receipt-bound-recombination-and-concept-blending",
+   "title": "Receipt-Bound Recombination and Concept Blending",
+   "type": "receipt",
+   "number": 68,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Recombination and Concept Blending domain, apply Receipt-Bound Recombination and Concept Blending and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "273-worked-miniature-bridge",
+   "title": "Worked-Miniature Bridge",
+   "type": "core",
+   "number": 69,
+   "template": "Apply Worked-Miniature Bridge to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Analogy and Cross-Domain Transfer domain, apply Worked-Miniature Bridge and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "280-receipt-bound-analogy-and-cross-domain-transfer",
+   "title": "Receipt-Bound Analogy and Cross-Domain Transfer",
+   "type": "receipt",
+   "number": 70,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Analogy and Cross-Domain Transfer domain, apply Receipt-Bound Analogy and Cross-Domain Transfer and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "281-constraint-sandwich",
+   "title": "Constraint Sandwich",
+   "type": "core",
+   "number": 71,
+   "template": "Apply Constraint Sandwich to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Constraint-Driven Creativity domain, apply Constraint Sandwich and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "288-receipt-bound-constraint-driven-creativity",
+   "title": "Receipt-Bound Constraint-Driven Creativity",
+   "type": "receipt",
+   "number": 72,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Constraint-Driven Creativity domain, apply Receipt-Bound Constraint-Driven Creativity and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "289-retrieval-augmented-generation-rag",
+   "title": "Retrieval-Augmented Generation (RAG)",
+   "type": "core",
+   "number": 73,
+   "template": "Apply Retrieval-Augmented Generation (RAG) to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Novelty Search and Alternative Generation domain, apply Retrieval-Augmented Generation (RAG) and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "296-receipt-bound-novelty-search-and-alternative-generation",
+   "title": "Receipt-Bound Novelty Search and Alternative Generation",
+   "type": "receipt",
+   "number": 74,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Novelty Search and Alternative Generation domain, apply Receipt-Bound Novelty Search and Alternative Generation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "297-layer-of-thoughts-prompting",
+   "title": "Layer-of-Thoughts Prompting",
+   "type": "core",
+   "number": 75,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Uniqueness and Local Specificity domain, apply Layer-of-Thoughts Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "304-receipt-bound-uniqueness-and-local-specificity",
+   "title": "Receipt-Bound Uniqueness and Local Specificity",
+   "type": "receipt",
+   "number": 76,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Uniqueness and Local Specificity domain, apply Receipt-Bound Uniqueness and Local Specificity and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "305-demonstration-conditioned-context",
+   "title": "Demonstration-Conditioned Context",
+   "type": "core",
+   "number": 77,
+   "template": "Apply Demonstration-Conditioned Context to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Strange Options and Edge Cases domain, apply Demonstration-Conditioned Context and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "312-receipt-bound-strange-options-and-edge-cases",
+   "title": "Receipt-Bound Strange Options and Edge Cases",
+   "type": "receipt",
+   "number": 78,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Strange Options and Edge Cases domain, apply Receipt-Bound Strange Options and Edge Cases and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "313-independent-parallel-sampling",
+   "title": "Independent Parallel Sampling",
+   "type": "core",
+   "number": 79,
+   "template": "Apply Independent Parallel Sampling to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Anti-Convergence and Diversity Preservation domain, apply Independent Parallel Sampling and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "320-staged-composition-anti-convergence-and-diversity-preservation",
+   "title": "Staged-Composition Anti-Convergence and Diversity Preservation",
+   "type": "staged",
+   "number": 80,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Anti-Convergence and Diversity Preservation domain, apply Staged-Composition Anti-Convergence and Diversity Preservation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "321-graph-guided-retrieval",
+   "title": "Graph-Guided Retrieval",
+   "type": "core",
+   "number": 81,
+   "template": "Apply Graph-Guided Retrieval to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Literature Discovery and Search Strategy domain, apply Graph-Guided Retrieval and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "328-receipt-bound-literature-discovery-and-search-strategy",
+   "title": "Receipt-Bound Literature Discovery and Search Strategy",
+   "type": "receipt",
+   "number": 82,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Literature Discovery and Search Strategy domain, apply Receipt-Bound Literature Discovery and Search Strategy and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "329-merge-node-validation",
+   "title": "Merge-Node Validation",
+   "type": "core",
+   "number": 83,
+   "template": "Apply Merge-Node Validation to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Research Synthesis and Claim Maps domain, apply Merge-Node Validation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "336-contrastive-fork-research-synthesis-and-claim-maps",
+   "title": "Contrastive-Fork Research Synthesis and Claim Maps",
+   "type": "contrastive",
+   "number": 84,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Research Synthesis and Claim Maps domain, apply Contrastive-Fork Research Synthesis and Claim Maps and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "337-agent-communication-protocol",
+   "title": "Agent Communication Protocol",
+   "type": "core",
+   "number": 85,
+   "template": "Apply Agent Communication Protocol to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Methodology and Protocol Design domain, apply Agent Communication Protocol and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "344-receipt-bound-methodology-and-protocol-design",
+   "title": "Receipt-Bound Methodology and Protocol Design",
+   "type": "receipt",
+   "number": 86,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Methodology and Protocol Design domain, apply Receipt-Bound Methodology and Protocol Design and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "345-chain-of-verification-prompting",
+   "title": "Chain-of-Verification Prompting",
+   "type": "core",
+   "number": 87,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Citation and Source Audit domain, apply Chain-of-Verification Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "352-receipt-bound-citation-and-source-audit",
+   "title": "Receipt-Bound Citation and Source Audit",
+   "type": "receipt",
+   "number": 88,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Citation and Source Audit domain, apply Receipt-Bound Citation and Source Audit and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "353-chain-of-draft-prompting",
+   "title": "Chain of Draft Prompting",
+   "type": "core",
+   "number": 89,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Decomposition and Intermediate Representations domain, apply Chain of Draft Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "359-boundary-bound-decomposition-and-intermediate-representations",
+   "title": "Boundary-Bound Decomposition and Intermediate Representations",
+   "type": "boundary",
+   "number": 90,
+   "template": "Apply this technique to {task} strictly within the declared boundary: {constraint}. Report anything that would exceed the boundary as a held item with evidence: {evidence}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Decomposition and Intermediate Representations domain, apply Boundary-Bound Decomposition and Intermediate Representations and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "361-contrastive-denoising-with-noisy-chain-of-thought",
+   "title": "Contrastive Denoising with Noisy Chain-of-Thought",
+   "type": "core",
+   "number": 91,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Contrastive and Dialectical Reasoning domain, apply Contrastive Denoising with Noisy Chain-of-Thought and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "368-receipt-bound-contrastive-and-dialectical-reasoning",
+   "title": "Receipt-Bound Contrastive and Dialectical Reasoning",
+   "type": "receipt",
+   "number": 92,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Contrastive and Dialectical Reasoning domain, apply Receipt-Bound Contrastive and Dialectical Reasoning and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "369-power-of-two-batching",
+   "title": "Power-of-Two Batching",
+   "type": "core",
+   "number": 93,
+   "template": "Apply Power-of-Two Batching to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Hypothesis Generation and Testing domain, apply Power-of-Two Batching and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "376-receipt-bound-hypothesis-generation-and-testing",
+   "title": "Receipt-Bound Hypothesis Generation and Testing",
+   "type": "receipt",
+   "number": 94,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Hypothesis Generation and Testing domain, apply Receipt-Bound Hypothesis Generation and Testing and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "377-failure-taxonomy-loop",
+   "title": "Failure Taxonomy Loop",
+   "type": "core",
+   "number": 95,
+   "template": "Apply Failure Taxonomy Loop to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Causal and Systems Reasoning domain, apply Failure Taxonomy Loop and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "383-contrastive-fork-causal-and-systems-reasoning",
+   "title": "Contrastive-Fork Causal and Systems Reasoning",
+   "type": "contrastive",
+   "number": 96,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Causal and Systems Reasoning domain, apply Contrastive-Fork Causal and Systems Reasoning and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "385-workbook-instrument-50-question-reflection",
+   "title": "Workbook Instrument (~50-Question Reflection)",
+   "type": "core",
+   "number": 97,
+   "template": "Apply Workbook Instrument (~50-Question Reflection) to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Socratic Questioning domain, apply Workbook Instrument (~50-Question Reflection) and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "392-receipt-bound-socratic-questioning",
+   "title": "Receipt-Bound Socratic Questioning",
+   "type": "receipt",
+   "number": 98,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Socratic Questioning domain, apply Receipt-Bound Socratic Questioning and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "393-optimization-by-prompting",
+   "title": "Optimization by Prompting",
+   "type": "core",
+   "number": 99,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Explanation and Teaching Prompts domain, apply Optimization by Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "400-receipt-bound-explanation-and-teaching-prompts",
+   "title": "Receipt-Bound Explanation and Teaching Prompts",
+   "type": "receipt",
+   "number": 100,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Explanation and Teaching Prompts domain, apply Receipt-Bound Explanation and Teaching Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "401-adaptive-agentic-retrieval",
+   "title": "Adaptive Agentic Retrieval",
+   "type": "core",
+   "number": 101,
+   "template": "Apply Adaptive Agentic Retrieval to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adaptive Scaffolding and Feedback domain, apply Adaptive Agentic Retrieval and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "408-staged-composition-adaptive-scaffolding-and-feedback",
+   "title": "Staged-Composition Adaptive Scaffolding and Feedback",
+   "type": "staged",
+   "number": 102,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adaptive Scaffolding and Feedback domain, apply Staged-Composition Adaptive Scaffolding and Feedback and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "409-logical-chain-of-thought-prompting",
+   "title": "Logical Chain-of-Thought Prompting",
+   "type": "core",
+   "number": 103,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Collaborative and Voice-Preserving Authoring domain, apply Logical Chain-of-Thought Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "416-receipt-bound-collaborative-and-voice-preserving-authoring",
+   "title": "Receipt-Bound Collaborative and Voice-Preserving Authoring",
+   "type": "receipt",
+   "number": 104,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Collaborative and Voice-Preserving Authoring domain, apply Receipt-Bound Collaborative and Voice-Preserving Authoring and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "417-chain-of-code-prompting",
+   "title": "Chain-of-Code Prompting",
+   "type": "core",
+   "number": 105,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Code and Software Engineering Prompts domain, apply Chain-of-Code Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "422-contrastive-fork-code-and-software-engineering-prompts",
+   "title": "Contrastive-Fork Code and Software Engineering Prompts",
+   "type": "contrastive",
+   "number": 106,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Code and Software Engineering Prompts domain, apply Contrastive-Fork Code and Software Engineering Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "425-structured-data-verbalization",
+   "title": "Structured Data Verbalization",
+   "type": "core",
+   "number": 107,
+   "template": "Apply Structured Data Verbalization to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Data and Analytical Prompts domain, apply Structured Data Verbalization and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "432-receipt-bound-data-and-analytical-prompts",
+   "title": "Receipt-Bound Data and Analytical Prompts",
+   "type": "receipt",
+   "number": 108,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Data and Analytical Prompts domain, apply Receipt-Bound Data and Analytical Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "433-multimodal-context-integration",
+   "title": "Multimodal Context Integration",
+   "type": "core",
+   "number": 109,
+   "template": "Apply Multimodal Context Integration to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Visual and Multimodal Prompts domain, apply Multimodal Context Integration and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "440-receipt-bound-visual-and-multimodal-prompts",
+   "title": "Receipt-Bound Visual and Multimodal Prompts",
+   "type": "receipt",
+   "number": 110,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Visual and Multimodal Prompts domain, apply Receipt-Bound Visual and Multimodal Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "441-structured-chain-of-thought-prompting",
+   "title": "Structured Chain-of-Thought Prompting",
+   "type": "core",
+   "number": 111,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Scientific and Mathematical Prompts domain, apply Structured Chain-of-Thought Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "448-receipt-bound-scientific-and-mathematical-prompts",
+   "title": "Receipt-Bound Scientific and Mathematical Prompts",
+   "type": "receipt",
+   "number": 112,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Scientific and Mathematical Prompts domain, apply Receipt-Bound Scientific and Mathematical Prompts and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "449-context-manifest",
+   "title": "Context Manifest",
+   "type": "core",
+   "number": 113,
+   "template": "Apply Context Manifest to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Privacy and Disclosure Boundaries domain, apply Context Manifest and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "456-staged-composition-privacy-and-disclosure-boundaries",
+   "title": "Staged-Composition Privacy and Disclosure Boundaries",
+   "type": "staged",
+   "number": 114,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Privacy and Disclosure Boundaries domain, apply Staged-Composition Privacy and Disclosure Boundaries and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "457-adversarial-review-gate",
+   "title": "Adversarial Review Gate",
+   "type": "core",
+   "number": 115,
+   "template": "Apply Adversarial Review Gate to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Permissions and Consequential Effects domain, apply Adversarial Review Gate and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "464-staged-composition-permissions-and-consequential-effects",
+   "title": "Staged-Composition Permissions and Consequential Effects",
+   "type": "staged",
+   "number": 116,
+   "template": "Process the task {task} in five stages — orient, construct, challenge, verify, hand off — following {steps}. Stay within budget: {budget}. At each stage name its input, output, check, and stop condition.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "steps",
+     "label": "Steps"
+    },
+    {
+     "key": "budget",
+     "label": "Budget"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Permissions and Consequential Effects domain, apply Staged-Composition Permissions and Consequential Effects and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "465-tree-of-thoughts-prompting",
+   "title": "Tree-of-Thoughts Prompting",
+   "type": "core",
+   "number": 117,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Policy and Constitutional Prompting domain, apply Tree-of-Thoughts Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "472-receipt-bound-policy-and-constitutional-prompting",
+   "title": "Receipt-Bound Policy and Constitutional Prompting",
+   "type": "receipt",
+   "number": 118,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Policy and Constitutional Prompting domain, apply Receipt-Bound Policy and Constitutional Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "473-blind-comparator",
+   "title": "Blind Comparator",
+   "type": "core",
+   "number": 119,
+   "template": "Apply Blind Comparator to {{task}}; name the forces, bounded solution shape, failure modes, falsifier, and handoff.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Audit, Receipts, and Governance Evidence domain, apply Blind Comparator and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "478-contrastive-fork-audit-receipts-and-governance-evidence",
+   "title": "Contrastive-Fork Audit, Receipts, and Governance Evidence",
+   "type": "contrastive",
+   "number": 120,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Audit, Receipts, and Governance Evidence domain, apply Contrastive-Fork Audit, Receipts, and Governance Evidence and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "481-self-harmonized-chain-of-thought-prompting",
+   "title": "Self-Harmonized Chain-of-Thought Prompting",
+   "type": "core",
+   "number": 121,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Meta-Prompting and Prompt Reflection domain, apply Self-Harmonized Chain-of-Thought Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "488-receipt-bound-meta-prompting-and-prompt-reflection",
+   "title": "Receipt-Bound Meta-Prompting and Prompt Reflection",
+   "type": "receipt",
+   "number": 122,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Meta-Prompting and Prompt Reflection domain, apply Receipt-Bound Meta-Prompting and Prompt Reflection and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "489-automated-prompt-search",
+   "title": "Automated Prompt Search",
+   "type": "core",
+   "number": 123,
+   "template": "Apply Automated Prompt Search to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Prompt Generation and Optimization domain, apply Automated Prompt Search and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "494-contrastive-fork-prompt-generation-and-optimization",
+   "title": "Contrastive-Fork Prompt Generation and Optimization",
+   "type": "contrastive",
+   "number": 124,
+   "template": "Generate two materially different routes for the task {task}: {alternatives}. For each, state mechanism, benefit, cost, anti-trigger, and the evidence that would reject it, judged against {criteria}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "alternatives",
+     "label": "Alternatives"
+    },
+    {
+     "key": "criteria",
+     "label": "Criteria"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Prompt Generation and Optimization domain, apply Contrastive-Fork Prompt Generation and Optimization and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "497-buffer-of-thoughts-prompting",
+   "title": "Buffer of Thoughts Prompting",
+   "type": "core",
+   "number": 125,
+   "template": "Apply this technique to the task {task}, honoring the constraint: {constraint}. Return {result}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "constraint",
+     "label": "Constraint"
+    },
+    {
+     "key": "result",
+     "label": "Expected result"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Workflow and Skill Compilation domain, apply Buffer of Thoughts Prompting and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "504-receipt-bound-workflow-and-skill-compilation",
+   "title": "Receipt-Bound Workflow and Skill Compilation",
+   "type": "receipt",
+   "number": 126,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Workflow and Skill Compilation domain, apply Receipt-Bound Workflow and Skill Compilation and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "505-iterative-self-refinement",
+   "title": "Iterative Self-Refinement",
+   "type": "core",
+   "number": 127,
+   "template": "Apply Iterative Self-Refinement to {{task}} using only declared inputs; return the selected context, exclusions, and evaluation signals.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adaptive Automation and Self-Revision domain, apply Iterative Self-Refinement and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  },
+  {
+   "slug": "512-receipt-bound-adaptive-automation-and-self-revision",
+   "title": "Receipt-Bound Adaptive Automation and Self-Revision",
+   "type": "receipt",
+   "number": 128,
+   "template": "Complete the task {task} and return a receipt naming exact inputs, checks run, observations, non-effects, unresolved uncertainty ({evidence}), and the next human gate. Do not claim {non_effect}.",
+   "fields": [
+    {
+     "key": "task",
+     "label": "Task"
+    },
+    {
+     "key": "evidence",
+     "label": "Evidence"
+    },
+    {
+     "key": "non_effect",
+     "label": "Non-effect (what it must NOT do)"
+    }
+   ],
+   "worked_example": "Synthesized example: Given a representative task in the Adaptive Automation and Self-Revision domain, apply Receipt-Bound Adaptive Automation and Self-Revision and compare against a simpler baseline. The technique returns a structured output with checks, a failure condition, and a non-effect boundary.\n\nCounterexample: Apply the technique without prerequisites — no named source, no bounded task. The output remains fluent but lacks the structural guarantees the mechanism is meant to provide."
+  }
+ ]
+}

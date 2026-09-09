@@ -1,0 +1,26 @@
+/* Prompt Lab — form styles */
+.lab-body{display:flex;flex-direction:column;gap:14px}
+.lab-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold);display:block;margin-bottom:4px}
+.lab-select{width:100%;background:var(--bg);border:1px solid var(--rule);color:var(--ink);padding:8px 10px;border-radius:6px;font:inherit;font-size:.85rem}
+.lab-select:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.lab-note{font-size:.78rem;color:var(--text);line-height:1.5;margin:0}
+.lab-fields{display:flex;flex-direction:column;gap:10px}
+.lab-field label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--copper);display:block;margin-bottom:3px}
+.lab-input{width:100%;background:var(--bg);border:1px solid var(--rule);color:var(--ink);padding:7px 9px;border-radius:6px;font:inherit;font-size:.82rem;resize:vertical;min-height:2.2em}
+.lab-input:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.lab-output-wrap{border:1px solid var(--copper);border-radius:8px;padding:12px;background:rgba(194,90,58,.05)}
+.lab-output{width:100%;background:var(--bg);border:1px solid var(--rule);color:var(--ink);padding:9px;border-radius:6px;font:.82rem/1.6 var(--mono,monospace);resize:vertical}
+.lab-output:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.lab-actions{display:flex;gap:8px;margin-top:8px}
+.lab-copy,.lab-reset,.card-lab-btn{font:inherit;font-size:.78rem;padding:7px 14px;border-radius:6px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);cursor:pointer;transition:all .15s}
+.lab-copy{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600}
+.lab-copy:hover{filter:brightness(1.1)}
+.lab-reset:hover,.card-lab-btn:hover{border-color:var(--gold);color:var(--gold)}
+.lab-example{margin-top:4px;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.lab-example summary{padding:10px 14px;font-size:.78rem;color:var(--gold);cursor:pointer;user-select:none}
+.lab-example[open] summary{border-bottom:1px solid var(--rule)}
+.lab-example-body{padding:12px 14px;font-size:.8rem;line-height:1.6;color:var(--text);max-height:220px;overflow-y:auto}
+.card-lab-btn{margin:8px 14px 12px;width:calc(100% - 28px)}
+.catalog-card{padding-bottom:0}
+.catalog-card{cursor:default}
+.catalog-card .card-click{cursor:pointer}
