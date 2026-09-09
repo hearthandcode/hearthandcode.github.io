@@ -1,19 +1,39 @@
-// Catalog pop-up info card system
-// Loaded on prompt-catalog.html page
+// Catalog pop-up info card system — fixed filter logic + animated grid
 if(document.querySelector('.catalog-grid')){
-  // Filter buttons
+  // Filter buttons — single pass, no redundant loop
   document.querySelectorAll('.catalog-filter').forEach(btn=>{
     btn.onclick=()=>{
       const type=btn.dataset.type;
-      document.querySelectorAll('.catalog-filter').forEach(b=>{b.classList.toggle('active',b===b);b.setAttribute('aria-pressed',String(b===b));});
-      document.querySelectorAll('.catalog-card').forEach(card=>{
-        card.hidden=!(type==='all'||card.dataset.type===type);
-      });
-      // Re-highlight active
+      // Single pass: update each button's active state
       document.querySelectorAll('.catalog-filter').forEach(b=>{
-        b.classList.toggle('active',b===btn);
-        b.setAttribute('aria-pressed',String(b===btn));
+        const isActive=b===btn;
+        b.classList.toggle('active',isActive);
+        b.setAttribute('aria-pressed',String(isActive));
       });
+      // Animate: filter cards with staggered fade
+      let delay=0;
+      document.querySelectorAll('.catalog-card').forEach(card=>{
+        const show=type==='all'||card.dataset.type===type;
+        card.hidden=!show;
+        // Animate visible cards with stagger
+        if(show){
+          card.style.transition='opacity .25s ease, transform .25s ease';
+          card.style.opacity='0';
+          card.style.transform='translateY(6px)';
+          setTimeout(()=>{
+            card.style.opacity='1';
+            card.style.transform='translateY(0)';
+          },delay);
+          delay+=12; // stagger each card by 12ms
+        }else{
+          card.style.transition='opacity .15s ease';
+          card.style.opacity='0';
+        }
+      });
+      // Update search status
+      const visible=document.querySelectorAll('.catalog-card:not([hidden])').length;
+      const status=document.getElementById('catalog-status');
+      if(status)status.textContent=`${visible} of 128 techniques shown`;
     };
   });
   // Search
@@ -21,13 +41,18 @@ if(document.querySelector('.catalog-grid')){
   if(searchInput){
     searchInput.oninput=()=>{
       const q=searchInput.value.toLowerCase().trim();
+      let visible=0;
       document.querySelectorAll('.catalog-card').forEach(card=>{
-        if(card.hidden)return; // already hidden by filter
-        card.hidden=!card.textContent.toLowerCase().includes(q);
+        if(card.hidden)return;
+        const match=!q||card.textContent.toLowerCase().includes(q);
+        card.style.display=match?'flex':'none';
+        if(match)visible++;
       });
+      const status=document.getElementById('catalog-status');
+      if(status)status.textContent=`${visible} of 128 techniques shown`;
     };
   }
-  // Pop-up cards
+  // Pop-up info cards
   const overlay=document.getElementById('catalog-overlay');
   const popupBody=document.getElementById('catalog-popup-body');
   const popupTitle=document.getElementById('catalog-popup-title');

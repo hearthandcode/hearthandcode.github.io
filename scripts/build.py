@@ -71,7 +71,7 @@ catalog_html=''
 if catalog_entries:
  by_type=defaultdict(list)
  for cat_entry in catalog_entries:by_type[cat_entry['type']].append(cat_entry)
- type_labels={'extract':'Extract','compare':'Compare','synthesize':'Synthesize','evaluate':'Evaluate','transform':'Transform','generate':'Generate','analyze':'Analyze','refine':'Refine','audit':'Audit','frame':'Frame','compose':'Compose','route':'Route','map':'Map','decompose':'Decompose','verify':'Verify','constrain':'Constrain'}
+ type_labels={'core':'Core','contrastive':'Contrastive','staged':'Staged','receipt':'Receipt','boundary':'Boundary','schema':'Schema','position':'Position','query':'Query','falsifier':'Falsifier','adaptive':'Adaptive'}
  sorted_types=sorted(by_type.keys())
  filter_html='<button class="catalog-filter active" data-type="all" aria-pressed="true">All types</button>'
  for t in sorted_types:filter_html+=f'<button class="catalog-filter" data-type="{e(t)}" aria-pressed="false">{e(type_labels.get(t,t))}</button>'
