@@ -1,114 +1,305 @@
 [
-  {
-    "slug": "hearth-code",
-    "number": "01",
-    "kicker": "IDENTITY / PUBLIC ORIENTATION",
-    "title": "Hearth & Code",
-    "deck": "A source-aware practice for making work with AI more legible, more useful and easier to return to.",
-    "visual": "compass",
-    "summary": "Hearth & Code treats research, software, design and creative practice as related forms of careful making. The public surface describes methods and work in progress without turning a draft, a prototype or a fluent explanation into proof.",
-    "sections": [
-      {"title":"A studio, not a black box","body":"The studio is organized around the work itself: a question, a source horizon, a constrained artifact and a return. AI can participate in every stage, but it does not erase ownership. A source retains its author; a reviewer retains judgment; a person retains the decision to act.\n\nThis matters because useful work accumulates. A good result should carry enough context that someone can inspect it, revise it or continue it later without recreating the entire conversation."},
-      {"title":"The public posture","body":"Public pages use clear labels for public orientation, teaching example, candidate design and review-only system. Those labels are not decorative. They prevent an interesting experiment from being mistaken for a deployed service or a completed claim.\n\nWhere detailed source material is private, the public layer uses a synthesized example that demonstrates the method while leaving private records, identities and operating detail where they belong."},
-      {"title":"The areas of practice","body":"The work crosses agentic engineering, software architecture, knowledge synthesis, prompt craft, research design and creative systems. These are not collapsed into one generic AI capability. Each asks for its own inputs, evidence, constraints and checks.\n\nThe root orientation map keeps those areas visible as separate rooms, then shows the shared method that allows them to connect without losing their meaning."},
-      {"title":"What a return contains","body":"A useful return names the thing made, the source or assumption it depended on, the check that was performed and the next bounded question. It also names the limit: what has not been tested, authorized, released or verified.\n\nThat small discipline makes the work easier to trust for the right reason. It gives a reader a way to distinguish an artifact from its promise."}
-    ],
-    "limit": "This page is an orientation to a practice. It is not a claim that every referenced research, product or method is complete, public, deployed or independently verified."
-  },
-  {
-    "slug": "work-studio",
-    "number": "03",
-    "kicker": "PRACTICE / CONNECTED DISCIPLINES",
-    "title": "Work & Studio",
-    "deck": "Architecture, engineering, knowledge work and creative direction are different crafts that become stronger when their handoffs are explicit.",
-    "visual": "weave",
-    "summary": "The studio works across the whole path from an ambiguous question to a concrete artifact. The goal is not to automate taste or replace craft. It is to build a stronger working surface around it.",
-    "sections": [
-      {"title":"Architecture gives work a place to stand","body":"Architecture begins by separating responsibilities: what a component owns, what it receives, what it may return and which transition needs human authority. This prevents a useful prototype from quietly becoming a system of record.\n\nA small architectural decision can be enough: declare a stable input, a typed output, a failure state and a receipt. The point is not ceremony. It is making an integration understandable before it becomes expensive."},
-      {"title":"Engineering makes the seam executable","body":"Engineering turns a declared seam into a real one: schemas, pure functions, fixtures, bounded retries, explicit parse failures and lifecycle states. The Fieldcraft library contains compact versions of these moves because they are easier to learn when the counterexample is visible.\n\nThe working preference is for small proofs before broad automation. A deterministic local check can clarify a design faster than a large service with unclear ownership."},
-      {"title":"Design keeps the decision visible","body":"Design is not a final skin. It shapes what can be noticed: a missing source, a held gate, an invalid state, a changed input or a meaningful next action. Good information design makes the system easier to read without pretending it is simpler than it is.\n\nThe Ember Circuit palette and editorial typography serve that aim: warm enough for sustained reading, structured enough for technical detail, and restrained enough that evidence remains the focal point."},
-      {"title":"Creative work retains its own criteria","body":"Creative direction needs room for variation, contrast and human judgment. It benefits from an explicit brief and a way to compare alternatives, but it should not be reduced to a score. A selected concept is a decision with reasons, not merely the highest number in a table.\n\nWhen AI enters this space, the useful question is usually not “did it make something?” but “which constraint did it preserve, which did it vary, and can we see the difference?”"}
-    ],
-    "limit": "These are working approaches and synthesized examples. They do not describe a universal delivery process or imply that a particular client, product or creative artifact has been completed."
-  },
-  {
-    "slug": "methodology",
-    "number": "04",
-    "kicker": "FOUNDATION / METHOD",
-    "title": "Methodology",
-    "deck": "Bind the work to a source, make a bounded artifact, check the declared predicate, and return with the boundary still intact.",
-    "visual": "loop",
-    "summary": "The methodology is a practical discipline for moving from language to work without confusing capability with permission or a passing check with a final judgment.",
-    "sections": [
-      {"title":"1. Bind","body":"Begin with a direct source, a named owner and a bounded task. A source can be an approved brief, a record, a specification or a supplied question. The point is to know what the work is answering and what it is not authorized to alter.\n\nBinding avoids a common AI failure mode: broadening a request through adjacency. A model may recognize related work, but relation does not grant scope."},
-      {"title":"2. Make","body":"Create the smallest artifact that gives the question a concrete form. That might be a method card, a source ledger, a typed record, a visual direction, a review packet or a runnable check. The artifact should have a readable shape and a place for the assumptions it uses.\n\nSmall artifacts are easier to review because their promises are small enough to test. They are also easier to replace when the underlying source changes."},
-      {"title":"3. Check","body":"State a predicate before treating a result as useful. A check can establish a narrow property: that a field exists, a value stays within a budget, a source identifier still matches, or a lifecycle transition is allowed. It should not claim more than that property.\n\nThe counterexample is part of the method. It demonstrates the boundary of the check and keeps a passing path from becoming a vague quality signal."},
-      {"title":"4. Return","body":"Return the artifact with a short account of sources, checks, limits and the next question. Evidence, inference, hypothesis, proposal and release belong to different classes; they should stay distinguishable in the return.\n\nThat distinction lets work remain useful across time. A later reader can update the evidence without silently rewriting the earlier conclusion or pretending an unreviewed draft became accepted."}
-    ],
-    "limit": "This is a methodological orientation, not a claim that it is a complete formal system or an automatic governance mechanism. Human judgment and explicit release decisions remain necessary."
-  },
-  {
-    "slug": "prompt-catalog",
-    "number": "05",
-    "kicker": "PROMPT CRAFT / METHOD CATALOG",
-    "title": "Prompt engineering catalog",
-    "deck": "Treat prompts as reusable methods with inputs, constraints, failure modes and return shapes—not as incantations.",
-    "visual": "catalog",
-    "summary": "The working catalog contains 128 prompt methods, with a broader 512-method horizon. The public layer shares the design of the catalog and synthesized examples, rather than exporting private prompt text or operational context.",
-    "sections": [
-      {"title":"A prompt is a small interface","body":"A strong prompt has a job, a context boundary, an expected return and a stopping rule. It tells the model what inputs are available, which facts must be preserved, what output shape is useful and what to do when information is missing.\n\nThis is more durable than collecting clever phrases. When the task changes, an interface can be revised intentionally; an isolated string usually becomes folklore."},
-      {"title":"The catalog is organized by transformation","body":"Methods are grouped by the work they perform: orient a task, extract a structure, compare alternatives, synthesize evidence, compose a draft, check a claim, return a handoff. This lets a practitioner choose a prompt by the transformation needed instead of by a vague topic label.\n\nEach method can be understood as a contract: input set → bounded operation → return type. The contract makes it possible to see where a prompt belongs in a workflow and where it does not."},
-      {"title":"A synthesized example","body":"Consider a source-dossier prompt. Its input is a set of named excerpts and a claim frame. Its output is a table of observations, inferences and open questions. Its failure condition is an unsupported claim, a missing source label or a conclusion that treats absence as contradiction.\n\nThe value is not that the prompt “knows research.” The value is that its return shape gives a reviewer a stable surface on which to inspect the reasoning."},
-      {"title":"Why the catalog stays governed","body":"Prompt libraries can leak context, overstate what a model can safely do, or become a substitute for a source of truth. The catalog therefore keeps a distinction between a reusable method and the private material it may be applied to.\n\nPublic examples use synthetic records. A method can be shared without publishing the people, systems or working notes that gave rise to it."}
-    ],
-    "limit": "The counts describe a working catalog and its broader horizon, not a claim that all methods are public, complete, equally mature or suitable for every model or context."
-  },
-  {
-    "slug": "knowledge-evidence",
-    "number": "06",
-    "kicker": "KNOWLEDGE WORK / EVIDENCE",
-    "title": "Knowledge & Evidence",
-    "deck": "Keep sources, claims, uncertainty, dissent and review decisions separate enough that each can be inspected and revised.",
-    "visual": "evidence",
-    "summary": "Knowledge work becomes more reliable when it records how a statement relates to its evidence, rather than presenting a synthesis as if it arrived without a history.",
-    "sections": [
-      {"title":"Source identity comes first","body":"A source needs an identity that survives a summary: a title or record label, a version when known, a relevant span and a note about what it can support. A citation alone is not an argument, but it makes the argument inspectable.\n\nWhen a source changes, the earlier claim should not silently inherit the new wording. Version awareness makes revision an explicit event instead of a hidden rewrite."},
-      {"title":"Claims are not evidence","body":"Evidence is an observation, record or source span. A claim is an interpretation about what that material supports. Separating them creates room for a claim to be weak, contested, incomplete or simply premature without damaging the record of what was actually observed.\n\nIn a synthesized example, two sources may agree on a measurement while disagreeing about its cause. The shared observation remains; the interpretation stays plural."},
-      {"title":"Absence and contradiction are different","body":"A missing source does not negate a claim. A contradictory source does not disappear because it is inconvenient. These are different states with different next actions: retrieve more evidence, resolve a definition, preserve a minority conclusion or hold a decision.\n\nThat distinction is especially valuable in AI-assisted synthesis, where fluent prose can make a gap look like a conclusion unless the record gives uncertainty its own place."},
-      {"title":"A review is its own record","body":"Review should capture who or what evaluated a candidate, against which edition, under which criteria and with what disposition. It should not overwrite the underlying source or convert confidence into authority.\n\nThis makes it possible to revise a claim, re-check a source and retain the history of a prior review without claiming that older work never existed."}
-    ],
-    "limit": "Source tracking improves inspectability; it does not establish truth, exhaust a research horizon, replace expert review or grant rights to reuse a source."
-  },
-  {
-    "slug": "engineering-exocore",
-    "number": "07",
-    "kicker": "ENGINEERING / CANDIDATE ARCHITECTURE",
-    "title": "Engineering & Exocore",
-    "deck": "Reliable agentic systems begin with typed boundaries, explicit lifecycle states and a refusal to turn an indeterminate step into a quiet retry.",
-    "visual": "stack",
-    "summary": "Exocore is a candidate architecture for local-first, contract-bound product modules. The public page describes design principles and synthetic patterns; it does not represent a running service or released platform.",
-    "sections": [
-      {"title":"Separate meaning from mechanics","body":"A product module should own its domain records and operations. Shared infrastructure can own generic policy, runtime mechanics, identity, persistence ports and receipts, but it should not silently decide what a domain record means.\n\nThis keeps a platform from becoming a collection of screens with unclear authority. It also gives each new module a real admission question: what is the smallest independently meaningful responsibility it owns?"},
-      {"title":"Use typed boundaries","body":"Typed inputs and outputs make a seam visible. In Rust, a lifecycle state can be represented so that a release-shaped operation is unavailable on a draft-shaped value. In a browser model, the same constraint can be shown as an explicit guard and a failing fixture.\n\nThe browser example is useful for explanation; compiler enforcement is useful for a narrower claim. They should not be conflated."},
-      {"title":"Hold indeterminate work","body":"A model call or external operation can end in an indeterminate state: the result may have occurred, but the system cannot prove it. Automatically sending the work again risks duplicate effects and broken receipts.\n\nA safer pattern records the uncertainty, preserves the key, polls or reconciles known state, and requires a deliberate next route. The point is not to avoid failure; it is to make recovery observable."},
-      {"title":"Build local proofs first","body":"The proposed architecture favors provider-free fixtures, deterministic checks and reversible implementation slices before a broader runtime is introduced. A simple proof can establish that a contract accepts valid input, rejects an invalid state and produces a readable receipt.\n\nThat proof does not establish model quality, production readiness or adoption. It earns only the next bounded question."}
-    ],
-    "limit": "Exocore references here are architectural and pedagogical. They do not assert a deployed runtime, provider availability, user data processing, product launch or service-level behavior."
-  },
-  {
-    "slug": "employment-operations",
-    "number": "08",
-    "kicker": "OPERATIONS / LOCAL-FIRST REVIEW",
-    "title": "Employment Operations",
-    "deck": "A candidate-owned system for turning career material and opportunity research into evidence-backed review packets, without automating representation.",
-    "visual": "board",
-    "summary": "Employment Operations keeps a local, evidence-backed workflow for preparation and review. It is designed to support careful work at volume while preserving the user's authority over what is sent, submitted or made public.",
-    "sections": [
-      {"title":"Candidate-owned records","body":"A canonical profile, source register, opportunity packet and review artifact each have a distinct role. The system treats generated documents as projections, not as the source of truth, and it preserves the relationship between a statement and the evidence supporting it.\n\nThis helps avoid a familiar failure: a polished résumé or application packet drifting away from the record it was meant to represent."},
-      {"title":"A reviewed path, not an auto-submit path","body":"The workflow can prepare a job packet, identify questions, compose a draft and surface missing evidence. It does not submit applications, send messages, answer legal or demographic questions, bypass CAPTCHAs or modify public profiles by default.\n\nThose boundaries are practical. They leave the consequential moments—representation, disclosure and submission—with the person who owns them."},
-      {"title":"Shared context without collapsed authority","body":"A business-oriented control room can project opportunities, research, offers, projects, capacity and pending decisions into one orientation surface. The projection is read-only where it crosses a record boundary. A selected organization or opportunity can provide context without becoming the authority for every other domain.\n\nWhen a source is absent, a review surface should show the gap rather than manufacture a record to keep the dashboard full."},
-      {"title":"Synthetic examples protect real work","body":"Public demonstrations use empty or synthetic fixtures. They can show a state transition, a review gate or an evidence ledger without exposing personal records, job data or private correspondence.\n\nA passing fixture demonstrates only the declared behavior under that synthetic input. It does not show that a real application has been submitted, a contact has been reached or a decision has been made."}
-    ],
-    "limit": "Employment Operations is described here as a local-first preparation and review system. This page does not expose personal data or claim automated outreach, application submission, hiring outcomes, legal guidance or active provider integration."
-  }
+ {
+  "slug": "hearth-code",
+  "number": "01",
+  "kicker": "IDENTITY / PUBLIC ORIENTATION",
+  "title": "Hearth & Code",
+  "deck": "A source-aware practice for making work with AI more legible, more useful and easier to return to.",
+  "visual": "compass",
+  "summary": "Hearth & Code treats research, software, design and creative practice as related forms of careful making. The public surface describes methods and work in progress without turning a draft, a prototype or a fluent explanation into proof.",
+  "sections": [
+   {
+    "title": "A studio, not a black box",
+    "body": "The studio is organized around the work itself: a question, a source horizon, a constrained artifact and a return. AI can participate in every stage, but it does not erase ownership. A source retains its author; a reviewer retains judgment; a person retains the decision to act.\n\nThis matters because useful work accumulates. A good result should carry enough context that someone can inspect it, revise it or continue it later without recreating the entire conversation.\n\n**The technique in practice:** Choose one artifact. Give it a name, a source and an owner. Before adding a new tool or capability, ask who will review the result and what counts as a useful return. That small discipline keeps a system from becoming a collection of unowned outputs."
+   },
+   {
+    "title": "The public posture",
+    "body": "Public pages use clear labels for public orientation, teaching example, candidate design and review-only system. Those labels are not decorative. They prevent an interesting experiment from being mistaken for a deployed service or a completed claim.\n\nWhere detailed source material is private, the public layer uses a synthesized example that demonstrates the method while leaving private records, identities and operating detail where they belong.\n\n**Claim boundary example:** On this page, every statement about method or practice is a description of a working approach, not a declaration of universal efficacy. The claim-boundary panel at the bottom of each page names what this page does not assert."
+   },
+   {
+    "title": "The areas of practice",
+    "body": "The work crosses agentic engineering, software architecture, knowledge synthesis, prompt craft, research design and creative systems. These are not collapsed into one generic AI capability. Each asks for its own inputs, evidence, constraints and checks.\n\nThe root orientation map keeps those areas visible as separate rooms, then shows the shared method that allows them to connect without losing their meaning.\n\n**Concrete distinction:** A prompt technique and a Rust type pattern may both use \"input → transformation → output\" as a frame, but they operate at different levels with different failure modes. The prompt might hallucinate; the Rust compiler rejects. They are both \"checks\" in different senses. The methodology page traces each meaning separately."
+   },
+   {
+    "title": "What a return contains",
+    "body": "A useful return names the thing made, the source or assumption it depended on, the check that was performed and the next bounded question. It also names the limit: what has not been tested, authorized, released or verified.\n\nThat small discipline makes the work easier to trust for the right reason. It gives a reader a way to distinguish an artifact from its promise.\n\n**Formulation sketch:** Let A be an artifact, S the set of sources it depends on, C the set of checks passed, U the set of checks not performed, and Q the next actionable question. A return R is the tuple (A, S, C, U, Q). Its utility is that a downstream reader can update S or add C without reconstructing the original reasoning. This is a pedagogical formulation, not a formal ESS record; see the methodology page for a fuller treatment."
+   },
+   {
+    "title": "Choosing a starting point",
+    "body": "New readers may find the methodology page the most direct entry, since it defines the working cycle that connects all the practice areas. Readers interested in concrete runnable examples can start with Fieldcraft. Those evaluating the architectural approach should read the engineering page first.\n\n**Guiding question:** If you could get one thing right about your interaction with an AI tool, what would it be? If the answer is \"know what it's actually doing\" → start with Fieldcraft. If it's \"know what I'm committing to\" → start with methodology. If it's \"see how all this fits together\" → start with work & studio."
+   },
+   {
+    "title": "How the site is organized",
+    "body": "The root dashboard (this page) is the orientation surface. Below it, seven detail pages correspond to practice areas. Fieldcraft is a separate library of 32 runnable field notes. The GitHub repository contains the full source, build scripts and visual system — public and inspectable like everything else here.\n\nThe pages share a navigation bar, typographic scale, color system and responsive layout. Each has a distinct visual device (compass, weave, loop, catalog, evidence, stack or board) that matches the information structure of that page."
+   },
+   {
+    "title": "Creative practice as a discipline",
+    "body": "Creative work — visual direction, narrative, interactive media, music — benefits from the same discipline as engineering work: a source, a bounded task, a check and a return. The difference is in the kinds of evidence a check can produce.\n\nIn creative work, a check often evaluates against an aesthetic brief, a contrast criterion or a directional question rather than a logical predicate. That does not make the check less real; it makes the claim limit more important. A good creative return says what was explored, what was set aside and what direction is proposed next.\n\n**Worked example:** A visual direction brief includes reference sources, a contrast formula (check that two design options differ by a measurable criterion such as WCAG contrast ratio) and an explicit boundary: 'this direction explores the warm palette; it does not resolve the mobile layout.' FC-011 demonstrates checking design contrast with the WCAG formula.\n\n**Technique:** Vary one creative parameter at a time. When exploring color, keep the layout fixed. When exploring layout, keep the typography fixed. This makes the creative decision traceable: 'we chose option B because it improved readability under the contrast criterion, while A did not.' FC-010 demonstrates varying one creative parameter at a time."
+   }
+  ],
+  "limit": "This page is an orientation to a practice. It is not a claim that every referenced research, product or method is complete, public, deployed or independently verified. Section headers, formulations and visual devices are pedagogical; they do not establish a formal standard or replace ESS definitions.",
+  "fieldcraft_links": ["FC-001", "FC-005", "FC-006"]
+ },
+ {
+  "slug": "work-studio",
+  "number": "03",
+  "kicker": "PRACTICE / CONNECTED DISCIPLINES",
+  "title": "Work & Studio",
+  "deck": "Architecture, engineering, knowledge work and creative direction are different crafts that become stronger when their handoffs are explicit.",
+  "visual": "weave",
+  "summary": "The studio works across the whole path from an ambiguous question to a concrete artifact. The goal is not to automate taste or replace craft. It is to build a stronger working surface around it.",
+  "sections": [
+   {
+    "title": "Architecture gives work a place to stand",
+    "body": "Architecture begins by separating responsibilities: what a component owns, what it receives, what it may return and which transition needs human authority. This prevents a useful prototype from quietly becoming a system of record.\n\nA small architectural decision can be enough: declare a stable input, a typed output, a failure state and a receipt. The point is not ceremony. It is making an integration understandable before it becomes expensive.\n\n**Worked example:** Consider a review pipeline. An article enters as Draft, then passes or fails a reviewer check. A straightforward model allows only Draft → UnderReview → (Approved|Rejected). The architecture is explicit about which transitions are allowed and what each state means. Now add a boundary: what happens when the reviewer does not respond? The architecture should have a timeout transition, returning the article to Draft with a note — not leaving it in an unmanaged held state. This is modeled in the ESS lifecycle."
+   },
+   {
+    "title": "Engineering makes the seam executable",
+    "body": "Engineering turns a declared seam into a real one: schemas, pure functions, fixtures, bounded retries, explicit parse failures and lifecycle states. The Fieldcraft library contains compact versions of these moves because they are easier to learn when the counterexample is visible.\n\nThe working preference is for small proofs before broad automation. A deterministic local check can clarify a design faster than a large service with unclear ownership.\n\n**Failure mode to avoid:** Writing a test that passes on ideal data but fails on realistic input. The Fieldcraft article on validating output shape (FC-003) demonstrates: check that every item has the required fields and correct types before operating on it. A surprising number of integration failures trace not to logic errors but to shape assumptions."
+   },
+   {
+    "title": "Design keeps the decision visible",
+    "body": "Design is not a final skin. It shapes what can be noticed: a missing source, a held gate, an invalid state, a changed input or a meaningful next action. Good information design makes the system easier to read without pretending it is simpler than it is.\n\nThe Ember Circuit palette and editorial typography serve that aim: warm enough for sustained reading, structured enough for technical detail, and restrained enough that evidence remains the focal point.\n\n**Counterexample:** Consider a dashboard that uses green/red indicators for system status. The green indicator says \"all systems operating.\" But the measurement polling has been silent for six hours. The design communicated confidence, not uncertainty. An explicit \"stale data\" label would have been more honest, if less soothing."
+   },
+   {
+    "title": "Creative work retains its own criteria",
+    "body": "Creative direction needs room for variation, contrast and human judgment. It benefits from an explicit brief and a way to compare alternatives, but it should not be reduced to a score. A selected concept is a decision with reasons, not merely the highest number in a table.\n\nWhen AI enters this space, the useful question is usually not \"did it make something?\" but \"which constraint did it preserve, which did it vary, and can we see the difference?\"\n\n**Technique:** Give the AI a fixed brief with required elements and a separate list of optional parameters that may vary. Run several candidates, then compare by varying exactly one option at a time. Fieldcraft article FC-008 shows this practice with a synthetic example."
+   },
+   {
+    "title": "The weave: how disciplines interact",
+    "body": "These disciplines are not sequential phases. Architecture may uncover a requirement that changes the creative direction. Engineering may discover that a proposed design is not feasible within the chosen constraints, informing a revision. A knowledge-synthesis insight may open a new architectural question.\n\nThe visual device for this page is the weave: interlaced strands that cross without losing their identity. The useful property of a weave is that you can trace a single strand from edge to edge, even when it crosses others.\n\n**Concrete seam:** The transition from research question → source ledger → synthesis → recommendation crosses at least three disciplines. Each has its own standards of evidence and review. The methodology page traces this seam step by step."
+   },
+   {
+    "title": "Recovery: what happens when a discipline fails",
+    "body": "Every discipline has recoverable and unrecoverable failure modes. An architecture that cannot be built within the available constraints is a recoverable problem: return to framing, adjust scope or technology. A creative direction that loses all connection to the brief is recoverable: return to the fixed requirements and restart variation.\n\nUnrecoverable failures include: loss of the source record, inability to reproduce a test result, and destruction of provenance that would allow review. These require different handling than a prototype that simply did not work.\n\n**Practice:** Before starting work, name the recoverable and unrecoverable failure modes for your planned artifact. This naming is itself a form of architecture."
+   }
+  ],
+  "limit": "These are working approaches and synthesized examples. They do not describe a universal delivery process or imply that a particular client, product or creative artifact has been completed. Each claim about discipline interaction is an inference from observed practice, not a controlled experiment.",
+  "fieldcraft_links": ["FC-003", "FC-008", "FC-016", "FC-022"]
+ },
+ {
+  "slug": "methodology",
+  "number": "04",
+  "kicker": "FOUNDATION / METHOD",
+  "title": "Methodology",
+  "deck": "Bind the work to a source, make a bounded artifact, check the declared predicate, and return with the boundary still intact.",
+  "visual": "loop",
+  "summary": "The methodology is a practical discipline for moving from language to work without confusing capability with permission or a passing check with a final judgment.",
+  "sections": [
+   {
+    "title": "1. Bind",
+    "body": "Begin with a direct source, a named owner and a bounded task. A source can be an approved brief, a record, a specification or a supplied question. The point is to know what the work is answering and what it is not authorized to alter.\n\nBinding avoids a common AI failure mode: broadening a request through adjacency. A model may recognize related work, but relation does not grant scope.\n\n**Worked example:** A researcher receives a task: \"analyze the performance of the new retrieval pipeline.\" Before writing a single line, they bind the work by naming the source (the pipeline specification, revision v2.3), the owner (the engineering team), the exact scope (compare recall@5 and latency P95 against the declared baseline), and the boundary (do not change pipeline configuration or evaluate on production traffic). Every decision that follows is traceable to this binding."
+   },
+   {
+    "title": "2. Make",
+    "body": "Create the smallest artifact that gives the question a concrete form. That might be a method card, a source ledger, a typed record, a visual direction, a review packet or a runnable check. The artifact should have a readable shape and a place for the assumptions it uses.\n\nSmall artifacts are easier to review because their promises are small enough to test. They are also easier to replace when the underlying source changes.\n\n**Failure mode:** Making one large artifact that tries to answer every possible question at once. This trades reviewability for comprehensiveness and usually achieves neither. The Fieldcraft principle of one technique per article is a defense against this."
+   },
+   {
+    "title": "3. Check",
+    "body": "State a predicate before treating a result as useful. A check can establish a narrow property: that a field exists, a value stays within a budget, a source identifier still matches, or a lifecycle transition is allowed. It should not claim more than that property.\n\nThe counterexample is part of the method. It demonstrates the boundary of the check and keeps a passing path from becoming a vague quality signal.\n\n**Technique sketch:** Let check: Input → {pass: bool, summary: str, checks: [{name: str, pass: bool}]}. The check function is deterministic, synchronous and has no side effects. The return includes both the overall verdict and the component checks, so a reviewer can see which specific claim failed. This is the Fieldcraft demo standard."
+   },
+   {
+    "title": "4. Return",
+    "body": "Return the artifact with a short account of sources, checks, limits and the next question. Evidence, inference, hypothesis, proposal and release belong to different classes; they should stay distinguishable in the return.\n\nThat distinction lets work remain useful across time. A later reader can update the evidence without silently rewriting the earlier conclusion or pretending an unreviewed draft became accepted.\n\n**Counterexample:** A report that says \"the prototype was tested and passed, confirming the approach.\" This collapses test evidence (the prototype ran without errors on 3 inputs) into a conclusion (the approach is confirmed). A better return says: \"the prototype passed 3 of 3 unit tests on synthetic data. It has not been tested on production traffic, concurrent access or boundary inputs. The next question is whether it handles empty and null inputs correctly.\""
+   },
+   {
+    "title": "The loop is not linear",
+    "body": "The four steps form a loop, not a pipeline. A return may become a new bind for the next cycle. A failed check may send work back to making a better artifact. The methodology describes movement, not a script.\n\n**Safety property:** Every step has a stop condition. If you cannot bind the work (no named source or owner), stop. If you cannot make a small enough artifact, decompose. If a check is impossible to state upfront, frame it as a discovery question. If a return is too vague to write, the work is not finished."
+   },
+   {
+    "title": "Notation guide",
+    "body": "Throughout this site, formulations use typed predicates, assumption lists and prose bridges. Notation is always pedagogical. It never supersedes the prose explanation, and it is never presented as a formal standard or theorem.\n\n**Example notation rule:** Let Bind = (S, O, T) where S is a source locator, O is a named owner, and T is a bounded task statement. Bind is valid only when S exists and is versioned, O is reachable for review, and T can be stated in under 100 words. If any component is missing, the bind is incomplete — it should be returned for revision, not accepted as-is and clarified later."
+   },
+   {
+    "title": "Research question framing",
+    "body": "A useful research question starts before the search begins. A decision boundary, inclusion rule, exclusion rule and stopping rule define what the question actually needs — and what it can safely ignore.\n\n**Decision boundary:** What will change based on the answer? If nothing changes, the question may not need answering right now. A boundary can be small: 'I need to choose between two Rust crates for structured concurrency.' That is research-size. 'What's the best concurrency model' is not.\n\n**Inclusion and exclusion rules:** I will include sources published after 2023 with a dedicated evaluation section. I will exclude blog posts that describe a library without comparing alternatives. These rules are stated before reading, so the horizon is bounded by design.\n\n**Stopping rule:** Stop when the decision boundary has a supported answer, even if the literature survey is not exhaustive. A stopping rule prevents research from expanding into a program of its own. Fieldcraft article FC-005 demonstrates bounded iteration budgets."
+   },
+   {
+    "title": "Source ledger practice",
+    "body": "A source ledger records what was consulted, what kind of evidence it provides, what relevant spans were used and which limitations are known. It creates a durable link between a source and a claim.\n\n**Ledger structure (synthesized):** Each row: Source ID, Title/Identifier, Version/Date, Relevant span, Support role (evidence | context | method | counterclaim), Limitations, Retrieved by. The ledger is versioned — if a source is replaced, the new row carries a 'supersedes' reference to the old one.\n\n**Counterexample to avoid:** An unsourced paragraph in a synthesis that reads 'recent work in this area suggests…' without naming which work, who published it or when. A reader cannot verify, update or challenge the claim. The source ledger pattern would require: 'Source S04 (2026-03-15, Preprint, authors X and Y) reports measurement Z under condition C. This supports the claim that Q, but the sample size is N=12 — see ledger row S04 for full limitations.'"
+   },
+   {
+    "title": "Claim and evidence mapping",
+    "body": "A claim map shows the relationship between a conclusion and the evidence that supports, contradicts or is silent about it. The map does not assert that the evidence is exhaustive; it records the current state of the mapping.\n\n**Map structure (synthesized):** For each claim C, record: sources that support C, sources that contradict C, sources that are silent (neither), sources that reframe C (offer a different interpretation), and sources that are missing (the evidence that would change C is not yet retrieved).\n\n**Technique:** A claim map can be built during synthesis and returned alongside the final claim. It makes dissent visible rather than absorbing it into a smooth narrative. Fieldcraft article FC-015 demonstrates preserving minority conclusions.\n\n**Boundary:** A claim map is not a verdict. It is evidence of what was considered and what was not. A reader can inspect the map, add missing sources or challenge the support classification without reconstructing the entire synthesis."
+   }
+  ],
+  "limit": "This is a methodological orientation, not a claim that it is a complete formal system or an automatic governance mechanism. Human judgment and explicit release decisions remain necessary. The notation examples are pedagogical and do not constitute ESS normative definitions.",
+  "fieldcraft_links": ["FC-001", "FC-005", "FC-013", "FC-014", "FC-015", "FC-019", "FC-022"]
+ },
+ {
+  "slug": "prompt-catalog",
+  "number": "05",
+  "kicker": "PROMPT CRAFT / METHOD CATALOG",
+  "title": "Prompt engineering catalog",
+  "deck": "Treat prompts as reusable methods with inputs, constraints, failure modes and return shapes — not as incantations.",
+  "visual": "catalog",
+  "summary": "The working catalog contains 128 prompt methods, with a broader 512-method horizon. The public layer shares the design of the catalog and synthesized examples, rather than exporting private prompt text or operational context.",
+  "sections": [
+   {
+    "title": "A prompt is a small interface",
+    "body": "A strong prompt has a job, a context boundary, an expected return and a stopping rule. It tells the model what inputs are available, which facts must be preserved, what output shape is useful and what to do when information is missing.\n\nThis is more durable than collecting clever phrases. When the task changes, an interface can be revised intentionally; an isolated string usually becomes folklore.\n\n**Concrete anatomy of a method card:** A method card in the catalog has: purpose (one sentence), preconditions (what must be true before using it), prompt shape (the structural pattern, not the exact text), input fields, output contract, failure mode, evaluator (how to check success), boundary (what it does not do) and related techniques. The card is the smallest reusable piece of the catalog."
+   },
+   {
+    "title": "Organized by transformation",
+    "body": "Methods are grouped by the work they perform: orient a task, extract a structure, compare alternatives, synthesize evidence, compose a draft, check a claim, return a handoff. This lets a practitioner choose a prompt by the transformation needed instead of by a vague topic label.\n\nEach method can be understood as a contract: input set → bounded operation → return type. The contract makes it possible to see where a prompt belongs in a workflow and where it does not.\n\n**Catalog structure (simplified):** ORIENT: question → context summary. EXTRACT: document → structured table. COMPARE: alternatives + criteria → comparison matrix. SYNTHESIZE: evidence set → synthesis with dissent. COMPOSE: brief → draft. CHECK: claim + evidence → assessment. HANDOFF: work state → continuation brief. Each has its own input shape, failure signature and evaluation method."
+   },
+   {
+    "title": "A worked example: source-dossier prompt",
+    "body": "Consider a source-dossier prompt. Its input is a set of named excerpts and a claim frame. Its output is a table of observations, inferences and open questions. Its failure condition is an unsupported claim, a missing source label or a conclusion that treats absence as contradiction.\n\nThe value is not that the prompt \"knows research.\" The value is that its return shape gives a reviewer a stable surface on which to inspect the reasoning.\n\n**Synthesized example:** Given source excerpts A, B and C with the claim \"the system supports concurrent writes,\" the dossier prompt returns a table showing which excerpts support the claim (A and C), which are silent (B), and what would change the assessment (a test of concurrent writes under contention). This is a labeled synthesized example; actual prompts are structured differently."
+   },
+   {
+    "title": "Composition patterns",
+    "body": "Prompts compose. An extract method can feed a compare method, which feeds a synthesize method. But composition requires that each stage's output contract matches the next stage's input contract. A verbose extract result will break a compare method that expects a fixed-width table.\n\n**Composition rule:** Two prompts P₁ → P₂ are composable into P₁;P₂ when P₁'s output type is a subtype of P₂'s input type. This rule is simple but often violated in practice, especially when prompts are designed in isolation.\n\n**Failure mode:** A prompt that returns \"a summary of key points\" (untyped prose) cannot reliably feed a prompt that expects \"a typed table with columns: claim, source, confidence.\" The interface mismatch forces the second prompt to do extraction, silently duplicating work and increasing error surface."
+   },
+   {
+    "title": "Why the catalog stays governed",
+    "body": "Prompt libraries can leak context, overstate what a model can safely do, or become a substitute for a source of truth. The catalog therefore keeps a distinction between a reusable method and the private material it may be applied to.\n\nPublic examples use synthetic records. A method can be shared without publishing the people, systems or working notes that gave rise to it.\n\n**Safety boundary:** The catalog catalogs the structural shape of prompts — what they accept, what they return, how they fail. It does not publish the exact prompt text used in production. This protects both operational security and intellectual property without reducing the catalog's value as a reference."
+   },
+   {
+    "title": "The 128/512 distinction",
+    "body": "The working catalog contains 128 methods that have been developed, used and iterated in practice. The 512-method horizon includes planned, partially specified or research-stage methods that have not yet been admitted. The horizon is a development target, not a claim of existing coverage.\n\n**Status labels within the catalog:** inspected (method has been run and reviewed), publishable (safe to share publicly), withheld (contains private material or unreviewed claims), horizon (planned or speculative). Each method card in the public layer bears one of these labels."
+   },
+   {
+    "title": "Catalog registry structure",
+    "body": "The registry admits a method through a review pipeline before it appears in the working catalog. Each entry records: method ID and slug, purpose statement, status (inspected|publishable|withheld|horizon), input contract, output contract, failure mode, evaluator card, boundary statement and fieldcraft link.\n\n**Admission sequence:** A method starts as a horizon proposal, receives initial inspection and review, then either becomes publishable or is returned with a revision note. Withheld methods remain structurally cataloged but their internal prompt text and configuration are not included in the public layer.\n\n**Synthesized registry entry:** Method 'source-dossier' (id: FC-AT-022), status: publishable, input: source excerpts + claim frame, output: typed observation table with confidence field, failure mode: claim without source support, evaluator: check_excerpt_coverage(entries, sources), boundary: does not assert factual correctness of the sources themselves, fieldcraft link: FC-013."
+   },
+   {
+    "title": "Technique card anatomy",
+    "body": "Each method card in the catalog follows a standard anatomy that makes comparison across techniques possible. The card contains: purpose (one sentence identifying the job), preconditions (what must be true before invocation), prompt shape (the structural pattern, never the operational text), input fields (typed), output contract (typed), failure mode (how incorrect usage presents), evaluator (how to check if it worked), boundary (what the technique does not do) and related techniques.\n\n**Synthesized example card:** Technique: source-dossier. Precondition: at least two named source excerpts with version identifiers. Input: excerpts: [{id: str, source: str, content: str}], claim: str, confidence: bool. Output: observations: [{observation: str, support_level: str}], missing_evidence: [str]. Failure mode: returns observation without source reference — check that every observation row includes a source ID. Evaluator: run with a known gap (a claim where only 2 of 3 sources support it) and confirm the missing evidence field is populated. Boundary: the dossier does not verify the factual correctness of the sources — that is a separate fact-checking technique."
+   },
+   {
+    "title": "Composition patterns in practice",
+    "body": "Prompts compose through typed contracts. The catalog defines three composition patterns:\n\n**Sequence (P₁; P₂):** P₁'s output becomes P₂'s input. Apply when P₁ produces structured output that P₂'s input contract accepts. Violation: P₁ returns prose but P₂ expects a table — the composition silently degrades.\n\n**Branch (P₁ ‖ P₂):** Same input, independent methods, results compared. Apply when the same material needs different perspectives. Violation: a branch is treated as sequential, and the second method receives the first's output, contaminating independence.\n\n**Feed (P₁ ≫ P₂):** P₁'s output is one of several inputs to P₂. Apply when extract-then-analyze patterns. Violation: P₁'s output is treated as authoritative rather than as one input among several.\n\n**Counterexample:** A method that extracts 'key claims' from text, then a second method that 'analyzes' those claims. If the extract method misses a claim, the second method cannot detect the gap. A better pattern preserves the full source alongside the extraction so the analysis method can cross-check completeness."
+   }
+  ],
+  "limit": "The counts describe a working catalog and its broader horizon, not a claim that all methods are public, complete, equally mature or suitable for every model or context. Method cards on this page describe structural patterns; they do not reproduce operational prompt text. Registry entries are synthesized pedagogical examples unless labeled otherwise.",
+  "fieldcraft_links": ["FC-002", "FC-003", "FC-005", "FC-013", "FC-014", "FC-017", "FC-020"]
+ },
+ {
+  "slug": "knowledge-evidence",
+  "number": "06",
+  "kicker": "KNOWLEDGE WORK / EVIDENCE",
+  "title": "Knowledge & Evidence",
+  "deck": "Keep sources, claims, uncertainty, dissent and review decisions separate enough that each can be inspected and revised.",
+  "visual": "evidence",
+  "summary": "Knowledge work becomes more reliable when it records how a statement relates to its evidence, rather than presenting a synthesis as if it arrived without a history.",
+  "sections": [
+   {
+    "title": "Source identity comes first",
+    "body": "A source needs an identity that survives a summary: a title or record label, a version when known, a relevant span and a note about what it can support. A citation alone is not an argument, but it makes the argument inspectable.\n\nWhen a source changes, the earlier claim should not silently inherit the new wording. Version awareness makes revision an explicit event instead of a hidden rewrite.\n\n**Technique:** Record each source as (id, locator, version/date, relevant span, support role). A source ledger is a collection of these records. Fieldcraft article FC-012 demonstrates detecting drift when a source revision identifier no longer matches the expected value."
+   },
+   {
+    "title": "Claims are not evidence",
+    "body": "Evidence is an observation, record or source span. A claim is an interpretation about what that material supports. Separating them creates room for a claim to be weak, contested, incomplete or simply premature without damaging the record of what was actually observed.\n\nIn a synthesized example, two sources may agree on a measurement while disagreeing about its cause. The shared observation remains; the interpretation stays plural.\n\n**Failure mode to avoid:** The phrase \"the data shows\" is almost always a claim conflated with evidence. A more precise formulation: \"In study X at date Y, measurement Z was observed under conditions C. This may support claim P, but alternative interpretations include Q and R.\""
+   },
+   {
+    "title": "Absence and contradiction are different",
+    "body": "A missing source does not negate a claim. A contradictory source does not disappear because it is inconvenient. These are different states with different next actions: retrieve more evidence, resolve a definition, preserve a minority conclusion or hold a decision.\n\nThat distinction is especially valuable in AI-assisted synthesis, where fluent prose can make a gap look like a conclusion unless the record gives uncertainty its own place.\n\n**Worked example:** A literature review of 12 sources finds 10 supporting claim C and 2 that are silent (neither support nor contradict). The reviewer labels support, silence and contradiction separately. A later reader can see that 2 sources were silent and investigate why — perhaps the relevant data was never collected, or the sources address a different population. Fieldcraft article FC-014 demonstrates separating contradiction from absence."
+   },
+   {
+    "title": "A review is its own record",
+    "body": "Review should capture who or what evaluated a candidate, against which edition, under which criteria and with what disposition. It should not overwrite the underlying source or convert confidence into authority.\n\nThis makes it possible to revise a claim, re-check a source and retain the history of a prior review without claiming that older work never existed.\n\n**Counterexample:** A reviewer says \"this is good to go\" without recording criteria. Later, a different reviewer rejects the same material under different criteria. Without a review record, the first finding cannot be distinguished from the second, and the work cycles without accumulating useful information."
+   },
+   {
+    "title": "Synthesis preserves dissent",
+    "body": "When combining multiple sources into a synthesis, the goal is not to produce the most average claim. It is to show the range of evidence, the points of agreement, the points of disagreement and the open questions.\n\nFieldcraft article FC-015 demonstrates preserving minority conclusions during synthesis. A synthesis of 5 sources with 4 supporting and 1 dissenting preserves the dissent rather than burying it in a consensus statement."
+   },
+   {
+    "title": "Projection losses are recorded",
+    "body": "Every time knowledge moves from one representation to another — source → summary, summary → synthesis, synthesis → recommendation — information is lost. The projection loss report makes those losses explicit.\n\nFieldcraft article FC-024 demonstrates a projection loss checker. Given a source record and a projected record, it identifies fields present in the source that are absent in the projection, and fields where precision, granularity or context is reduced."
+   },
+   {
+    "title": "Counterevidence methodology",
+    "body": "Counterevidence is not the opposite of supporting evidence. It is a distinct role in reasoning: a finding that would change the claim if it held, but has not done so yet. A methodology for handling counterevidence includes: (1) stating the claim in falsifiable form, (2) defining what would count as counterevidence, (3) actively searching for it, and (4) reporting what was found or not found.\n\n**Technique: falsifier-first research.** Before gathering supporting evidence, write down what would disprove the claim. This protects against confirmation bias — the tendency to find what you expect to find. FC-014 demonstrates detecting contradiction versus absence.\n\n**Worked example:** Claim: 'A structured reasoning prompt improves output quality over an unstructured baseline.' Falsifier: 'The structured method produces outputs rated equal or lower than the baseline on the same rubric with the same model.' The counterevidence search includes running both the method and baseline on the same inputs with a blind evaluator. If no significant difference is found, the claim is not disproven — it remains unsupported and should not be propagated as confirmed.\n\n**Boundary:** Searching for counterevidence does not guarantee finding it. The absence of counterevidence is not proof. It is a condition that changes confidence but does not eliminate the need for further testing or alternative explanations."
+   }
+  ],
+  "limit": "Source tracking improves inspectability; it does not establish truth, exhaust a research horizon, replace expert review or grant rights to reuse a source. The worked examples use synthetic records and should not be interpreted as citation guidance for other systems.",
+  "fieldcraft_links": ["FC-012", "FC-013", "FC-014", "FC-015", "FC-016", "FC-017", "FC-018", "FC-019", "FC-020", "FC-021", "FC-024"]
+ },
+ {
+  "slug": "engineering-exocore",
+  "number": "07",
+  "kicker": "ENGINEERING / CANDIDATE ARCHITECTURE",
+  "title": "Engineering & Exocore",
+  "deck": "Reliable agentic systems begin with typed boundaries, explicit lifecycle states and a refusal to turn an indeterminate step into a quiet retry.",
+  "visual": "stack",
+  "summary": "Exocore is a candidate architecture for local-first, contract-bound product modules. The public page describes design principles and synthetic patterns; it does not represent a running service or released platform.",
+  "sections": [
+   {
+    "title": "Separate meaning from mechanics",
+    "body": "A product module should own its domain records and operations. Shared infrastructure can own generic policy, runtime mechanics, identity, persistence ports and receipts, but it should not silently decide what a domain record means.\n\nThis keeps a platform from becoming a collection of screens with unclear authority. It also gives each new module a real admission question: what is the smallest independently meaningful responsibility it owns?\n\n**Concrete design rule:** If two modules would implement the same domain logic differently, that is a feature, not a bug — it means the logic genuinely belongs in each module's domain. Shared infrastructure should enforce policy, preserve receipts and provide persistence, not unify meaning."
+   },
+   {
+    "title": "Use typed boundaries",
+    "body": "Typed inputs and outputs make a seam visible. In Rust, a lifecycle state can be represented so that a release-shaped operation is unavailable on a draft-shaped value. In a browser model, the same constraint can be shown as an explicit guard and a failing fixture.\n\nThe browser example is useful for explanation; compiler enforcement is useful for a narrower claim. They should not be conflated.\n\n**Demonstration:** Fieldcraft article FC-029 shows a Rust typestate where a `Draft` article cannot be published — the `publish()` method is only available on `Reviewed` articles. The same article shows a browser model with the same constraint, using a guard and a failing fixture. The browser model explains; the Rust compiler enforces."
+   },
+   {
+    "title": "Hold indeterminate work",
+    "body": "A model call or external operation can end in an indeterminate state: the result may have occurred, but the system cannot prove it. Automatically sending the work again risks duplicate effects and broken receipts.\n\nA safer pattern records the uncertainty, preserves the key, polls or reconciles known state, and requires a deliberate next route. The point is not to avoid failure; it is to make recovery observable.\n\n**Worked example:** A system dispatches a model call with an idempotency key. The call times out. Did the model process the input but return value was lost? Did it never receive the input? An automatic retry risks executing the effect twice. The correct response is to hold, preserve the key, and let a human or policy decide the next route. FC-027 demonstrates this lifecycle."
+   },
+   {
+    "title": "Build local proofs first",
+    "body": "The proposed architecture favors provider-free fixtures, deterministic checks and reversible implementation slices before a broader runtime is introduced. A simple proof can establish that a contract accepts valid input, rejects an invalid state and produces a readable receipt.\n\nThat proof does not establish model quality, production readiness or adoption. It earns only the next bounded question.\n\n**Technique sequence:** 1) Write the contract (input type, output type, valid transitions). 2) Write a pure validate function. 3) Write fixtures for valid, invalid and boundary cases. 4) Run them against the contract, not against a running service. 5) Extend to real I/O only after the contract is stable and the test passes. This sequence is demonstrated across Fieldcraft articles FC-001, FC-022, FC-023 and FC-032."
+   },
+   {
+    "title": "Idempotency is a contract, not a feature",
+    "body": "An idempotency key binds a request to a digest. If the same key arrives with a different body, it is a conflict, not a replay. If the same key arrives with the same body, it is a safe replay. If the key is new, it is a new request.\n\nFC-026 demonstrates this distinction with a deterministic check that correctly classifies new, replay, conflict and duplicate-history scenarios."
+   },
+   {
+    "title": "Fail closed, not open",
+    "body": "When a guard's state is unknown, preserve the current state rather than allowing or denying the transition by default. FC-022 demonstrates a tri-state guard that returns a hold with visible evidence when the transition condition cannot be evaluated. The principle applies broadly: an unknown state is not a denial and not a grant; it is a separate condition requiring separate handling."
+   },
+   {
+    "title": "Lifecycle as a state machine",
+    "body": "A product module's lifecycle controls which operations are available at each stage. A draft record cannot be published; a published record cannot be re-edited without a revision cycle. These constraints make the system's behavior predictable and reviewable.\n\n**State model (synthesized):** Draft → Review → Published → Archived. Each transition requires specific evidence and authority. Draft→Review requires a completeness check. Review→Published requires a named reviewer disposition. Each transition also has a reverse path: Review→Draft returns the record with reviewer notes. Published→Revision returns it for a new review cycle.\n\n**Design rule:** A state machine does not need every state to be reachable from every other. The transitions that exist should be the ones you have explicitly designed and tested. A 'back' button that can return any state to any other state is not a lifecycle — it is an Undo facility masquerading as a state machine.\n\n**Concrete example from Fieldcraft:** FC-029 demonstrates a Rust typestate where Draft, Reviewed and Published are distinct types. The `publish()` function is only available on Reviewed — the compiler enforces the lifecycle. The same article provides a browser-based demonstration with explicit guards for readers without Rust experience."
+   },
+   {
+    "title": "Product modules and contract design",
+    "body": "A product module owns its domain and communicates through typed contracts. The contract defines what the module accepts, what it returns and what side effects are permitted. This is the Exocore architectural pattern: modules are independent, contract-bound and locally falsifiable before integration.\n\n**Contract anatomy (synthesized):** For each module interface, define: inputs (type, validation rules), outputs (type, success/failure structure), allowed side effects, idempotency semantics (new, replay, conflict), and rollback behavior (what happens if a downstream module fails).\n\n**Design rule:** When two modules disagree about a contract (one expects a field the other does not send), that is an integration failure, not a bug in either module. The contract is the authority; each module's implementation must be reconciled to it. FC-025 demonstrates checking producer-consumer compatibility.\n\n**Boundary:** Contracts define interfaces, not behavior. A module that satisfies a contract may still fail semantically (returning wrong data in the correct shape). Contracts are a necessary condition for reliable composition but not a sufficient one."
+   },
+   {
+    "title": "Product modularity in practice",
+    "body": "A product module is the smallest independently useful responsibility. It should implement its core logic without depending on other modules' runtime state. Shared infrastructure (identity, persistence, policy) is provided through ports, not by making modules aware of each other.\n\n**Modularity test:** Can this module be implemented as a standalone crate (or component) with its own test suite, its own lifecycle and its own interface contract? If the answer requires importing another module's types or dependending on its runtime state, the module boundary is wrong.\n\n**Failure mode to avoid:** A 'shared' module that grows to hold domain logic for multiple features. Over time, no single feature can change without touching shared code. The modularity test is also a safety test: modules that pass it can be independently deployed, tested and retired.\n\n**Technique sequence:** 1) Define the boundary — what data and operations belong exclusively to this module. 2) Write the interface contract before implementation. 3) Implement and test against the contract, not against another module's internal state. 4) Integration: verify that the module's contract matches its consumer's expectations."
+   }
+  ],
+  "limit": "Exocore references here are architectural and pedagogical. They do not assert a deployed runtime, provider availability, user data processing, product launch or service-level behavior. Browser examples illustrate concepts; they are not substitutes for compiler enforcement or production testing.",
+  "fieldcraft_links": ["FC-001", "FC-022", "FC-023", "FC-024", "FC-025", "FC-026", "FC-027", "FC-028", "FC-029", "FC-030", "FC-031", "FC-032"]
+ },
+ {
+  "slug": "employment-operations",
+  "number": "08",
+  "kicker": "OPERATIONS / LOCAL-FIRST REVIEW",
+  "title": "Employment Operations",
+  "deck": "A candidate-owned system for turning career material and opportunity research into evidence-backed review packets, without automating representation.",
+  "visual": "board",
+  "summary": "Employment Operations keeps a local, evidence-backed workflow for preparation and review. It is designed to support careful work at volume while preserving the user's authority over what is sent, submitted or made public.",
+  "sections": [
+   {
+    "title": "Candidate-owned records",
+    "body": "A canonical profile, source register, opportunity packet and review artifact each have a distinct role. The system treats generated documents as projections, not as the source of truth, and it preserves the relationship between a statement and the evidence supporting it.\n\nThis helps avoid a familiar failure: a polished résumé or application packet drifting away from the record it was meant to represent.\n\n**Technique:** Maintain a source register that links every claim in application materials to specific evidence (project URL, publication, performance review excerpt, recommendation). When you update a claim, update the evidence first. The projection (résumé, cover letter) is regenerated from the register, not edited in isolation."
+   },
+   {
+    "title": "A reviewed path, not an auto-submit path",
+    "body": "The workflow can prepare a job packet, identify questions, compose a draft and surface missing evidence. It does not submit applications, send messages, answer legal or demographic questions, bypass CAPTCHAs or modify public profiles by default.\n\nThose boundaries are practical. They leave the consequential moments — representation, disclosure and submission — with the person who owns them.\n\n**Safety boundary:** The system may draft an application packet for review. It may research salary ranges, company culture and interview format. It may identify gaps in a candidate's preparation. It may not submit the packet, send a message on the candidate's behalf, or represent the candidate to any third party without explicit per-action authorization."
+   },
+   {
+    "title": "Shared context without collapsed authority",
+    "body": "A business-oriented control room can project opportunities, research, offers, projects, capacity and pending decisions into one orientation surface. The projection is read-only where it crosses a record boundary. A selected organization or opportunity can provide context without becoming the authority for every other domain.\n\nWhen a source is absent, a review surface should show the gap rather than manufacture a record to keep the dashboard full.\n\n**Counterexample:** A dashboard that shows \"opportunities this week\" with every slot filled, some by placeholder entries. Better: show 3 real opportunities and 2 empty slots labeled \"research in progress\" or \"filtered pending criteria.\" The honest dashboard supports decision-making; a full one supports denial."
+   },
+   {
+    "title": "Synthetic examples protect real work",
+    "body": "Public demonstrations use empty or synthetic fixtures. They can show a state transition, a review gate or an evidence ledger without exposing personal records, job data or private correspondence.\n\nA passing fixture demonstrates only the declared behavior under that synthetic input. It does not show that a real application has been submitted, a contact has been reached or a decision has been made.\n\n**Method card (synthesized):** A Readiness Check takes a list of required evidence types and checks them against a local evidence ledger for completeness. It returns: present, missing, or stale for each type. Missing items are surfaced with a gap description and a suggested retrieval action. This is a pedagogical pattern; the actual readiness check implementation may differ."
+   },
+   {
+    "title": "Evidence-based preparation cycle",
+    "body": "The preparation cycle for an opportunity: 1) Frame the role and identify evidence types needed. 2) Audit the evidence ledger for matches and gaps. 3) Draft a projection (cover letter, talking points) from available evidence. 4) Review for accuracy, boundary and authorization. 5) Hold for human release. Each step has a distinct gate and output."
+   },
+   {
+    "title": "Why automation is bounded here",
+    "body": "Employment decisions — what to say about yourself, where to apply, how to present — are deeply personal and consequential. An automated system that sends applications or modifies public profiles without per-action review would cross a meaningful autonomy boundary. The system is designed to help prepare; it does not act on the user's behalf."
+   }
+  ],
+  "limit": "Employment Operations is described here as a local-first preparation and review system. This page does not expose personal data or claim automated outreach, application submission, hiring outcomes, legal guidance or active provider integration. Synthetic examples are pedagogical only.",
+  "fieldcraft_links": ["FC-003", "FC-005", "FC-006", "FC-020"]
+ }
 ]

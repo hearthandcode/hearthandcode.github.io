@@ -1,0 +1,33 @@
+/* Hearth & Code dashboard depth expansion — S07 components */
+/* Intent-based route cards */
+.dashboard-routes{padding:3rem 1rem;max-width:1000px;margin:0 auto}
+.dashboard-routes .dashboard-grid{gap:.75rem}
+.dashboard-routes .orientation-card{padding:1rem 1.25rem;grid-column:span 2}
+.dashboard-routes .orientation-card h3{margin:0;font-size:1.05rem;color:var(--copper)}
+.dashboard-routes .orientation-card p{margin:.35rem 0 0;font-size:.9rem;color:var(--text);line-height:1.5}
+.dashboard-routes .orientation-card .card-number{color:var(--gold);font-weight:700;margin-right:.5rem}
+@media(max-width:680px){.dashboard-routes .orientation-card{grid-column:span 4}}
+
+/* Evidence-class grid */
+.dashboard-evidence{padding:3rem 1rem;max-width:1000px;margin:0 auto;border-top:1px solid var(--rule)}
+.evidence-class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem}
+.evidence-class-card{border:1px solid var(--rule);border-radius:8px;padding:1.25rem;background:var(--panel)}
+.evidence-class-card h3{margin:0 0 .35rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--cyan)}
+.evidence-class-card p{margin:0;font-size:.85rem;color:var(--text);line-height:1.5}
+@media(max-width:680px){.evidence-class-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Dashboard claim-boundary panel */
+.dashboard-limit{padding:2rem 1rem 3rem;max-width:800px;margin:0 auto}
+.limit-panel{border:1px solid var(--copper);border-radius:8px;padding:1.5rem 2rem;background:var(--panel)}
+.limit-panel .eyebrow{color:var(--copper)}
+.limit-panel h2{margin:0 0 1rem;font-size:1.1rem;color:var(--copper)}
+.limit-panel ul{margin:0;padding:0 0 0 1.25rem}
+.limit-panel li{margin-bottom:.6rem;font-size:.9rem;color:var(--text);line-height:1.5}
+.limit-panel li:last-child{margin-bottom:0}
+
+/* Card detail text */
+.card-detail{font-size:.78rem;color:var(--text);margin-top:.35rem;line-height:1.4;opacity:.8}
+.orientation-card .card-detail{margin-top:.35rem}
+
+/* Dashboard start heading */
+.dashboard-start .eyebrow{color:var(--gold)}
